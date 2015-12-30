@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>baocunzfu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        ///*****✅存储
+        NSUserDefaults.standardUserDefaults().setObject(&lt;#start.text#&gt;, forKey: &lt;#start.text#&gt; as String)
+        
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        ///*****✅读取
+        &lt;#start.text#&gt; = NSUserDefaults.standardUserDefaults().objectForKey(&lt;#start.text#&gt; as String)! as? NSString</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FD688EB8-4559-435A-AEC1-E369D5ECD907</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>读取字符</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>保存字符</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

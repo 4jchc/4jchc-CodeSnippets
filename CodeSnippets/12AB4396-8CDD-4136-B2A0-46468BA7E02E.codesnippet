@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zidingyicellzengjiafenggexian</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///*****💗给cell增加分割线
+    func addXianCell(cell:UITableViewCell){
+        
+        ///*****✅创建分割线
+       let divide = UIView.init()
+        divide.backgroundColor = UIColor.blackColor()
+        divide.alpha = 0.2
+        cell.contentView.addSubview(divide)
+        
+        ///*****✅/ 给divide设置位置
+        let divideH:CGFloat = 1;
+        let divideW:CGFloat = cell.bounds.size.width;
+        let divideY:CGFloat = cell.bounds.size.height - divideH;
+        divide.frame = CGRectMake(0, divideY, divideW, divideH);
+    }
+    
+    
+    &lt;#自定义cll#&gt;
+    ///*****✅懒加载小视图添加到cell
+    var _divide:UIView!
+    var divide:UIView {
+        
+        if _divide == nil {
+            
+            _divide = UIView.init()
+            _divide.backgroundColor = UIColor.blackColor()
+            _divide.alpha = 0.2
+            self.contentView.addSubview(_divide)
+        }
+        return _divide
+    }
+    
+    ///*****✅// 当cell自己的frame改变的时候就会调用
+    override func layoutSubviews() {
+        // 给divide设置位置
+        let divideH:CGFloat = 1;
+        let divideW:CGFloat = self.bounds.size.width;
+        let divideY:CGFloat = self.bounds.size.height - divideH;
+        self.divide.frame = CGRectMake(0, divideY, divideW, divideH);
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>12AB4396-8CDD-4136-B2A0-46468BA7E02E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自定义和非自定义</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义cll增加分割线</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

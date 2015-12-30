@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>choutixiaoguo</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class HMDrawViewController: UIViewController {
+    weak var leftView:UIView!
+    weak var rightView:UIView!
+    weak var mainView:UIView!
+    var isDraging:Bool!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // 1.添加子控件
+        self.addChildView()
+///*****💗#warning 第三步 观察_mainView的frame改变
+        
+        /**
+        *  给_mainView添加一个观察者
+        *
+        *  KeyPath：监听frame这个属性
+        *
+        *  options：监听新值的改变
+        */
+        ////*****✅/ 2.监听
+        mainView.addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
+
+    }
+        ////*****✅/ 2. 当_mainView的frame属性改变的时候就会调用
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [NSObject : AnyObject]?, context: UnsafeMutablePointer&lt;Void&gt;) {
+            NSLog("%@", NSStringFromCGRect(mainView.frame));
+        
+            if (mainView.frame.origin.x &lt; 0) { // 往左移动
+            // 显示右边
+            rightView.hidden = false;
+            // 隐藏左边
+            leftView.hidden = true;
+            }else if (mainView.frame.origin.x &gt; 0){ // 往右移动
+            // 显示左边
+            rightView.hidden = true;
+            // 隐藏右边
+            leftView.hidden = false;
+
+        }
+    }
+
+    
+///*****💗#warning 第一步
+        func addChildView(){
+
+            ///*****✅// left
+            let leftView:UIView = UIView(frame: self.view.bounds)
+            leftView.backgroundColor = UIColor.greenColor()
+            self.view.addSubview(leftView)
+            self.leftView = leftView;
+            
+            ///*****✅// right
+            let rightView:UIView = UIView(frame: self.view.bounds)
+            rightView.backgroundColor = UIColor.blueColor()
+            self.view.addSubview(rightView)
+            self.rightView = rightView;
+            
+            ///*****✅// mainView
+            let mainView:UIView = UIView(frame: self.view.bounds)
+            mainView.backgroundColor = UIColor.redColor()
+            self.view.addSubview(mainView)
+            self.mainView = mainView;
+   }
+///*****💗#warning 第二布
+    override func touchesMoved(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        ////*****✅/ 获取UITouch对象
+        let touch:UITouch = (touches as NSSet).anyObject() as! UITouch
+     
+        ////*****✅/ 获取当前点
+        let currentPoint:CGPoint = touch.locationInView(self.view)
+        
+        ////*****✅/ 获取上一个点
+        let prePoint:CGPoint = touch.previousLocationInView(self.view)
+
+        ////*****✅/ x轴偏移量：当手指移动一点的时候，x偏移多少
+        let offsetX:CGFloat = currentPoint.x - prePoint.x
+        
+        ////*****✅/ 设置当前主视图的frame
+//        var mainframe:CGRect = self.mainView.frame
+//        mainframe.origin.x +=  offsetX
+        mainView.frame = self.getCurrentFrameWithOffsetX(offsetX)
+        
+        
+        
+        isDraging = true
+    }
+    
+///*****💗#warning 第四步
+    let HMMaxY:CGFloat = 60
+    ////*****✅/ 当手指偏移一点，根据X轴的偏移量算出当前主视图的frame
+        
+    func getCurrentFrameWithOffsetX(offsetX:CGFloat) -&gt; CGRect
+    {
+        
+        let screenW:CGFloat = UIScreen.mainScreen().bounds.size.width;
+        
+        let screenH:CGFloat = UIScreen.mainScreen().bounds.size.height;
+    
+    ////*****✅/ 获取y轴偏移量，手指每移动一点，y轴偏移多少
+        
+        let offsetY:CGFloat = offsetX * HMMaxY / screenW;
+        
+        var scale:CGFloat = (screenH - 2 * offsetY) / screenH;
+    
+    if (mainView.frame.origin.x &lt; 0) { // 往左边滑动
+        scale = (screenH + 2 * offsetY) / screenH;
+    }
+    
+    ////*****✅/ 获取之前的frame
+        var frame:CGRect  = mainView.frame;
+    frame.origin.x += offsetX;
+    frame.size.height = frame.size.height * scale
+    frame.size.width = frame.size.width * scale;
+    frame.origin.y = (screenH - frame.size.height) * 0.5;
+    
+        return frame;
+    }
+
+///*****💗#warning 第五步
+    let HMRTarget:CGFloat = 300
+    let HMLTarget:CGFloat = -270
+    /*
+    _mainView.frame.origin.x &gt; screenW * 0.5 定位到右边
+    CGRectGetMaxX(_mainView.frame) &lt; screenW * 0.5 定位到左边 -220
+    
+    */
+    ////*****✅/ 定位
+    override func touchesEnded(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+//        ////*****✅/ 复位
+//        if (isDraging == true &amp;&amp; mainView.frame.origin.x.isZero == false) {
+//            ///*****✅动画0.25
+//            UIView.animateWithDuration(0.25, animations: { () -&gt; Void in
+//                self.mainView.frame = self.view.bounds;
+//            })
+//
+//        }
+
+        let screenW:CGFloat = UIScreen.mainScreen().bounds.size.width
+        
+        var target:CGFloat = 0
+        if ((mainView.frame.origin.x &gt; screenW * 0.5) == true) { // 定位到右边
+            
+            target = HMRTarget
+            
+        }else if (CGRectGetMaxX(mainView.frame) &lt; screenW * 0.5) { // 定位到左边
+            
+            target = HMLTarget
+            
+        }
+        ///*****✅动画0.25
+        UIView.animateWithDuration(0.25) { () -&gt; Void in
+            if (target.isZero == false) { ////*****✅/ 在需要定位左边或者右边
+                
+                ////*****✅/ 获取x轴偏移量
+                let offsetX:CGFloat = target - self.mainView.frame.origin.x;
+                
+                ////*****✅/ 设置当前主视图的frame
+                self.mainView.frame = self.getCurrentFrameWithOffsetX(offsetX)
+                
+            }else{ ////*****✅/ 还原
+                
+           self.mainView.frame = self.view.bounds;
+            }
+        }
+        
+        isDraging = false
+        
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5D53DC09-A1D9-4AA8-8827-19CE2FB1C3DD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>左中右切换view</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>抽屉效果</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zifukuandu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        if (os.majorVersion &gt; 7) {
+            ///*****✅计算字符的宽度 尺寸要与字体的相同
+            titleW = currentTitle!.boundingRectWithSize(size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: textDict as? [String : AnyObject], context: nil).size.width
+    
+ 
+        }else{
+
+            titleW = self.currentTitle!.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(15)]).width</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DA33CBFD-677B-4827-87BB-4138CB9B34F0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>计算</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>字符宽度</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jmeijujiandan-简单</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        enum &lt;#CompassPoint#&gt; {
+            case &lt;#North#&gt;
+            case &lt;#North#&gt;
+            case &lt;#North#&gt;
+            case &lt;#North#&gt;
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>89E6FE63-0E94-4D86-B659-CCE2B1DBD5A6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>简单枚举</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>enum简单</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

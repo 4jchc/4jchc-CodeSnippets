@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4juitabbarcontroller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///  添加子控制器
+    func addControllers() {
+        addchildController("Home", "首页", "tabbar_home", "tabbar_home_highlighted")
+        addchildController("Message", "消息", "tabbar_message_center", "tabbar_message_center_highlighted")
+        addchildController("Discover", "发现", "tabbar_discover", "tabbar_discover_highlighted")
+        addchildController("Profile", "我", "tabbar_profile", "tabbar_profile_highlighted")
+    }
+    
+    
+    
+    ///  添加视图控制器
+    ///
+    ///  - parameter name:      sb name
+    ///  - parameter title:     标题
+    ///  - parameter imageName: 图像名称
+    ///  - parameter highlight: 高亮名称
+    func addchildController(name: String, _ title: String, _ imageName: String, _ highlight: String) {
+        
+        let sb = UIStoryboard(name: name, bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! UINavigationController
+        // 添加图标&amp;文字
+        vc.tabBarItem.image = UIImage(named: imageName)
+        vc.tabBarItem.selectedImage = UIImage(named: highlight)?.imageWithRenderingMode(.AlwaysOriginal)
+        
+        vc.title = title
+        
+        /// 设置文字颜色，在 UIKit 框架中，大概有 7~9 个头文件是以 NS 开头的，都是和文本相关的
+        // NSAttributedString 中定义的文本属性，主要用在"图文混排"
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orangeColor()], forState: UIControlState.Selected)
+        
+        self.addChildViewController(vc)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6ECB9C2B-C136-40A4-98ED-FE17883DADAF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加按钮</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UITabBarController添加按钮</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ttabbarcontroller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 1.创建窗口
+        
+        self.window = UIWindow()
+        
+        self.window!.frame = UIScreen.mainScreen().bounds
+        
+        // 2.设置根控制器
+        let tabbarVc:UITabBarController = UITabBarController()
+        self.window!.rootViewController = tabbarVc
+
+        
+        // 3.设置子控制器
+        let &lt;#元素#&gt;:&lt;#元素#&gt; = &lt;#元素#&gt;()
+        self.addChildVc(home, title: "&lt;#元素#&gt;", image: "&lt;#元素#&gt;", selectedImage: "&lt;#元素#&gt;")
+        
+        
+        let &lt;#元素#&gt;:&lt;#元素#&gt; = &lt;#元素#&gt;()
+        self.addChildVc(home, title: "&lt;#元素#&gt;", image: "&lt;#元素#&gt;", selectedImage: "&lt;#元素#&gt;")
+        
+        
+        let discover:HWDiscoverViewController = HWDiscoverViewController()
+        self.addChildVc(discover, title: "发现", image: "tabbar_discover", selectedImage: "tabbar_discover_selected")
+        
+        let profile:HWProfileViewController = HWProfileViewController()
+        self.addChildVc(profile, title: "我", image: "tabbar_profile", selectedImage: "tabbar_profile")
+        
+
+        tabbarVc.viewControllers = [&lt;#元素#&gt;,&lt;#元素#&gt;,&lt;#元素#&gt;,&lt;#元素#&gt;]
+        
+        
+//        tabbarVc.addChildViewController(home)
+//        tabbarVc.addChildViewController(messageCenter)
+        
+        // 4.显示窗口
+        self.window?.makeKeyAndVisible()
+        
+        // 很多重复代码 ---&gt; 将重复代码抽取到一个方法中
+        // 1.相同的代码放到一个方法中
+        // 2.不同的东西变成参数
+        // 3.在使用到这段代码的这个地方调用方法， 传递参数
+        
+        // 4.显示窗口
+        self.window?.makeKeyAndVisible()
+        
+        return true
+    }
+    
+    
+    /**
+    *  添加一个子控制器
+    *
+    *  @param childVc       子控制器
+    *  @param title         标题
+    *  @param image         图片
+    *  @param selectedImage 选中的图片
+    */
+    func addChildVc(childVc:UIViewController,title:NSString ,image:NSString, selectedImage:NSString){
+        
+        
+        // 设置文字的样式
+        let normalcolor = UIColor(red: &lt;#元素#&gt;/255.0, green: &lt;#元素#&gt;/255.0, blue: &lt;#元素#&gt;/255.0, alpha: 1.0)
+        
+        let selectedcolor = UIColor.&lt;#元素#&gt;
+        
+        
+        // 设置子控制器的文字和图片
+        
+        childVc.tabBarItem.title = title as String
+        childVc.tabBarItem.image = UIImage(named: image as String)
+        // 声明：这张图片按照原始的样子显示出来，不要自动渲染成其他颜色（比如蓝色）
+        childVc.tabBarItem.selectedImage = UIImage(named: selectedImage as String)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        
+        // 设置子控制器的文字和图片
+        childVc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: normalcolor], forState: UIControlState.Normal)
+        childVc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: selectedcolor], forState: UIControlState.Selected)
+        
+        childVc.view.backgroundColor = &lt;#UIColorTool.randomColor()#&gt;
+        
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1D23CFF8-0BE3-4565-AB86-9D7F33010D2D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>底部导航栏-delegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>底部导航栏纯代码</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zhuzhuangtu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func drawRect(rect: CGRect) {
+        // Drawing code
+        let date:NSArray = [&lt;#25#&gt;,&lt;#25#&gt;,&lt;#25#&gt;]
+        let count:Int = date.count
+        
+        let w:CGFloat = (rect.size.width) / CGFloat(2 * count - 1);
+        var h:CGFloat = 0;
+        var x:CGFloat = 0;
+        var y:CGFloat = 0;
+        let viewH:CGFloat = rect.size.height;
+        // 1.获取上下文
+        let ctx:CGContextRef = UIGraphicsGetCurrentContext()
+        var i:Int = 0
+        for (i; i &lt; count; i++) {
+            h = viewH * CGFloat(date[i].integerValue) / 100.0
+
+            x = 2 * w * CGFloat(i)
+            y = viewH - h;
+            // 2.拼接路径
+            let path:UIBezierPath = UIBezierPath(rect: CGRectMake(x, y, w, h))
+            
+            // 3.添加路径到上下文
+            CGContextAddPath(ctx, path.CGPath);
+            UIColor_Random.randomColor().setFill()
+            
+            // 4.渲染
+            CGContextFillPath(ctx);
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9375085B-046C-4129-8FF8-EA82C2E92794</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>柱状图</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>lanjiazaikebianshuzu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    var _btns:NSMutableArray!
+    
+    var btns:NSMutableArray {
+        get{
+            if _btns == nil {
+               _btns = NSMutableArray()
+            }
+            return _btns
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BD957D22-570E-4FBE-9295-4A75E0453FFD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>可变数组空</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载-导入</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tupianshuiyin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///*****💗 图片水印
+    func watermarkImage(){
+        
+        super.viewDidLoad()
+        ///*****✅得到老图片
+        let oldImage:UIImage = UIImage(named: "&lt;#img#&gt;")!
+        
+        ////*****✅/ 开启上下文
+        ////*****✅/ size 新的图片大小
+        ////*****✅/ opaque YES 不透明 NO 透明
+        UIGraphicsBeginImageContextWithOptions(oldImage.size, false, 0.0)
+        ///*****✅老图片画到设备里
+        oldImage.drawAtPoint(CGPointZero)
+        ///*****✅添加文字
+        let text:NSString = "&lt;#我要高薪#&gt; ！"
+        let dict:NSDictionary = [NSFontAttributeName:UIFont.systemFontOfSize(15),
+            NSForegroundColorAttributeName:UIColor.redColor()]
+        text.drawAtPoint(CGPointMake(120, 170), withAttributes: dict as? [String : AnyObject])
+        
+        ////*****✅/ 获取新的图片
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        ///*****✅展示新图片
+        iimage.image = newImage
+        
+        // 关闭上下文
+        UIGraphicsEndImageContext()
+        ////*****✅/ 把图片转换成png格式的二进制数据
+        let d:NSData = UIImagePNGRepresentation(newImage)!
+        
+        ////*****✅/ 写入桌面
+        d.writeToFile("/Users/jiangjin/Desktop/newImage.png", atomically: true)    }
+  
+    
+  }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0A54DEC7-5FC6-41A4-BA0A-E17071D5C42A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>图片水印-文字</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>图片水印</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

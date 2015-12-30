@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>patharrayanimation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*****💗 CAKeyframeAnimation可以传路径和数组
+    func pathAnimationView(){
+        
+        // 创建动画对象
+         let anim:CAKeyframeAnimation = CAKeyframeAnimation()
+      
+        // 设置动画的属性
+        anim.keyPath = "position";
+        
+        // 设置动画时长
+        anim.duration = 2;
+        
+        let path:UIBezierPath = UIBezierPath(ovalInRect: CGRectMake(0, 0, 200, 200))
+        anim.path = path.CGPath
+
+        anim.repeatCount = MAXFLOAT;
+        
+        // 取消反弹
+        // 动画执行完毕之后不要把动画移除
+        anim.removedOnCompletion = false
+        
+        // 保持最新的位置
+        anim.fillMode = kCAFillModeForwards;
+        
+        // 给图层添加了动画
+        layer.addAnimation(anim, forKey: nil)
+        redView.layer.addAnimation(anim, forKey: nil)
+        
+    }
+    ///*****✅ CAKeyframeAnimation可以传路径和数组
+    func arrayAnimationView(){
+        
+        // 创建动画对象
+        let anim:CAKeyframeAnimation = CAKeyframeAnimation()
+        
+        // 设置动画的属性
+        anim.keyPath = "position";
+        
+        // 设置动画时长
+        anim.duration = 2;
+        let v1:NSValue = NSValue(CGPoint:CGPointZero)
+        let v2:NSValue = NSValue(CGPoint: CGPointMake(160, 160))
+        let v3:NSValue = NSValue(CGPoint: CGPointMake(270, 0))
+        
+        anim.values = [v1,v2,v3]
+
+        anim.duration = 2;
+        // 取消反弹
+        // 动画执行完毕之后不要把动画移除
+        anim.removedOnCompletion = false
+        
+        // 保持最新的位置
+        anim.fillMode = kCAFillModeForwards;
+        
+        // 给图层添加了动画
+        ///*****✅可以多个layer添加此动画
+        layer.addAnimation(anim, forKey: nil)
+        redView.layer.addAnimation(anim, forKey: nil)
+  
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D6861A7D-7F8E-4F35-ACAA-8B06E4DD3A9F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>可以添加路径和数组的动画效果</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CAKeyframeAnimation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

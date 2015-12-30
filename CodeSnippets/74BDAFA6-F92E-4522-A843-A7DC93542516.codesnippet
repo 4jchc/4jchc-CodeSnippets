@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>suijiyanse</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let r:CGFloat = (CGFloat(arc4random_uniform(UInt32(256)))) / 255.0
+            let g:CGFloat = (CGFloat(arc4random_uniform(UInt32(256)))) / 255.0
+            let b:CGFloat = (CGFloat(arc4random_uniform(UInt32(256)))) / 255.0
+
+&lt;#名字#&gt; = UIColor(red: r, green: g, blue: b, alpha: 1)&lt;#.CGColor#&gt;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>74BDAFA6-F92E-4522-A843-A7DC93542516</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>随机颜色</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>随机颜色</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

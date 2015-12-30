@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>moxing2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///****✅模型嵌套数组类
+class &lt;#icon#&gt;:NSObject{
+//********************************💗元素***************************************
+   
+    ///*****✅模型数组元素
+    var &lt;#name#&gt;:NSString!
+    var &lt;#icon#&gt;:NSString!
+    
+//    ///*****✅类的初始化
+//    init(dict:NSDictionary){
+//        super.init()
+//        self.carWithDict(dict)
+//    }   
+//********************************💗赋值***************************************
+    ///*****✅模型数组元素赋值方法
+    func carWithDict(dict:NSDictionary){
+        
+        icon = dict["&lt;#icon#&gt;"] as! String
+
+        name = dict["&lt;#icon#&gt;"] as! String
+    }
+//********************************💗转换***************************************    
+    ///*****✅数组转模型
+    func  getcar(array:NSArray){
+        //定义一个模型数组
+        let carMarray:NSMutableArray = NSMutableArray()
+        //遍历数组添加到模型数组
+        for dict in array {
+    ///*****✅必须初始化一个模型类
+            let hmcar:HMCar = HMCar()
+     hmcar.carWithDict(dict as! NSDictionary)
+            carMarray.addObject(hmcar)
+    ///*****✅测试
+            print("💗\(hmcar.name)")
+            print("💗\(hmcar.icon)")
+            print("初始化添加数组")
+            NSLog("每个分组的数据总数 %d", carMarray.count)
+            print("初始化添加数组")
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>41BA6D41-3DCC-4CE2-929B-B183D36183E3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型2头文件</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

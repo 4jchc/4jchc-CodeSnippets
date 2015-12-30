@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>dian</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>////*****💗//获取当前触摸点触摸点
+    func pointWithTouches(touches:NSSet) -&gt; CGPoint {
+        // 当前触摸点
+        let touch:UITouch = (touches as NSSet).anyObject() as! UITouch
+        
+        return touch.locationInView(self)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>553E0861-C6D6-4E69-84F2-1F0A9DD8065C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>获取当前触摸点</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>获取当前触摸点</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

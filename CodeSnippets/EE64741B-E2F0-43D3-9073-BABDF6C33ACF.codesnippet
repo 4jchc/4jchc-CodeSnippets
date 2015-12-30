@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jisEqual</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** 重写删除数组调用的比较方法 */
+    override func isEqual(object: AnyObject?) -&gt; Bool {
+        
+        return (self.deal_id as NSString).isEqual(object!.deal_id)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EE64741B-E2F0-43D3-9073-BABDF6C33ACF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>重写isEqual方法</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>数组删除元素</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

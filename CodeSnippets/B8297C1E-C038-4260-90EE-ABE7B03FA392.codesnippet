@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jdescription</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///  如果要打印对象信息，OC 中的 description，在 swift 中需要遵守协议 DebugPrintable
+    extension HWTextPart: CustomDebugStringConvertible {
+        
+        override var debugDescription: String {
+            
+            let dict = NSString(format: "%@ - %@", self.text!, NSStringFromRange(self.range!))
+            return "\(dict)"
+        }
+    }
+
+
+    override var description: String {
+        
+        let dict = NSString(format: "%@-%@", self.name!, self.pricew!)
+     
+        
+        return "\r\n\(dict)"
+    }
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B8297C1E-C038-4260-90EE-ABE7B03FA392</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>遍历打印</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>description</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

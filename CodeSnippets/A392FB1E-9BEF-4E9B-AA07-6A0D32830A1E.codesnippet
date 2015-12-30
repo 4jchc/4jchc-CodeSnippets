@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>moxing1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///****✅模型数组
+class &lt;#类名#&gt;:NSObject{
+//********************************💗元素***************************************
+    ///*****✅模型数组元素
+    var &lt;#title#&gt;:NSString!
+    var &lt;#title#&gt;:NSString!
+    var &lt;#title#&gt;:&lt;#类型#&gt;!
+    var &lt;#title#&gt;:&lt;#类型#&gt;!
+    /** 车的数组，存放的是HMCar的模型数据 */
+    var &lt;#title#&gt;:&lt;#类型#&gt;!
+   
+    init(dict:NSMutableDictionary){
+        super.init()
+    ///*****✅调用实例方法
+        self.&lt;#类名#&gt;GroupWithDict(dict)
+        
+    }
+//*****************************💗元素没有值填写💗?💗**********************************
+    ///*****✅模型数组元素赋值方法
+        func &lt;#类名#&gt;GroupWithDict(dict:NSDictionary){
+            &lt;#title#&gt; = dict["&lt;#title#&gt;"] as! String
+            &lt;#title#&gt; = dict["&lt;#title#&gt;"] as! String
+            &lt;#title#&gt; = dict["&lt;#title#&gt;"] as! String
+            &lt;#title#&gt; = dict["&lt;#title#&gt;"] as! String
+            ///*****✅定义一个临时数组接受数组--dict[@"cars"]存放的是字典的数组
+            let &lt;#title#&gt;:NSMutableArray = dict["&lt;#title#&gt;"] as! NSMutableArray
+            ///*****✅初始化定义的数组元素
+            cars = NSMutableArray()
+            ///*****✅遍历刚刚得到的临时数组
+            for dict in temAaray{
+                ///*****✅将字典的数组转换成💗子模型的数组
+                let &lt;#title#&gt;:&lt;#类名#&gt; = &lt;#类名#&gt;()
+                carsModel.carWithDict(dict as! NSDictionary)
+                cars.addObject(carsModel)
+        }
+ }
+//********************************💗转换***************************************
+    ///*****✅数组完成添加元素转成模型
+ class   func get&lt;#类名#&gt;() -&gt; (NSArray){
+        
+        ///*****✅初始化一个模型数组
+        let arrayM:NSMutableArray = NSMutableArray()
+        ///*****✅初始化一个临时数组
+        var array:NSArray = NSArray()
+        ///*****✅模型数组完成添加元素
+        array = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("&lt;#文件名#&gt;.plist", ofType: nil)!)!
+        ///*****✅遍历添加模型
+        for dict in array {
+            ///*****✅必须初始化一个模型类
+                    let group:&lt;#类名#&gt; = &lt;#类名#&gt;.self.init(dict: dict as! NSMutableDictionary)
+            arrayM.addObject(group)
+            ///*****✅测试
+            print("---\(group.&lt;#title#&gt;)")
+            print("---\(group.&lt;#title#&gt;)")
+            // print("---\(arrayM.)")}
+        }
+        return arrayM
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A392FB1E-9BEF-4E9B-AA07-6A0D32830A1E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型1头文件</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

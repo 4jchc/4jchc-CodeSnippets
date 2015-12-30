@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>toolbar-代码编写</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///*****✅///*代码编写Toolbar
+  
+    func codeForToolbar(){
+        let screenW:CGFloat = self.view.bounds.size.width
+///设置尺寸
+        let toolbar:UIToolbar = UIToolbar(frame: CGRectMake(0, 100, screenW, 44))
+       /// #warning 一定要设置bounds 否则UIBarButtonItem监听不了点击事件
+        toolbar.backgroundColor = UIColor.redColor()
+
+///添加按钮
+
+        let prevBtn:UIBarButtonItem = UIBarButtonItem(title: "上一个", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let nextBtn:UIBarButtonItem = UIBarButtonItem(title: "下一个", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let doneBtn:UIBarButtonItem = UIBarButtonItem(title: "完成", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+
+
+///固定弹簧
+        let fixedTanhuang:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+///一定设置宽度
+        fixedTanhuang.width = 100;
+    
+///伸缩弹簧
+        let flexTanhuang:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+///数组 //[toolbar setItems:&lt;#(NSArray *)#&gt;]
+        toolbar.items = [prevBtn,fixedTanhuang,nextBtn,flexTanhuang,doneBtn]
+        
+ ///设置textfield的键盘模式 💗一个是日期---💗一个是toobar
+//        self.textField.inputView = self.datePicker
+//        self.textField.inputAccessoryView = toolbar
+        self.view.addSubview(toolbar)
+    
+
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4AD05635-39BA-414F-9E35-EB9F4BC4312A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>toolbar-代码编写</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

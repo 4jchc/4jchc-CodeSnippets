@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jlazy-TableView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
+        tableView.backgroundColor = .clearColor()
+        tableView.contentInset.bottom = 10
+        tableView.sectionHeaderHeight = 0
+        tableView.sectionFooterHeight = 0
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.01))
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.01))
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    public lazy var former: Former = Former(tableView: self.tableView)
+    
+    private final func setup() {
+        view.backgroundColor = .groupTableViewBackgroundColor()
+        view.insertSubview(tableView, atIndex: 0)
+        let tableConstraints = [
+            NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:|-0-[table]-0-|",
+                options: [],
+                metrics: nil,
+                views: ["table": tableView]
+            ),
+            NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:|-0-[table]-0-|",
+                options: [],
+                metrics: nil,
+                views: ["table": tableView]
+            )
+            ].flatMap { $0 }
+        view.addConstraints(tableConstraints)
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>49E6B88B-405D-4245-86FA-4C2B8841D264</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>TableView懒加载</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

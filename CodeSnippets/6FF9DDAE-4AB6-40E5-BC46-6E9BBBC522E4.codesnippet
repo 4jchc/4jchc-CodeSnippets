@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jyanshijiazai</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            //延时加载
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(&lt;#1#&gt; * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -&gt; Void in
+                
+                 &lt;#WCXMPPTool.sharedWCXMPPTool.xmppUserLogin(nil)#&gt;
+            })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6FF9DDAE-4AB6-40E5-BC46-6E9BBBC522E4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>延时加载</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>延时加载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

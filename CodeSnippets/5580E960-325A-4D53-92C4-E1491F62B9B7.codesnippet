@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>fanhuikelasheng的图片</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//返回一个可拉伸的图片
+
+func resizeWithImageName(name:String) -&gt; UIImage
+{
+   ///*****✅1.//传入上下左右不需要拉升的编剧，只拉伸中间部分
+    var normal:UIImage = UIImage(named: name)!
+    let w:CGFloat = normal.size.width * 0.5 //- 1
+    let h:CGFloat = normal.size.height * 0.5 //- 1
+    normal = normal.resizableImageWithCapInsets(UIEdgeInsetsMake(h, w, h, w))
+    return normal
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5580E960-325A-4D53-92C4-E1491F62B9B7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>返回一个可拉伸的图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

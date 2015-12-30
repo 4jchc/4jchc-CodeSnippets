@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zidingyicell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        ///*****✅调用自定义cell的cell方法
+        let cell:HMStatusCell = HMStatusCell.cellWithTableView(tableview) as! HMStatusCell
+        
+        let status:HMStatus = mxArray[indexPath.row] as! HMStatus
+        
+        cell.getStatus(status,tableview: tableview)
+        
+        
+        return cell</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B06F1E7A-44A9-4FCA-97CB-28F98F691DD0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>快速初始化cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jxibshitu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ////*****✅/ 创建控制器对象
+    
+    let jump = &lt;#视图类名#&gt;(nibName: "&lt;#xib视图名#&gt;", bundle: nil)
+    let nav:UINavigationController = UINavigationController(rootViewController: jump)
+    
+    ////*****✅/ Modal出一个控制器
+    self.presentViewController(nav, animated: true, completion: nil)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1C8858DC-78CD-4084-98F1-9242D357EEF1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>加载Xib视图</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>加载Xib视图</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

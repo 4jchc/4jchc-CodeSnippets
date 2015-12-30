@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jbianli模型</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /**
+    *  微博数组（里面放的都是HWStatusFrame模型，一个HWStatusFrame对象就代表一条微博）
+    *  将HWStatus模型转为HWStatusFrame模型
+    *///遍历模型赋值新的模型添加到新的数组
+    func stausFramesWithStatuses(statuses:NSArray) -&gt;NSArray{
+        
+        let frames: NSMutableArray  = NSMutableArray()
+        
+        for status in statuses {
+            let f: HWStatusFrame  = HWStatusFrame()
+        f.status = status as? HWStatus;
+        frames.addObject(f)
+        }
+        return frames;
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1804334F-0592-490F-ACF8-3E9B43F6D466</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>添加到新的模型</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型遍历</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>lanjiazacellshitu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    var _&lt;#名字#&gt;:&lt;#类型#&gt;!
+    var &lt;#名字#&gt;:&lt;#类型#&gt; {
+        
+        if _&lt;#名字#&gt; == nil {
+            
+            _&lt;#名字#&gt; = &lt;#类型#&gt;.init()
+            
+            self.contentView.addSubview(_&lt;#名字#&gt;)
+        }
+        return _&lt;#名字#&gt;
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>026F64B2-6062-458E-AFF6-2EE1EC0C0C88</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>懒加载</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义cell增加视图</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

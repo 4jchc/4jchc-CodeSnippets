@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jmeijuanli</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>enum CompassPoint {
+            case North
+            case South
+            case East
+            case West
+        }
+        var directionToHead = CompassPoint.West
+        
+        enum Planet: Int {
+            case Mercury = 1
+            case Venus = 2
+            case Earth = 3
+        }
+        let earthsOrder = Planet.Earth.rawValue //rawValue来获取他的原始值:3
+        let possiblePlanet = Planet(rawValue: 2)  //通过原始值来寻找所对应的枚举成员:Venus
+        
+        enum Direction {
+            case Up
+            case Down
+            
+            func description() -&gt; String{
+                switch(self){
+                case .Up:
+                    return "向上"
+                case .Down:
+                    return "向下"
+                }
+            }
+        }
+        print(Direction.Up.description())
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>87C51288-E24A-4667-B4CD-22596E973575</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>枚举案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>enum-案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

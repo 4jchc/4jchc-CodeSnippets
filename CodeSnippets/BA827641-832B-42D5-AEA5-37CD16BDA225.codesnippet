@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>baocunbendiNSUserDefaults</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        /*1，下面通过一个样例演示NSUserDefaults的用法：
+        （1）如果是第一次运行程序通过CFUUIDCreate方法生成一个唯一字符串作为用户id储存起来（形如：B8DDB58D-73BF-4E39-A051-365858FC4626）
+        （2）往后运行时直接从NSUserDefaults中把用户id取出
+          */
+        class func get_uuid() -&gt; String{
+            var userid = NSUserDefaults.standardUserDefaults().stringForKey("hangge")
+            if(userid != nil){
+                return userid!
+            }else{
+                var uuid_ref = CFUUIDCreate(nil)
+                var uuid_string_ref = CFUUIDCreateString(nil , uuid_ref)
+                var uuid:String = NSString(format: uuid_string_ref)
+                NSUserDefaults.standardUserDefaults().setObject(uuid, forKey: "hangge")
+                return uuid
+            }
+        }
+        
+        //2，对原生数据类型的储存和读取
+
+        var userDefault = NSUserDefaults.standardUserDefaults()
+        
+        //AnyObject
+        userDefault.setObject("hangge.com", forKey: "Object")
+        var objectValue:AnyObject? = userDefault.objectForKey("Object")
+        
+        //Int类型
+        userDefault.setInteger(12345, forKey: "Int")
+        var intValue = userDefault.integerForKey("Int")
+        
+        //Float类型
+        userDefault.setFloat(3.2, forKey: "Float")
+        var floatValue = userDefault.floatForKey("Float")
+        
+        //Double类型
+        userDefault.setDouble(5.2240, forKey: "Double")
+        var doubleValue = userDefault.doubleForKey("Double")
+        
+        //Bool类型
+        userDefault.setBool(true, forKey: "Bool")
+        var boolValue = userDefault.boolForKey("Bool")
+        
+        //NSURL类型
+        userDefault.setURL(NSURL(string:"http://hangge.com")!, forKey: "NSURL")
+        var urlValue = userDefault.URLForKey("NSURL")
+        
+        //NSString类型
+        userDefault.setObject("hangge.com", forKey: "NSString")
+        var nsStringValue = userDefault.objectForKey("NSString") as! NSString
+        
+        //NSNumber类型
+        var number:NSNumber = NSNumber(int:22)
+        userDefault.setObject(number, forKey: "NSNumber")
+        number = userDefault.objectForKey("NSNumber") as! NSNumber
+        
+        //NSArray类型
+        var array:NSArray = NSArray(array: ["123","456"])
+        userDefault.setObject(array, forKey: "NSArray")
+        
+        //NSDictionaryy类型
+        var dictionary:NSDictionary = NSDictionary(dictionary: ["1":"hangge.com"])
+        userDefault.setObject(dictionary, forKey: "NSDictionary")
+        dictionary = userDefault.objectForKey("NSDictionary") as! NSDictionary
+        
+        /*3，系统对象的存储与读取
+        系统对象实现存储，需要通过archivedDataWithRootObject方法转换成NSData为载体，才可以存储。下面以UIImage对象为例：
+        */
+        var userDefault = NSUserDefaults.standardUserDefaults()
+        
+        //UIImage对象存储
+        //将对象转换成NSData流
+        var image = UIImage(named: "apple.png")
+        var imageData:NSData = NSKeyedArchiver.archivedDataWithRootObject(image!)
+        //存储NSData对象
+        userDefault.setObject(imageData, forKey: "imageData")
+        
+        //UIImage对象读取
+        //获取NSData
+        var objData:NSData = userDefault.objectForKey("imageData") as! NSData
+        //还原对象
+        var myImage = NSKeyedUnarchiver.unarchiveObjectWithData(objData) as! UIImage
+        print(myImage)
+        
+       /* 4，自定义对象的存储和读取
+        如果想要存储自己定义的类，首先需要对该类实现NSCoding协议来进行归档和反归档（序列号和反序列化）。即该类内添加func encodeWithCoder(_encoder:NSCoder)方法和init(coder decoder:NSCoder)方法，将属性进行转换。
+        */
+        var userDefault = NSUserDefaults.standardUserDefaults()
+        
+        //自定义对象存储
+        var model = UserInfo(name: "航歌", phone: "3525")
+        //实例对象转换成NSData
+        var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(model)
+        //存储NSData对象
+        userDefault.setObject(modelData, forKey: "myModel")
+        
+        //自定义对象读取
+        var myModelData = userDefault.objectForKey("myModel") as! NSData
+        var myModel = NSKeyedUnarchiver.unarchiveObjectWithData(myModelData) as! UserInfo
+        
+        
+        //----- 自定义对象类 -----
+        class UserInfo: NSObject {
+            var name:String
+            var phone:String
+            
+            //构造方法
+            init(name:String="",phone:String=""){
+                self.name = name
+                self.phone = phone
+                super.init()
+            }
+            
+            //从nsobject解析回来
+            init(coder aDecoder:NSCoder!){
+                self.name=aDecoder.decodeObjectForKey("Name") as! String
+                self.phone=aDecoder.decodeObjectForKey("Phone") as! String
+            }
+            
+            //编码成object
+            func encodeWithCoder(aCoder:NSCoder!){
+                aCoder.encodeObject(name,forKey:"Name")
+                aCoder.encodeObject(phone,forKey:"Phone")
+            }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BA827641-832B-42D5-AEA5-37CD16BDA225</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSUserDefaults存储案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jattribute</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>         let attributes =  [NSForegroundColorAttributeName: UIColor.&lt;#orangeColor()#&gt;,            NSFontAttributeName: UIFont(name: "Heiti SC", size: &lt;#13.0#&gt;)!]
+    navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.&lt;#orangeColor()#&gt;,NSFontAttributeName:UIFont.systemFontOfSize(&lt;#13.0#&gt;)]</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B5E6A984-BF8C-43C5-9EF8-6206E0B6564D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>字体-颜色尺寸字典</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>字体attribute</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

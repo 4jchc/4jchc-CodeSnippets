@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jmoxing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class Shop: NSObject {
+    
+    
+    var w:CGFloat?
+    var h:CGFloat?
+    var img:NSString?
+    var price:NSString?
+
+    static func shopWithDict(dict:NSDictionary) -&gt;Shop{
+        
+        let obj:Shop = Shop()
+        obj.setValuesForKeysWithDictionary(dict as! [String : AnyObject])
+        return obj
+        
+    }
+    
+    static func shopsWithIndex(index:NSInteger)-&gt;NSArray{
+        
+        let  array = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("\((index % 3) + 1).plist", ofType: nil)!)!
+        
+        let arrayM:NSMutableArray = NSMutableArray(capacity: array.count)
+        array.enumerateObjectsUsingBlock { (obj, idx, stop) -&gt; Void in
+            
+            arrayM.addObject(self.shopWithDict(obj as! NSDictionary))
+      
+        }
+        return arrayM.copy() as! NSArray
+        
+        // 提示：之所以返回 copy，建立一个不可变的数组，外界无法修改
+        // 否则，外面可以通过 id 其他的方法修改数组内容，不够安全！
+        
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AC76F6B8-38ED-4F24-B2C1-FDFB77EC0ED9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>模型案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

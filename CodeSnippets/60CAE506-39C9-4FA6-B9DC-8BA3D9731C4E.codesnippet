@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>fanyexiaoguo</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///*****✅ 点击翻页效果
+    override func touchesBegan(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        
+            self.index++
+        
+            if (index == 4) {
+            index = 1
+                        }
+        
+        let fileName:NSString = NSString(format: "%d", index)
+        
+        imageView.image = UIImage(named:fileName as String)!
+        
+        let anim:CATransition = CATransition()
+        
+            anim.type = "pageCurl";
+            //anim.type = "fromLeft"
+           //anim.type = "fromRight"
+            // anim.type = "fromTop"
+            // anim.type = "fromBottom"
+            anim.subtype = kCATransitionFromLeft
+            anim.startProgress = 0.6;
+            
+            anim.duration = 1;
+            imageView.layer.addAnimation(anim, forKey: nil)
+
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>60CAE506-39C9-4FA6-B9DC-8BA3D9731C4E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>图片翻页效果</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>翻页效果</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jyuesu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func setupView(){
+        // 代码方式实现自动布局 VFL
+        // 创建一个Tableview
+        self.view.addSubview(tableView)
+        // 创建输入框View
+        self.view.addSubview(InputView)
+
+        // 自动布局
+        
+        // 水平方向的约束
+        let views:NSDictionary = ["tableview":tableView,"inputView":InputView]
+        // 1.tabview水平方向的约束
+        let tabviewHConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[tableview]-0-|",options: [],metrics: nil,
+            views: views as! [String : AnyObject]
+            )
+        self.view.addConstraints(tabviewHConstraints as! [NSLayoutConstraint])
+        
+        // 2.inputView水平方向的约束
+        let inputViewHConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[inputView]-0-|",options: [],metrics: nil,
+            views: views as! [String : AnyObject]
+        )
+        self.view.addConstraints(inputViewHConstraints as! [NSLayoutConstraint])
+        
+        
+        // 垂直方向的约束
+        let vContraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[tableview]-0-[inputView(50)]-0-|",options: [],metrics: nil,
+            views: views as! [String : AnyObject]
+        )
+        self.view.addConstraints(vContraints as! [NSLayoutConstraint])
+        //MARK: - 代码创建的底部约束:
+        self.inputViewConstraint = vContraints.lastObject as! NSLayoutConstraint
+        NSLog("%@",vContraints);
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A8049DF2-B78B-4A25-A6A3-F0BB0C184125</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>代码实现自动布局 VFL</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>代码实现自动布局</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

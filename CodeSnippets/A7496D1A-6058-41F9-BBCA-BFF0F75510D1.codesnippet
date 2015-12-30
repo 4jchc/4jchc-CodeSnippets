@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>uibbutton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+        
+        let shareBtn:UIButton = UIButton()
+        shareBtn.setImage(UIImage(named: "&lt;#name#&gt;"), forState: UIControlState.Normal)
+        
+        shareBtn.setImage(UIImage(named: "&lt;#name#&gt;"), forState: UIControlState.Selected)
+        
+        shareBtn.setBackgroundImage(UIImage(named: "&lt;#name#&gt;"), forState: UIControlState.Normal)
+        
+        shareBtn.setBackgroundImage(UIImage(named: "&lt;#name#&gt;"), forState: UIControlState.Highlighted)
+        
+        
+        shareBtn.setTitle("&lt;#name#&gt;", forState: UIControlState.Normal)
+        
+        shareBtn.setTitleColor(UIColor.&lt;#name#&gt;, forState: UIControlState.Normal)
+        
+        shareBtn.titleLabel!.font = UIFont.systemFontOfSize(&lt;#name#&gt;)
+        shareBtn.frame.size.width = &lt;#name#&gt;
+        shareBtn.frame.size.height = &lt;#name#&gt;
+        shareBtn.center.x = &lt;#name#&gt;
+        shareBtn.center.y = &lt;#name#&gt;
+
+        shareBtn.addTarget(self, action: "&lt;#name#&gt;", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        
+        </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A7496D1A-6058-41F9-BBCA-BFF0F75510D1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>按钮的设置</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>按钮的设置</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

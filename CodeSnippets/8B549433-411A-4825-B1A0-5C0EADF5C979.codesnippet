@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ppickview--主代码</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+    
+    var indexOfProvice:Int = 0 //当前默认选中的省份
+    
+    @IBOutlet var pickview: UIPickerView!
+    ///*****✅模型主代码
+    var _mxArray:NSMutableArray!
+    
+    var mxArray:NSMutableArray {
+        get{
+            if _mxArray == nil {
+                
+                _mxArray = Province.getProvince() as! NSMutableArray
+                
+            }
+            return _mxArray
+        }
+    }
+    
+    
+///有几列component
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -&gt; Int {
+        return 2
+    }
+    
+///有几行row
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
+            if (component == 0) {//省分
+                
+            return self.mxArray.count;
+            }
+        
+            //获取对应省份的城市个数
+        let privince:Province = self.mxArray[indexOfProvice] as! Province
+
+            return privince.cities.count
+            
+            }
+    
+
+///#pragma mark 显示数据
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
+        
+            if(component == 0){//显示省份的名字
+            //对应列行的省份
+                let province:Province = self.mxArray[row] as! Province
+
+            return province.name as String
+            }
+        
+            ///获取选中的城市，显示城市名字2
+        let selectedProvice:Province = self.mxArray[indexOfProvice] as! Province
+        
+
+            return selectedProvice.cities[row] as? String;
+            }
+    
+///添加lable显示数据
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -&gt; UIView {
+        ///*****✅重用机制
+        var label:UILabel? = view as? UILabel
+        if label == nil {
+        
+            label = UILabel.init()
+    }
+            
+                if(component == 0){//显示省份的名字
+                    //对应列行的省份
+                    let province:Province = mxArray[row] as! Province
+                    label?.text = province.name as String
+
+                    label!.backgroundColor = UIColor.redColor()
+                }else{
+            
+                    //获取选中的城市，显示城市名字
+                    let selectedProvice:Province = mxArray[indexOfProvice] as! Province
+                   
+                    
+                    label!.text = selectedProvice.cities[row] as? String
+                    
+                    label!.backgroundColor = UIColor.blueColor()
+                }
+        return label!
+}
+
+
+///#pragma mark 选中行
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+            if (component == 0) {//第一列省的选中改变后，就要更新第二列数据
+            //更新选中省份的索引
+            self.indexOfProvice = row;
+        
+            ///刷新数据
+            ///全部刷新
+            //pickerView.reloadAllComponents()
+
+            ///部份刷新//第一列省的选中改变后，就要更新第二列数据
+            pickerView.reloadComponent(1)
+
+    
+            ///不管之前第二列选中第几行，重新刷新数据后，都显示每二列的第一行
+            self.pickview.selectRow(0, inComponent: 1, animated: true)
+
+        }
+    }
+
+    
+///#pragma mark 设置宽度
+    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -&gt; CGFloat {
+        if component == 0 {
+            
+            return 80
+        }
+        return 200
+    }
+
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NSLog("%@",self.mxArray)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8B549433-411A-4825-B1A0-5C0EADF5C979</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>省市</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>pickview-联动</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

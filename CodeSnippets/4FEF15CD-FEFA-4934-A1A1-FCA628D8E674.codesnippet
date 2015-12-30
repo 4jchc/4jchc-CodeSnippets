@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zidingyitiaozhuanchkou</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>************************💗自定义启动窗口*******************************
+
+import UIKit
+import CoreData
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
+        
+        ///*****✅自定义添加window的启动窗口和控制器
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.blueColor()
+        
+        let root:HMRootViewController = HMRootViewController.init()
+        root.view.backgroundColor = UIColor.redColor()
+        self.window?.rootViewController = root
+        self.window?.makeKeyAndVisible()
+        return true
+    }
+    
+    ************************💗添加启动窗口*******************************
+    import UIKit
+    
+    class HMRootViewController: UIViewController {
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            ///*****✅添加按钮
+            let btn:UIButton = UIButton(type: UIButtonType.ContactAdd)
+            btn.center = self.view.center
+            btn.addTarget(self, action: "btnClick", forControlEvents: UIControlEvents.TouchUpInside)
+            self.view.addSubview(btn)
+            
+        }
+        ////*****✅/ Modal出一个控制器
+        func btnClick()
+        {
+            ////*****✅/ 创建控制器对象
+            
+            let jump = HMJumpViewController(nibName: "HMJumpViewController", bundle: nil)
+            let nav:UINavigationController = UINavigationController(rootViewController: jump)
+            
+            ////*****✅/ Modal出一个控制器
+            self.presentViewController(nav, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    ************************💗跳转窗口*******************************
+    
+    //  04-01Modal
+    import UIKit
+    
+    class HMJumpViewController: UIViewController {
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            ///*****✅为控制器添加左边取消按钮
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Done, target: self, action: "cancle:")
+            
+        }
+        
+        
+        @IBAction func cancle(sender: AnyObject) {
+            ////*****✅/ 关闭modal
+            self.dismissViewControllerAnimated(true,completion: nil)
+        }
+        
+        override func viewDidAppear(animated: Bool) {
+            NSLog("%@",self.parentViewController!);
+        }
+        
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4FEF15CD-FEFA-4934-A1A1-FCA628D8E674</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自定义跳转视图nav</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>modal跳转</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

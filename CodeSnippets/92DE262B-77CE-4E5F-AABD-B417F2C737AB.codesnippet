@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jpohto---cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // 获取cell.tag
+        let cell: UITableViewCell  = tableView.cellForRowAtIndexPath(indexPath)!
+        let tag:Int  = cell.tag;
+        
+        // 判断
+        if (tag == 2) {//不做任务操作
+            
+            print("不做任务操作");
+            return;
+        }
+        
+        if(tag == 0){//选择照片
+            print("选择照片");
+            self.showAlert(self, title: "请选择", message: "", cancelButtonTitle: "取消" , okButtonTitle: "照相", otherButtonTitle: "相册")
+  
+            
+        }else{//跳到下一个控制器
+            print("跳到下一个控制器");
+            
+        }
+    }
+    
+     func showAlert(
+        presentController: UIViewController!,
+        title: String!,
+        message: String,
+        cancelButtonTitle: String?,
+        okButtonTitle: String?,
+        otherButtonTitle: String?) {
+              weak var weakSelf = self
+            
+            let alert = UIAlertController(title: title!, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            if (cancelButtonTitle != nil) {
+                
+                alert.addAction(UIAlertAction(title: cancelButtonTitle!, style: UIAlertActionStyle.Default, handler: nil))// do not handle cancel, just dismiss
+            }
+            if (okButtonTitle != nil) {
+                alert.addAction(UIAlertAction(title: okButtonTitle, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -&gt; Void in
+                    // 照相
+                    self.imagePicker!.sourceType = UIImagePickerControllerSourceType.Camera;
+                    // 显示图片选择器
+                    //MARK: - self的弱引用
+                    weakSelf!.presentViewController(self.imagePicker!, animated: true, completion: nil)
+    
+                }))
+                
+
+            }
+            if (otherButtonTitle != nil) {
+                
+                alert.addAction(UIAlertAction(title: otherButtonTitle, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -&gt; Void in
+                    
+                    // 相册
+                    self.imagePicker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+                    // 显示图片选择器
+                    weakSelf!.presentViewController(self.imagePicker!, animated: true, completion: nil)
+                }))
+            }
+        
+            presentController!.presentViewController(alert, animated: true, completion: nil)
+    }
+
+     //MARK: -  图片选择器的代理
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        print("info")
+        // 获取图片 设置图片
+        let image: UIImage  = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        self.haedView.image = image;
+        
+        // 隐藏当前模态窗口
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>92DE262B-77CE-4E5F-AABD-B417F2C737AB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>弹出照片选择器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell的照片选择器</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

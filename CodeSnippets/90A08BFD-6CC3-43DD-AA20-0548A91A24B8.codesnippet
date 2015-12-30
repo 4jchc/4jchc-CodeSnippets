@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jselectphoto</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: - 照片选择器
+    func selectedPhoto(){
+        
+        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .SavedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            imagePicker.modalTransitionStyle = .PartialCurl
+            
+            presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+     //MARK: - UIImagePickerControllerDelegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        self.customIV.image = info["UIImagePickerControllerOriginalImage"] as? UIImage
+        picker.dismissViewControllerAnimated(false, completion:nil)
+        
+        
+        ///国外代码
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            NSNotificationCenter.defaultCenter().postNotificationName("imageLoaded", object: self, userInfo: ["image": image])
+        }
+        
+        dismissViewControllerAnimated(false) { () -&gt; Void in
+            print("Hello")
+        }
+        navigationController?.popViewControllerAnimated(false)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>90A08BFD-6CC3-43DD-AA20-0548A91A24B8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>照片选择器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>照片选择器</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

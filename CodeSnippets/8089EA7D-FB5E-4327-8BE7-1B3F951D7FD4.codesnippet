@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jXIB-Cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>     ///*✅*****************💗元素************************
+    @IBOutlet var &lt;#hmtg.icon#&gt;: &lt;#hmtg.icon#&gt;!
+    @IBOutlet var &lt;#hmtg.icon#&gt;: &lt;#hmtg.icon#&gt;!
+    @IBOutlet var &lt;#hmtg.icon#&gt;: &lt;#hmtg.icon#&gt;!
+    @IBOutlet var &lt;#hmtg.icon#&gt;: &lt;#hmtg.icon#&gt;!
+    
+     ///*✅*****************💗赋值************************
+    func getCell(hmtg:HMTg){///*****✅传模型过来一个一个赋值
+        // setter方法中，第一句要赋值，否则要在其他方法中使用模型，将无法访问到
+        self.&lt;#hmtg.icon#&gt; = UIImage(named: "\(&lt;#hmtg.icon#&gt;)")
+        self.&lt;#hmtg.icon#&gt; = "\(&lt;#hmtg.icon#&gt;)"
+        self.&lt;#hmtg.icon#&gt; = "\(&lt;#hmtg.icon#&gt;)"
+        self.&lt;#hmtg.icon#&gt; = &lt;#hmtg.icon#&gt; as String
+        
+    }
+    ///*****✅快速创建cell的类方法前面有加class
+  class  func cellWithTableView(tableview:UITableView) -&gt; UITableViewCell{
+        // 1. 可重用标示符
+        let ID:String = "Cell";
+        // 2. tableView查询可重用Cell
+        ///*****✅从XIB加载自定义视图
+        var cell:hmtgCell? = (tableview.dequeueReusableCellWithIdentifier(ID) as? hmtgCell)
+        // 3. 如果没有可重用cell
+        if (cell == nil) {
+            ///*****✅从XIB加载自定义视图 //***💗方法XIB
+            ///*****✅没有用到ID要在XIB面板中设置💗
+            print("加载cell")
+            cell = (NSBundle.mainBundle().loadNibNamed("&lt;#XIB名称#&gt;", owner: nil, options: nil).last as! hmtgCell)
+        }
+        return cell!
+    }
+ 
+ 
+     ///*****✅ 从XIB被加载之后，会自动被调用，如果使用纯代码，不会被执行
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.contentView.backgroundColor = UIColor.yellowColor()
+
+    }
+
+    ///*****✅ Cell 被选中或者取消选中都会被调用
+    //如果是自定义Cell控件，所有的子控件都应该添加到contentView中
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        if (selected){
+            self.contentView.backgroundColor = UIColor.redColor()
+        }else {
+            self.contentView.backgroundColor =  UIColor.grayColor()
+        }
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8089EA7D-FB5E-4327-8BE7-1B3F951D7FD4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>XIB-Cell案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义cell快速创建赋值-XIB</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

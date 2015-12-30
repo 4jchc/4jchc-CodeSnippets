@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>xitongbanben</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        ///*****✅判断系统版本设置UINavigationBar导航条外观
+        //***💗方法1
+        let os = NSProcessInfo().operatingSystemVersion
+        switch (os.majorVersion, os.minorVersion, os.patchVersion)
+        {
+        case (8, _, _):
+            print("iOS &gt;= 8.0.0")
+        case (7, 0, _):
+            print("iOS &gt;= 7.0.0, = 7.1.0, &lt; 8.0.0")
+        default:
+            print("iOS = 8.0")
+        }
+        
+
+        var navImage:UIImage = UIImage()
+        //***💗方法2
+        if (os.majorVersion &gt; 7) {
+            navImage = UIImage(named: "NavBar64")!
+        }else{
+            navImage = UIImage(named: "NavBar")!
+        }
+        bar.setBackgroundImage(navImage, forBarMetrics: UIBarMetrics.Default)
+
+//***💗方法3
+if (UIDevice.currentDevice().systemVersion as NSString).doubleValue &gt;= 8.0{
+
+}
+
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9F08837C-9B99-4824-93F9-3EA80BF33583</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>系统版本</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>系统版本</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

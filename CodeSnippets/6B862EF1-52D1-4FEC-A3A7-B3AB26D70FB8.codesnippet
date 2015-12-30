@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jprepareforsegure</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        //获取好友
+        let friend:XMPPUserCoreDataStorageObject = _resultsContrl.fetchedObjects![indexPath.row] as! XMPPUserCoreDataStorageObject;
+   
+        //选中表格进行聊天界面
+        self.performSegueWithIdentifier("&lt;#ChatSegue#&gt;" ,sender:&lt;#ChatSegue#&gt;)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // 获取控制器
+        let destVc = segue.destinationViewController;
+        // 判断控制器
+        if destVc.isKindOfClass(WCChatViewController.classForCoder())  {
+            
+            let chatVc = destVc as! WCChatViewController
+          
+            chatVc.friendJid = sender as! XMPPJID
+                
+                let editVc:WCEditProfileViewController = destVc as! WCEditProfileViewController
+                // sender赋值 OR 代理
+                editVc.cell = sender as! UITableViewCell
+      
+            }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // 获取注册控制器
+        let destVc = segue.destinationViewController
+        
+        if destVc.isKindOfClass(WCNavigationController.classForCoder()){
+            
+            let nav: WCNavigationController  = destVc as! WCNavigationController
+            if nav.restorationIdentifier != "&lt;#ChatSegue#&gt;"{
+                return
+            }
+            if ((nav.topViewController?.isKindOfClass(WCRegisgerViewController.classForCoder())) == true){
+                //获取根控制器
+                let registerVc: WCRegisgerViewController  = nav.topViewController as! WCRegisgerViewController
+                // 设置注册控制器的代理
+                registerVc.delegate = self;
+            }
+            
+        }
+    
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6B862EF1-52D1-4FEC-A3A7-B3AB26D70FB8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>莫打出导航控制器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>prepareforsegure-莫打出导航控制器</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>touchyidongtupian</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        
+        let touch:UITouch = (touches as NSSet).anyObject() as! UITouch
+        
+        // 获取当前的位置
+        let current:CGPoint = touch.locationInView(self)
+
+        // 获取上一个点
+        
+        let pre:CGPoint = touch.previousLocationInView(self)
+        
+        // x轴偏移量
+        let offsetX:CGFloat = current.x - pre.x
+        let offsetY:CGFloat = current.y - pre.y
+
+        
+        // 获取视图的center
+        print("dianji")
+        var center:CGPoint = self.center
+        
+        center.x += offsetX
+        center.y += offsetY
+        
+        self.center = center</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3F54CFCC-F3C1-476C-8D70-90BDFCE2880D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>touch移动图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

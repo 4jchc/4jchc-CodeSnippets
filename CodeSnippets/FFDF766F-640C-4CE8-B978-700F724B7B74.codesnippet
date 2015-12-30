@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4juserpwd</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 把用户名和密码放在沙盒
+        let user: NSString = self.userField.text!;
+        let pwd: NSString  = self.pwdField.text!;
+        
+        let defaults: NSUserDefaults  = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(user, forKey: "user")
+        defaults.setObject(pwd, forKey: "pwd")
+        defaults.synchronize()
+        // 从沙盒获取用户名
+        let user:String = NSUserDefaults.standardUserDefaults().objectForKey("user") as! String
+        // 从沙盒里获取密码
+        let pwd:String = NSUserDefaults.standardUserDefaults().objectForKey("pwd") as! String</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FFDF766F-640C-4CE8-B978-700F724B7B74</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>把用户名密码存进沙盒</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSUserDefaults</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

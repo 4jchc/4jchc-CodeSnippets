@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jiazai-pickview的随机数</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///*****✅#pragma mark 随机菜单
+        
+// 1.获取每列有多少行
+        let colus:Int = self.mxArray.count
+         var i:Int = 0
+        for (i; i &lt; colus; i++){
+            //1.对应列的行数
+            let items:NSArray = self.mxArray[i] as! NSArray
+            
+            let rowsInRow:Int = items.count
+           // arc4random_uniform(UInt32())
+            
+            // 2.在行范围产生随机数据
+            var randonrow:Int = (Int(arc4random_uniform(UInt32(rowsInRow))))
+                //每列的随机行数不能与之前一样
+                // 获取旧的行数
+            let oldRow:Int = self.pickerView.selectedRowInComponent(i)
+            print("💗\(randonrow)")
+            while oldRow == randonrow {
+            
+                randonrow = (Int(arc4random_uniform(UInt32(rowsInRow))))
+            }
+                        // 0.0~0.9
+                        //arc4random_uniform(10) * 0.1
+                        // 0.00~0.99
+                        //arc4random_uniform(100) * 0.01
+                        /// 3.更改数据
+            ///***💗方法1是pickview本身的刷新
+            self.pickerView(pickerView, didSelectRow: randonrow, inComponent: i)
+
+                       /// #warning 要改变PIckerview选中的行，要使用pickerview的一个方法
+            
+            ///***💗方法2是lable的值刷新
+            self.pickerView.selectRow(randonrow, inComponent: i, animated: true)
+            
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>447A0AD6-30FF-4754-8C04-2B45A69C87B4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>随机数</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>pickview的随机数</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

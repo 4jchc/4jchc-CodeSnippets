@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zhanbiyuanbing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*****✅占比圆饼
+    func draYuan(){
+        ///*****✅占比
+        let data:NSArray = [&lt;#25#&gt;,&lt;#25#&gt;,&lt;#25#&gt;,&lt;#25#&gt;,&lt;#25#&gt;,&lt;#25#&gt;];
+        ////*****✅/ 1.获取上下文
+        let ctx: CGContextRef  = UIGraphicsGetCurrentContext()
+        ////*****✅/ 2.拼接路径
+        let center:CGPoint  = CGPointMake(&lt;#中心点#&gt;, &lt;#中心点#&gt;);
+        let radius:CGFloat = &lt;#半径#&gt;;
+        var startA:CGFloat = 0;
+        var angle:CGFloat = 0;
+        var endA:CGFloat = 0;
+        //let number:NSNumber!
+        
+        for number in data {
+        // 2.拼接路径
+        startA = endA
+        ///*****✅百分比CGFloat(number.integerValue) / CGFloat(100.0)
+        angle = CGFloat(number.integerValue) / CGFloat(100.0) * CGFloat(M_PI * 2)
+        endA = startA + angle;
+        let path:UIBezierPath  = UIBezierPath(arcCenter: center, radius: radius, startAngle: startA, endAngle: endA, clockwise: true)
+        path.addLineToPoint(center)
+        
+        UIColor_Random.randomColor().setFill()
+        //path.lineWidth = 20
+        
+        ////*****✅/ 添加到上下文
+        CGContextAddPath(ctx, path.CGPath);
+        ////*****✅/ 渲染
+        CGContextFillPath(ctx);
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A531C2D2-508E-4095-BAAE-E29AB5A8A40E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>圆形比例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>占比圆饼</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

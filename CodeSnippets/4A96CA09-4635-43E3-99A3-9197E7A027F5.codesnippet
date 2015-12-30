@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bendilujing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*****✅获取本地路径*******************
+    func HouQuBenDiLJ(){
+        
+        ///*****✅1，Home目录**整个应用程序各文档所在的目录
+        //获取程序的Home目录
+        let homeDirectory1 = NSHomeDirectory()
+        print("*\(homeDirectory1)\r\n")
+        
+        ///*****✅2，Documnets目录 ./Documents用户文档目录，苹果建议将程序中建立的或在程序中浏览到的文件数据保存在该目录下，iTunes备份和恢复的时候会包括此目录
+        ///方法1
+        let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,
+            NSSearchPathDomainMask.UserDomainMask, true)
+        let documnetPath = documentPaths[0] as String
+        
+        ///方法2
+       // let ducumentPath2 = NSHomeDirectory() + "/Documents"
+        print("*****\(documnetPath)\r\n")
+    
+        
+        ///*****✅ 3，Library目录  ./Library这个目录下有两个子目录：Caches 和 Preferences
+        //Library/Preferences目录，包含应用程序的偏好设置文件。不应该直接创建偏好设置文件，而是应该使用NSUserDefaults类来取得和设置应用程序的偏好。
+        //Library/Caches目录，主要存放缓存文件，iTunes不会备份此目录，此目录下文件不会再应用退出时删除
+ 
+        ///Library目录－方法1
+        let libraryPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory,
+            NSSearchPathDomainMask.UserDomainMask, true)
+        let libraryPath = libraryPaths[0] as String
+        print("*****\(libraryPath)\r\n")
+        ///Library目录－方法2
+        let libraryPath2 = NSHomeDirectory() + "/Library"
+        print("*****\(libraryPath2)\r\n")
+        
+        ///Cache目录－方法1
+        let cachePaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory,
+            NSSearchPathDomainMask.UserDomainMask, true)
+        let cachePath = cachePaths[0] as String
+        print("*****\(cachePath)\r\n")
+        ///Cache目录－方法2
+        //let cachePath2 = NSHomeDirectory() + "/Library/Caches"
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4A96CA09-4635-43E3-99A3-9197E7A027F5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>获取本地路径</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>获取本地路径</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

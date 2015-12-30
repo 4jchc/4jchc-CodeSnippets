@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>shoushijiesuo</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    
+    var movep:CGPoint = CGPointMake(0, 0)
+    
+    var _btns:NSMutableArray!
+    
+    var btns:NSMutableArray {
+        get{
+            if _btns == nil {
+               _btns = NSMutableArray()
+            }
+            return _btns
+        }
+    }
+
+    ////*****💗/ 初始化时使用在控制器初始化的时候加载按钮
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+     self.addBtns()
+    }
+    
+   ////*****💗/ 解析Xib的时候调用--就是自定义图片绑定此类名的时候
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        //初始化按钮添加按钮
+       self.addBtns()
+       // print("++++++\(self.classForCoder)")
+  
+    }
+
+   ////*****💗/ 添加按钮
+    func addBtns(){
+        
+        for (var i:Int = 0; i &lt; 9; i++) {
+            let button:UIButton = UIButton(type: UIButtonType.Custom)
+            ////*****✅/绑定tag
+            button.tag = i
+            // 设置普通状态下的图片
+            button.setImage(UIImage(named: "gesture_node_normal"), forState: UIControlState.Normal)
+            button.setImage(UIImage(named: "gesture_node_highlighted"), forState: UIControlState.Selected)
+            ////*****✅/ 不允许用户交互设置按钮不可用
+            button.userInteractionEnabled = false;
+    //        [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
+            self.addSubview(button)
+
+    }
+ }
+
+   ////*****💗//1.1获取当前触摸点触摸点
+    func pointWithTouches(touches:NSSet) -&gt; CGPoint {
+        // 当前触摸点
+        let touch:UITouch = (touches as NSSet).anyObject() as! UITouch
+        
+        return touch.locationInView(self)
+    }
+
+    ////*****💗//2判断当前这个触摸点在不在按钮的范围内
+    func buttonWithPoint(point:CGPoint) -&gt; UIButton? {
+        ///*****✅wh为内嵌距离
+        let wh:CGFloat = 20
+        //print("**********\(self.subviews)")
+        for btn in self.subviews {
+            let x:CGFloat = btn.center.x - wh * 0.5
+            let y:CGFloat = btn.center.y - wh * 0.5
+            let frame:CGRect = CGRectMake(x, y, wh, wh)
+             ///*****✅遍历所有的子视图判断点在不在上面
+           
+        if (CGRectContainsPoint(frame, point) == true){
+            // 点在按钮上
+        return btn as? UIButton
+        }
+            
+    }
+   return nil
+        
+}
+
+    override func touchesBegan(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        ////*****✅/1.判断当前这个触摸点在不在按钮的范围内，如果存在按钮范围内，设置按钮的选取状态
+        let pos:CGPoint = self.pointWithTouches(touches)
+ 
+            ////*****✅/2判断当前这个触摸点在不在按钮的范围内
+            let btn:UIButton? = self.buttonWithPoint(pos)
+            if (btn?.selected == false) { // 有触摸按钮的时候才需要选中
+            
+            btn!.selected = true
+                print("💗\(btn!.selected)")
+                ///*****✅加载到数组
+                btns.addObject(btn!)
+        }
+        
+    }
+    override func touchesMoved(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        ////*****✅/1.判断当前这个触摸点在不在按钮的范围内，如果存在按钮范围内，设置按钮的选取状态
+        
+        //1.1获取当前触摸点
+        let pos:CGPoint = self.pointWithTouches(touches)
+          movep = pos
+        
+        ////*****✅/1.2判断当前这个触摸点在不在按钮的范围内
+        // 遍历所有的按钮
+        let btn:UIButton? = self.buttonWithPoint(pos)
+
+        if (btn?.selected == false) { // 有触摸按钮的时候才需要选中
+                btn!.selected = true;
+            ///*****✅加载到数组
+            btns.addObject(btn!)
+        }
+        // 重绘
+        self.setNeedsDisplay()
+        
+  }
+
+    
+
+
+    override func touchesEnded(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        ///*****✅警告框没有实现
+                if self.btns.count != 0 {
+    
+                            var ReStr:String = ""
+        
+                            for index in 0...self.btns.count - 1
+                            {
+                                ReStr += String(self.btns[index]) + ","
+                            }
+        
+                let alertController = UIAlertController(title: "您的结果",
+                    message: ReStr, preferredStyle: UIAlertControllerStyle.Alert)
+                let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+                let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default,
+                    handler: {
+                        action in
+        
+                        ///*****✅方法
+                        print("点击了确定")
+                })
+                alertController.addAction(cancelAction)
+                alertController.addAction(okAction)
+         
+                self.pre.presentViewController(alertController, animated: true, completion: nil)
+                }
+        ///*****✅去除所有按钮的选中属性
+        let str:NSMutableString = NSMutableString()
+        
+        for  button in self.btns{
+            var but:UIButton = UIButton()
+            but = button as! UIButton
+            but.selected = false
+            str.appendFormat("%d", but.tag)
+        }
+        
+        
+        
+        
+        
+        ///*****✅去除所有按钮
+        self.btns.removeAllObjects()
+        ///*****✅重绘
+        self.setNeedsDisplay()
+    }
+    
+    
+
+
+
+///*****✅#pragma mark 绘制按钮点的连线
+    override func drawRect(rect: CGRect) {
+    
+            ////*****✅/创建一个路径
+            let path:UIBezierPath = UIBezierPath()
+        
+            /// &gt;1 ******❌ 提示没有当前值的错误no current point.使用下面的
+            ////*****✅/没有选中按钮，直接返回
+            if (self.btns.count == 0){
+                
+                return
+            }
+        
+            ////*****✅/遍历所有有选中的按钮
+            for (var i:Int = 0; i &lt; self.btns.count; i++) {
+            
+            let btn:UIButton = btns[i] as! UIButton;
+            
+            
+            if (i == 0) {
+            path.moveToPoint(btn.center)
+            
+            }else{
+            path.addLineToPoint(btn.center)
+            }
+            }
+        
+            // 所有选中按钮之间都连线
+            // 连接多余的那根线
+                ////*****✅/ 追回一个点的路径
+            path.addLineToPoint(movep)
+            
+            print("00000000\(movep)")
+            UIColor.greenColor().set()
+            path.lineWidth = 8;
+                ////*****✅/ 连接点样式
+            path.lineJoinStyle = kCGLineJoinRound;
+            path.lineCapStyle = kCGLineCapRound
+            // 渲染到视图
+            path.stroke()
+    
+    }
+    
+    
+    
+
+    
+     override func layoutSubviews() {
+        super.layoutSubviews()
+        ////*****✅/重新布局9个按钮
+        var col:CGFloat = 0;
+        var row:CGFloat = 0;
+    
+        let btnW:CGFloat = 74;
+        let btnH:CGFloat = 74;
+        var btnX:CGFloat = 0;
+        var btnY:CGFloat = 0;
+        
+        let tolCol:CGFloat = 3;
+        ////*****✅/ 每一个按钮的间距
+        let margin:CGFloat = (self.bounds.size.width - tolCol * btnW) / (tolCol + 1);
+        
+        ////*****✅/ 给按钮设置位置
+        for (var i:Int = 0; i &lt; self.subviews.count; i++) {
+            
+            let button:UIButton = self.subviews[i] as! UIButton
+            ////*****✅/ 当前按钮所处的列
+            col = CGFloat(i % 3);
+            ////*****✅/ 当前按钮所处的行
+            row = CGFloat(i / 3)
+            ////*****✅/ 计算每一个按钮的位置
+            ////*****✅/ x = 间距 + （按钮的宽度 + 间距） * 列
+            btnX = margin + (margin + btnW) * col;
+             ////*****✅/ y = 间距 + （按钮的高度 + 间距） * 行
+            btnY = (margin + btnH) * row;
+            
+            button.frame = CGRectMake(btnX, btnY, btnW, btnH);
+        }
+
+
+ }
+    
+    ////*****✅/ 加载xib完成的时候调用
+    override func awakeFromNib() {
+        print("\(self.classForCoder)")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7D786EED-2F32-4936-8455-E95D8CDC2477</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>手势解锁</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>手势解锁</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

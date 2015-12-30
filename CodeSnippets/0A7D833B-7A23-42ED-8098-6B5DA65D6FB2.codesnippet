@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jios8</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@available(iOS &lt;#8.0#&gt;, *)
+
+&lt;#class#&gt;
+
+
+if #available(iOS &lt;#8.0#&gt;, *) {
+    &lt;#baseImageView2.maskView = maskView#&gt;
+} else {
+    
+    &lt;#baseImageView2.maskView = maskView#&gt;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0A7D833B-7A23-42ED-8098-6B5DA65D6FB2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>ios8</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ios8</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

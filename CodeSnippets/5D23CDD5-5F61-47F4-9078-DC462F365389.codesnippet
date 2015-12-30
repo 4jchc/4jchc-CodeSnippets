@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>webfenduan</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ////*****✅/ 加载完网页调用
+      func webViewDidFinishLoad(webView: UIWebView) {
+        ///*****✅判断同一个网页有没有分段.如果分段就调用下面的方法
+        if &lt;#html.ID#&gt; != nil{
+            let js:NSString = NSString(format: "window.location.href = '#%@'", (&lt;#html.ID#&gt;)!)
+            
+            webView.stringByEvaluatingJavaScriptFromString(js as String)
+            
+        }
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5D23CDD5-5F61-47F4-9078-DC462F365389</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>同一个网页分段</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>网页--分段加载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

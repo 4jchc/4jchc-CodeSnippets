@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jhoutaiyunxing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        var result = UIBackgroundTaskInvalid
+        result = application.beginBackgroundTaskWithExpirationHandler { () -&gt; Void in
+            // 当申请的后台运行时间已经结束（过期），就会调用这个block
+            
+            // 赶紧结束任务
+            application.endBackgroundTask(result)
+            result = UIBackgroundTaskInvalid
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3FEBA74B-3400-4B20-A8CC-B21545195958</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>程序后台</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>后台运行</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

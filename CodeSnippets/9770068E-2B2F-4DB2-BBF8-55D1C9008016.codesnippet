@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>wltupian</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let url:NSURL = NSURL(string: "&lt;#http://hangge.com/blog/images/logo.png#&gt;")!
+
+        let data:NSData? = NSData(contentsOfURL: url)!
+        let image:UIImage = UIImage(data: data!)!</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9770068E-2B2F-4DB2-BBF8-55D1C9008016</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>网络图片</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>网络图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

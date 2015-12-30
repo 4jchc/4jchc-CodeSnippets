@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tianjia--分割线cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///*****💗cell添加分割线-------
+    func addXian(cell:UITableViewCell){
+        ///*****✅懒加载小视图添加到cell
+        let divide = UIView.init()
+        divide.backgroundColor = UIColor.blackColor()
+        divide.alpha = 0.2
+        cell.contentView.addSubview(divide)
+        // 给divide设置位置
+        let divideH:CGFloat = 1;
+        let divideW:CGFloat = cell.frame.size.width + 100;
+        let divideY:CGFloat = cell.bounds.size.height - divideH;
+        divide.frame = CGRectMake(0, divideY, divideW, divideH);
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C7FF64D9-4074-4107-B246-BC1ABF97A734</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>分割线cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>分割线cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

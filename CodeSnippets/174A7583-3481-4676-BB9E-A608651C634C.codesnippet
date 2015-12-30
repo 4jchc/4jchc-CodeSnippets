@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jianlimoxingshuzu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///****✅&lt;#HMHero#&gt;模型数组
+class &lt;#HMHero#&gt;:NSObject{
+    
+    ///*****✅模型数组元素
+    var &lt;#name#&gt;:NSString!
+    var &lt;#name#&gt;:NSString!
+    var &lt;#name#&gt;:NSString!
+    
+    
+    ///*****✅模型数组元素赋值方法
+    func initWithDict(dict:NSDictionary){
+        
+        dict.setValuesForKeysWithDictionary(dict as! [String : AnyObject])  }
+    
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>174A7583-3481-4676-BB9E-A608651C634C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>建立模型数组</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

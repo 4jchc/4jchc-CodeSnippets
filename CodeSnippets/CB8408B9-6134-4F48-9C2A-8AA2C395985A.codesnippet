@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>lanjiazaiplist</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*****✅懒加载-导入数组
+    var _mxArray:NSArray!
+    
+    var mxArray:NSArray {
+        get{
+            if _mxArray == nil {
+                let filePath:String = NSBundle.mainBundle().pathForResource("&lt;#文件名#&gt;.plist", ofType: nil)!
+               _mxArray = NSArray(contentsOfFile: filePath)
+            }
+            return _mxArray
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CB8408B9-6134-4F48-9C2A-8AA2C395985A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Plist数组</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载-导入</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

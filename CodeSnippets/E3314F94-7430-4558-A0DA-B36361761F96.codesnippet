@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jtongzhi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        if (UIDevice.currentDevice().systemVersion as NSString).doubleValue &gt;= 8.0{
+            
+            let types: UIUserNotificationType = [.Alert,.Sound,.Badge]
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            //本地推播程式碼
+            application.registerUserNotificationSettings(settings)
+            let notification:UILocalNotification = UILocalNotification()
+            notification.alertBody = "熱門訊息通知!"
+            notification.fireDate = NSDate(timeIntervalSinceNow: 3600)
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        }
+        
+        
+        if UIDevice.currentDevice().model != "iPhone Simulator" {
+            let types: UIUserNotificationType = [.Alert,.Sound,.Badge]
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: Set&lt;UIUserNotificationCategory&gt;())
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }
+
+        
+        
+        return true
+    }
+
+    
+    
+    /*** 注册远程推送 */
+    func registerRemotePush() -&gt; Void {
+        if((UIDevice.currentDevice().systemVersion as NSString).floatValue &gt;= 8.0) {
+            
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+            let types: UIUserNotificationType = [.Alert,.Sound,.Badge]
+            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        } else {
+            @available(iOS 7, *)
+            self.registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert,UIRemoteNotificationType.Sound,UIRemoteNotificationType.Badge)
+        }
+    }
+
+//发出通知
+        //如果当前程序不在前台，发出一个本地通知
+        if UIApplication.sharedApplication().applicationState != UIApplicationState.Active{
+            
+            NSLog("在后台")
+            //本地通知
+            let localNoti:UILocalNotification = UILocalNotification()
+            // 设置内容
+            localNoti.alertBody = "\(message.fromStr)\n\(message.body)"
+            // 设置通知执行时间
+            localNoti.fireDate = NSDate()
+            //声音
+            localNoti.soundName = "default";
+            //执行
+            UIApplication.sharedApplication().scheduleLocalNotification(localNoti)
+            //{"aps":{'alert':"zhangsan\n have dinner":'sound':'default',badge:'12'}}
+        }
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E3314F94-7430-4558-A0DA-B36361761F96</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通知</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>通知</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

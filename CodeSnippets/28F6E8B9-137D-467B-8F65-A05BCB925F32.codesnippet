@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jsonmoxing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class ILProduct: NSObject {
+
+
+        ///*****✅模型数组元素
+    var &lt;#title#&gt;:String!
+        var ID:String!
+        var url:String!
+        var customUrl:String!
+        var icon:String!
+
+            init(dict:NSDictionary){
+            super.init()
+                self.productWithDict(dict)
+         
+        }
+        ///*****✅模型数组元素赋值方法
+       func productWithDict(dict:NSDictionary) {
+
+          title = dict["title"] as! String
+            ID = dict["id"] as! String
+            url = dict["url"] as! String
+           customUrl = dict["customUrl"] as! String
+            let icon1:String = (dict["icon"] as! String)
+        //去掉部分文字
+       icon = icon1.stringByReplacingOccurrencesOfString("@2x.png", withString: "")
+        
+
+    }
+
+    ///*****✅数组完成添加元素转成模型
+    class   func getproduct() -&gt; (NSArray){
+    
+            ///*****✅初始化一个模型数组
+            let arrayM:NSMutableArray = NSMutableArray()
+
+            ///*****✅模型数组完成添加元素
+
+            let filePath:String = NSBundle.mainBundle().pathForResource("&lt;#products#&gt;.json", ofType: nil)!
+            let data:NSData = NSData(contentsOfFile: filePath)!
+            
+            
+            let jsonArr = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
+            
+            for dict in jsonArr {
+            let product:ILProduct = ILProduct.self.init(dict: dict as! NSDictionary)
+
+            arrayM.addObject(product)
+    
+            }
+
+            return arrayM
+    
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>28F6E8B9-137D-467B-8F65-A05BCB925F32</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JSON模型</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>chundaima-cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import Foundation
+
+
+///** 姓名字体 */
+let kNameFont:UIFont = UIFont.systemFontOfSize(14)
+///** 正文字体 */
+let kTextFont:UIFont = UIFont.systemFontOfSize(13)
+
+
+class HMStatusCell: UITableViewCell {
+    ///*****✅不用调用init方法.直接加!
+    weak var status:HMStatus!
+  
+    var cellheight:CGFloat = 0
+    
+    
+    ///*****✅初始化cell
+    class  func cellWithTableView(tableview:UITableView) -&gt; UITableViewCell{
+        let ID:String = "Cell"
+        var cell:HMStatusCell? = tableview.dequeueReusableCellWithIdentifier(ID) as? HMStatusCell
+        
+        if cell == nil {
+            print("初始化了")
+            
+            cell = HMStatusCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ID)
+        }
+        return cell!
+    }
+    
+///*✅*****************💗元素************************
+///*✅*****************💗初始化添加contentView************************
+///*******get方法
+    var _&lt;#icon#&gt;:UIImageView!
+    var &lt;#icon#&gt;:UIImageView {
+        
+        if _&lt;#icon#&gt; == nil {
+            
+            _&lt;#icon#&gt; = UIImageView.init()
+        
+            self.contentView.addSubview(_&lt;#icon#&gt;)
+        }
+        return _&lt;#icon#&gt;
+    }
+///*******get方法
+    var _nameView:UILabel!
+    var nameView:UILabel {
+        
+        if _nameView == nil {
+            
+            _nameView = UILabel.init()
+            _nameView.font = kNameFont
+            self.contentView.addSubview(_nameView)
+        }
+        return _nameView
+    }
+///*******get方法
+    var _vipView:UIImageView!
+    var vipView:UIImageView {
+        
+        if _vipView == nil {
+            
+            _vipView = UIImageView.init()
+            _vipView.image = UIImage(named: "vip")
+            _vipView.hidden = true
+            self.contentView.addSubview(_vipView)
+        }
+        return _vipView
+    }
+///*******get方法
+    var _textView:UILabel!
+    var textView:UILabel {
+        
+        if _textView == nil {
+            
+            _textView = UILabel.init()
+            _textView.font = kTextFont;
+            _textView.numberOfLines = 0;
+            self.contentView.addSubview(_textView)
+        }
+        return _textView
+    }
+    ///*******get方法
+    
+    var _pictureView:UIImageView!
+    var pictureView:UIImageView {
+        
+        if _pictureView == nil {
+            
+            _pictureView = UIImageView.init()
+            self.contentView.addSubview(_pictureView)
+        }
+        return _pictureView
+    }
+
+    
+    ///*✅*****************💗赋值**************************************
+
+///*****✅总的方法放在一起让cell调用
+    func getStatus(status:HMStatus? ,tableview:UITableView?){
+        ///*****✅传进来的参数替换没有初始化的参数
+
+        self.status = status
+        // 1&gt; 设置数据
+        self.settingFrame(tableview!)
+        // 2&gt; 设置位置
+        self.settingCell()
+    }
+    
+    
+
+    ///*****✅传模型过来一个一个赋值// 1&gt; 设置数据
+    func settingCell(){
+        
+        // setter方法中，第一句要赋值，否则要在其他方法中使用模型，将无法访问到
+        
+        /// 头像
+        self.iconView.image = UIImage(named: "\(status.icon)")
+       /// 姓名
+        self.nameView.text = "\(status.name)"
+        
+        /// vip(可选的)
+        self.vipView.image = UIImage(named: "vip")
+        
+        if ((status.vip) != 0) {
+            
+            self.vipView.hidden = false
+            self.nameView.textColor = UIColor.redColor()
+        } else {
+            self.vipView.hidden = true
+            self.nameView.textColor = UIColor.blackColor()
+        }
+        
+        /// 正文
+        self.textView.text = "\(status.text)"
+        
+        /// 配图(可选参数)
+        if status.picture == nil  {
+            
+            print("💗💗\(status.picture)")
+            self.pictureView.hidden = true
+
+        } else {
+                        self.pictureView.hidden = false
+                        print("💗\(status.picture)")
+                        self.pictureView.image = UIImage(named: "\(status.picture)")
+
+        }
+
+    }
+
+    ///*✅*****************💗设置位置************************
+    // 2&gt; 设置位置
+    func settingFrame(tableview:UITableView)
+    {
+        
+    /// 0. 定义间距
+        let padding:CGFloat = 10
+    /// 1. 头像
+        
+        let &lt;#icon#&gt;X = padding;
+    let &lt;#icon#&gt;Y = padding;
+        let &lt;#icon#&gt;W:CGFloat = 30;
+        let &lt;#icon#&gt;H:CGFloat = 30;
+    self.&lt;#icon#&gt;.frame = CGRectMake(&lt;#icon#&gt;X, &lt;#icon#&gt;Y, &lt;#icon#&gt;W, &lt;#icon#&gt;H);
+    
+    /// 2. 姓名大小由文字的长度来决定
+    // boundingRectWithSize计算给定文本字符串所占的区域
+    // 返回值是一个x,y = 0的CGRect,w,h是计算好的宽高
+    //
+    // 如果要计算多行的准确高度，需要传入NSStringDrawingUsesLineFragmentOrigin选项
+    // dict用于指定字体的相关属性的字典，UIKit框架中的第一个头文件
+
+        let nameDict:NSDictionary  = [NSFontAttributeName : kNameFont]
+        ///CGSizeMake(CGFloat.max, CGFloat.max)
+        let option = NSStringDrawingOptions.UsesLineFragmentOrigin
+        let cgsize:CGSize = CGSizeMake(CGFloat.max, CGFloat.max)
+        
+        var nameFrame = status.name.boundingRectWithSize(cgsize, options: option, attributes: nameDict as? [String : AnyObject], context: nil)
+            
+            
+        &lt;#icon#&gt;.x = CGRectGetMaxX(self.iconView.frame) + padding
+        &lt;#icon#&gt;.y = padding + (self.iconView.bounds.size.height - nameFrame.size.height) * 0.5;
+        
+        self.&lt;#icon#&gt;.frame = nameFrame
+
+
+    /// vip图标
+        let &lt;#icon#&gt;X = CGRectGetMaxX(self.nameView.frame) + padding;
+        let &lt;#icon#&gt;Y = self.nameView.frame.origin.y;
+        let &lt;#icon#&gt;W:CGFloat = 14;
+        let &lt;#icon#&gt;H:CGFloat = 14;
+        self.vipView.frame = CGRectMake(vipX, vipY, vipW, vipH);
+
+    /// 正文
+        let textDict:NSDictionary = [NSFontAttributeName: kTextFont]
+        
+        var textFrame:CGRect = status.text.boundingRectWithSize(CGSizeMake(365.0, CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: textDict as? [String : AnyObject], context: nil)
+        
+        textFrame.origin.x = padding;
+        textFrame.origin.y = CGRectGetMaxY(self.iconView.frame) + padding;
+        print("✅✅\(CGFloat.max)")
+        self.textView.frame = textFrame;
+    
+    /// 配图
+    ///*****✅💗cellHeight是cell的高度使用最后一个视图的最大的y值CGRectGetMaxY(self.pictureView.frame) + padding.
+        
+        if status.picture != nil {
+        let &lt;#icon#&gt;X = padding + 10.0;
+        let &lt;#icon#&gt;Y:CGFloat = CGRectGetMaxY(textFrame) + padding ;
+        let &lt;#icon#&gt;W:CGFloat = 100;
+        let &lt;#icon#&gt;H:CGFloat = 100;
+    self.&lt;#icon#&gt;.frame = CGRectMake(pictureX, pictureY, pictureW, pictureH);
+            
+            cellheight = CGRectGetMaxY(self.pictureView.frame) + padding
+            print("✅\(cellheight)")
+        }
+            else {
+            
+             self.cellheight = CGRectGetMaxY(self.textView.frame) + padding
+            
+             print("✅\(cellheight)")
+            }
+        
+        tableview.rowHeight = cellheight
+        
+        }
+}
+
+
+//    ///*****✅ 从XIB被加载之后，会自动被调用，如果使用纯代码，不会被执行
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        self.contentView.backgroundColor = UIColor.yellowColor()
+//        
+//    }
+//    
+//    ///*****✅ Cell 被选中或者取消选中都会被调用
+//    //如果是自定义Cell控件，所有的子控件都应该添加到contentView中
+//    override func setSelected(selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//        
+//        if (selected){
+//            self.contentView.backgroundColor = UIColor.redColor()
+//        }else {
+//            self.contentView.backgroundColor =  UIColor.grayColor()
+//        }
+//    }
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CB920217-3176-44AD-A59B-DC4AA5FF6CF8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>纯代码cell-高度自适应微博版</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

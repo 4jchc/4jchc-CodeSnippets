@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>添加pickview默认值</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            //***💗pickviw的默认值方法
+            let coluns:Int = &lt;#数组的名字#&gt;.count
+        var i:Int = 0
+        for (i; i &lt; coluns; i++)
+         {
+  
+            print("\(mxArray.count)")
+            &lt;#pickerView#&gt;(&lt;#pickerView#&gt;, didSelectRow: 0, inComponent: i)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>27CAA5E2-CA34-4B44-96CF-15AD248BCC34</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>pick属性添加默认值</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>pickview的lable添加默认值</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

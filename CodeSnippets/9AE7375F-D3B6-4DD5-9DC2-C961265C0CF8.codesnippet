@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bendishuju</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*****💗要保存的本地的地址
+    func getFilePath() -&gt; NSString{
+        ///*****✅地址
+        let docPath:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        ///*****✅拼接文件路径
+        let filePath:NSString = docPath.stringByAppendingPathComponent("&lt;#数组名字#&gt;.data")
+        return filePath
+    }
+    
+    ////*****💗/数组归档保存到本地
+    func saveToBenDi(){
+        ///*****✅保存文件
+        NSKeyedArchiver.archiveRootObject(self.&lt;#数组名字#&gt;, toFile: getFilePath() as String)
+    }
+    
+    ///*****💗/读取本地数据
+    func redBenDi(){
+        ///*****✅获取文件----数组名
+        &lt;#数组名字#&gt; = NSKeyedUnarchiver.unarchiveObjectWithFile(getFilePath() as String) as! Array
+        
+    }
+    
+    ///*****✅懒加载读取本地的保存数组
+    var _&lt;#数组名字#&gt;:NSMutableArray!
+    
+    var &lt;#数组名字#&gt;:NSMutableArray {
+        
+        if &lt;#数组名字#&gt; == nil {
+            
+            &lt;#数组名字#&gt; = NSKeyedUnarchiver.unarchiveObjectWithFile(getFilePath() as String) as? NSMutableArray
+            if &lt;#数组名字#&gt; == nil {
+                &lt;#数组名字#&gt; =  NSMutableArray()
+                
+            }}
+        return &lt;#数组名字#&gt;
+    }
+    
+    
+    
+    ///*****✅类模型方法必须调用
+    
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+    }
+        </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9AE7375F-D3B6-4DD5-9DC2-C961265C0CF8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>读取写入</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>数组保存本地</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

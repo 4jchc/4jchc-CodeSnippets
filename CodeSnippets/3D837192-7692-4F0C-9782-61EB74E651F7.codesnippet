@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jenumerateKeysAndObjectsUsingBlock</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        self.&lt;#maxYDict#&gt;.enumerateKeysAndObjectsUsingBlock( { (column: AnyObject!, maxY: AnyObject!, stop: UnsafeMutablePointer&lt;ObjCBool&gt;) -&gt; () in
+            
+            
+            if maxY.floatValue &gt; self.maxYDict[weakmaxColumn!]?.floatValue {
+                
+                maxColumn = column as! NSString
+            }
+            
+        })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3D837192-7692-4F0C-9782-61EB74E651F7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>enumerateKeysAndObjectsUsingBlock</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>enumerateKeysAndObjectsUsingBlock</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

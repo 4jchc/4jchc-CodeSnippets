@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jPOPoverPresentationController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // UIPopoverController只能用在iPad
+    func PopoverPresentationController(){
+        
+        let vc:SecondViewController = SecondViewController()
+        // modal出来是个popover
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        // 取出vc所在的UIPopoverPresentationController
+        vc.popoverPresentationController!.sourceView = self.slider;
+        vc.popoverPresentationController!.sourceRect = self.slider.bounds;
+
+//        vc.popoverPresentationController!.delegate = self
+//        self.preferredContentSize = CGSize(width:320,height:100)
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+
+    func popover(){
+        let vc:SecondViewController = SecondViewController()
+        let popover:UIPopoverController = UIPopoverController(contentViewController: vc)
+        popover.presentPopoverFromRect(self.slider.bounds, inView: self.slider, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+    
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9EA41094-7C49-4BB9-8717-43B58EB734F1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>popover出控制器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>PopoverPresentationController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>moxing12</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*****✅模型主代码
+    var _mxArray:NSMutableArray!
+    
+    var mxArray:NSMutableArray {
+        get{
+            if _mxArray == nil {
+                
+                _mxArray = &lt;#类名#&gt;.get&lt;#Statuses#&gt;() as! NSMutableArray
+
+                }
+            return _mxArray
+            }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F0F38CC3-9827-44FD-899F-76A3FFFF97AE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型12主代码</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

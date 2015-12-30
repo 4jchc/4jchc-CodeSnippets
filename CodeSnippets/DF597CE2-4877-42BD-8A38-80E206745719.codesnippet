@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jjinggaokuanganli</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func touchesBegan(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        
+        let alert:UIAlertController = UIAlertController(title: "警告", message: "你真的要放弃swift吗", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // 设置popover指向的item
+        alert.popoverPresentationController?.barButtonItem = self.navigationItem.leftBarButtonItem
+        
+        // 添加按钮
+        alert.addAction(UIAlertAction(title: "sure", style: UIAlertActionStyle.Destructive, handler: { (action) -&gt; Void in
+            
+            NSLog("点击了确定按钮");
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (action) -&gt; Void in
+            
+            NSLog("点击了取消按钮");
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        //alertController()
+        
+    }
+
+    // UIAlertControllerStyleActionSheet的使用注意
+    // 1.不能有文本框
+    // 2.在iPad中,必须使用popover的形式展示
+    
+    // Text fields can only be added to an alert controller of style UIAlertControllerStyleAlert
+    // 只能在UIAlertControllerStyleAlert样式的view上添加文本框
+    // 文本框监听用addTarget
+    func alertController(){
+        // 危险操作:弹框提醒
+        // 1.UIAlertView
+        // 2.UIActionSheet
+        // iOS8开始:UIAlertController == UIAlertView + UIActionSheet
+        let alert:UIAlertController = UIAlertController(title: "警告", message: "你真的要放弃swift吗", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // 添加按钮
+        weak var weakalert = alert
+        alert.addAction(UIAlertAction(title: "sure", style: UIAlertActionStyle.Destructive, handler: { (action) -&gt; Void in
+            weakalert?.textFields?.first?.text
+            weakalert?.textFields?.last?.text
+            NSLog("点击了确定按钮");
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (action) -&gt; Void in
+            
+            NSLog("点击了取消按钮");
+        }))
+        
+        // 添加文本框
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            
+            textField.placeholder = "放弃swift"
+            
+        }
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            
+            textField.placeholder = "你真的要放弃swift吗"
+            textField.secureTextEntry = true
+            textField.textColor = UIColor.redColor()
+            textField.addTarget(self, action: "usernameDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        }
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+
+    func usernameDidChange(username:UITextField){
+        
+        NSLog("%@", username.text!);
+
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DF597CE2-4877-42BD-8A38-80E206745719</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>带文本添加监听</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>警告框案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

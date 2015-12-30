@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jXIB-pick</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///*✅************************💗属性*******************************
+    @IBOutlet var &lt;#imageView#&gt;: &lt;#imageView#&gt;!
+    @IBOutlet var &lt;#imageView#&gt;: &lt;#imageView#&gt;!
+
+
+    
+    ///*✅************************💗加载XIB*******************************
+    
+    class func FlagView() -&gt; UIView {
+        
+        return NSBundle.mainBundle().loadNibNamed("&lt;#xib名字#&gt;", owner: nil, options: nil).last as! UIView
+        
+    }
+    
+    
+    ///*✅************************💗赋值*******************************
+
+    func getFlag(flag:Flag)  {
+    
+        self.imageView.image = UIImage(named: String(flag.icon))
+        self.label.text = String(flag.name)
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F6161D9A-671E-41CC-8098-B88858FF0E7E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>加载pick的xib</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>加载pick的xib</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

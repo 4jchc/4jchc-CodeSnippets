@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jswitchcase</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        switch(segue.identifier!){
+        case &lt;#"chooseSchool"#&gt;:
+            let schoolListTC = (segue.destinationViewController as? SchoolListTC)!
+            schoolListTC.popoverOniPhone = popoverOniPhoneSwitch.on
+        schoolListTC.popoverOniPhoneLandscape = popoverOniPhoneLandscapeSwitch.on
+            break
+        default:
+            break
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>54E700D3-0EB5-4591-A437-119B1D2BFDE1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>switch-case</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>switch</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

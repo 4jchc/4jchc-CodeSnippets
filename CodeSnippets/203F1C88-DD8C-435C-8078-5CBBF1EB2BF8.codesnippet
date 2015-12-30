@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jinggaokuang</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let alertController = UIAlertController(title: "注销？",
+            message: "是否注销？", preferredStyle: UIAlertControllerStyle.Alert)
+        let cancelAction = UIAlertAction(title: "&lt;#取消#&gt;", style: UIAlertActionStyle.Cancel, handler: nil)
+        let okAction = UIAlertAction(title: "&lt;#好的#&gt;", style: UIAlertActionStyle.Default,
+            handler: {
+                action in
+                ///*****✅方法
+                self.navigationController?.popToRootViewControllerAnimated(true)
+                print("&lt;#点击了确定#&gt;")
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>203F1C88-DD8C-435C-8078-5CBBF1EB2BF8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>警告框</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>警告框</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

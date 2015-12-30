@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ccell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+
+        let ID:String = "cell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(ID  as String)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ID as String)
+        }
+        &lt;#let city: MTCity = self.resultCities![indexPath.row] as! MTCity;#&gt;
+        cell!.textLabel!.text = &lt;#city.name;#&gt;
+        return cell!
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>582583A3-5C7F-43A3-AE2B-1ECC5BF64467</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cell创建</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell创建</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

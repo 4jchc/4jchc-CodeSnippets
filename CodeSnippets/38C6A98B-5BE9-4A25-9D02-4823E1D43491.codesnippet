@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jadddibutabbar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 1.创建Window
+        
+        self.window = UIWindow(frame:UIScreen.mainScreen().bounds )
+        self.window!.backgroundColor = UIColor.whiteColor()
+        // 2.创建TabBarCongtroller
+        
+        let tb: UITabBarController  = UITabBarController()
+        // 3.加载4个Storyboard
+        
+        let homeSB: UIStoryboard  = UIStoryboard(name: "Home", bundle: nil)
+        let messageSB: UIStoryboard  = UIStoryboard(name: "Message", bundle: nil)
+        let discoverSB: UIStoryboard  = UIStoryboard(name: "Discover", bundle: nil)
+        let profileSB: UIStoryboard  = UIStoryboard(name: "Profile", bundle: nil)
+
+        
+        // 4.创建并将4个Storyboard添加到TabBarCongtroller中
+        tb.viewControllers = [homeSB.instantiateInitialViewController()!,        messageSB.instantiateInitialViewController()!,
+            discoverSB.instantiateInitialViewController()!,
+            profileSB.instantiateInitialViewController()!]
+        // 5.设置根控制器
+        self.window!.rootViewController = tb;
+        // 6.显示Window
+        self.window!.makeKeyAndVisible()
+        return true</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>38C6A98B-5BE9-4A25-9D02-4823E1D43491</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>4个控制器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>添加底部tabBar</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
