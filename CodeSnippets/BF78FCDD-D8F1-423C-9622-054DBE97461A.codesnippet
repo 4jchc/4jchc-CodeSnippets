@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jalertControllerWithLogin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func alertControllerWithLogin(){
+        // 危险操作:弹框提醒
+        // 1.UIAlertView
+        // 2.UIActionSheet
+        // iOS8开始:UIAlertController == UIAlertView + UIActionSheet
+        let alert:UIAlertController = UIAlertController(title: "温馨提示", message: "请输入用户名&amp;密码", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // 添加按钮
+        weak var weakalert = alert
+        alert.addAction(UIAlertAction(title: "sure", style: UIAlertActionStyle.Destructive, handler: { (action) -&gt; Void in
+            
+            
+            
+            // 比较内容
+            if ((weakalert?.textFields?.first?.text)! as NSString).isEqualToString("zhang") &amp;&amp; weakalert?.textFields?.last?.text == "123"{
+                
+                self.purchase()
+                
+                NSLog("点击了确定按钮");
+                
+            }}))
+
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (action) -&gt; Void in
+            
+            NSLog("点击了取消按钮");
+            
+            self.inputUserInfo()
+        }))
+        
+        // 添加文本框
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            
+            textField.placeholder = "放弃swift"
+            textField.addTarget(self, action: "usernameDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        }
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            
+            textField.placeholder = "你真的要放弃swift吗"
+            textField.secureTextEntry = true
+            textField.textColor = UIColor.redColor()
+            textField.addTarget(self, action: "pwdDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        }
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    func usernameDidChange(username:UITextField){
+        
+        NSLog("%@", username.text!);
+        
+    }
+    func pwdDidChange(username:UITextField){
+        
+        NSLog("%@", username.text!);
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BF78FCDD-D8F1-423C-9622-054DBE97461A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>登录提示框</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>登录提示框</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
