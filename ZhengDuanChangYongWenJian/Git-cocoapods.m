@@ -65,24 +65,8 @@
 
 
 
-
-
-
-
-
-
-
     sudo gem install cocoapods
     pod setup
-
-
-
-
-
-
-
-
-
 
 
 "  git reflog
