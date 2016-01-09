@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jJianPanFrame</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class ComposeViewController: UIViewController {
+
+    ///  取消
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    /// 发送按钮
+    @IBOutlet weak var sendButton: UIBarButtonItem!
+    /// 占位文本 － 注意：懒加载的对象属性，不要使用 weak
+    lazy var placeHolderLabel: UILabel? = {
+        let l = UILabel()
+        l.text = "分享新鲜事..."
+        l.font = UIFont.systemFontOfSize(18)
+        l.textColor = UIColor.lightGrayColor()
+        l.frame = CGRectMake(5, 8, 0, 0)
+        // 可以根据文本的内容大小，自动调整
+        l.sizeToFit()
+    
+        return l
+    }()
+    @IBOutlet weak var textView: UITextView!
+
+    @IBOutlet weak var toolBarBottomConstraint: NSLayoutConstraint!
+    
+
+    
+    
+    /// 发送微博
+    @IBAction func sendStatus(sender: UIBarButtonItem) {
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        
+        if let token = AccessToken.loadAccessToken()?.access_token {
+            let params = ["access_token": token,
+                "status": textView.text!]
+            
+            let net = NetworkManager.sharedNetworkManager
+            // 重点提示：params中一定都要确保有值，否则会提示 .POST 不正确！
+            net.requestJSON(.POST, urlString, params) { (result, error) -&gt; () in
+                SVProgressHUD.showInfoWithStatus("微博发送成功")
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 设置 UI
+        setupUI()
+        
+        // 注册通知
+        registerNotification()
+    }
+    
+    /// 设置 UI
+    func setupUI() {
+        // 文本框默认不支持滚动，设置此属性后，能够滚动！
+        textView.alwaysBounceVertical = true
+        textView.addSubview(placeHolderLabel!)
+        
+        // 设置文本框的默认焦点
+        textView.becomeFirstResponder()
+    }
+    
+    /// 注册键盘通知
+    func registerNotification() {
+        // 添加观察者，监听键盘框架的变化
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameChanged:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameChanged:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    deinit {
+        
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        
+    }
+    
+    /// 键盘变化监听方法
+    func keyboardFrameChanged(notification: NSNotification) {
+        print(notification)
+        
+        var height: CGFloat = 0
+        var duration = 0.25
+        
+        if notification.name == UIKeyboardWillChangeFrameNotification {
+            let rect = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+            height = rect.size.height
+            
+            duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        }
+        
+        toolBarBottomConstraint.constant = height
+
+        UIView.animateWithDuration(duration) {
+            
+            self.view.layoutIfNeeded()
+        }
+    
+    }
+
+}
+/// UITextView 的扩展
+
+extension ComposeViewController: UITextViewDelegate {
+    
+
+    /// 将要使用 replacementText 添加到 textView 的 range 位置
+    /// 能够在用户输入之前进行判断
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -&gt; Bool {
+        
+        // 删除键或者其他的功能键如何判断？
+        if text.isEmpty {
+            print("是删除吗？")
+            return true
+        }
+        
+        // 在 textView 控件中，没有代理方法监听回车键！
+        // 以下代码是在 textView 中拦截回车键的办法
+        if text == "\n" {
+            print("回车键")
+            view.endEditing(true)
+        }
+        
+        // 微博文字通常限制 140 个字
+        if textView.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) &gt; 10 {
+            return false
+        }
+        
+        return true
+    }
+    func textViewDidChange(textView: UITextView) {
+        print(textView.text)
+        
+        placeHolderLabel!.hidden = !textView.text.isEmpty
+        sendButton.enabled = !textView.text.isEmpty
+    }
+    /// 滚动视图开始被拖拽
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        textView.resignFirstResponder()
+    }
+
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9E3F6284-820F-4174-8D3A-3ACB895B403F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>键盘高度的判断和文本添加占位符</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>键盘-textview的placehodle</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

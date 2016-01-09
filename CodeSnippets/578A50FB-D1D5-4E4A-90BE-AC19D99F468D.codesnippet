@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>4jPath</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>        let path = NSURL(fileURLWithPath: &lt;#NSBundle.mainBundle().bundlePath#&gt;).URLByAppendingPathComponent("&lt;#Emoticons/\(group_path)/info.plist#&gt;").path!</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>578A50FB-D1D5-4E4A-90BE-AC19D99F468D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>path</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>path</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

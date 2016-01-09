@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jBaoCunTuPianXiangCe</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 保存到相册
+    @IBAction func save() {
+        print("save")
+        
+        // 1. 拿到图片 － 从 collectionView 中取出当前显示的图片
+        if let indexPath = photoView.indexPathsForVisibleItems().last {
+            
+            // 2. 根据索引取 cell
+            let cell = photoView.cellForItemAtIndexPath(indexPath) as! PhotoCell
+            
+            // 3. 从 cell 中取出图片
+            if let image = cell.imageView?.image {
+                // 4. 保存图像
+                UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+            }
+        }
+    }
+
+    // 保存到相册的回调
+    // - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+        
+        if error != nil {
+            SVProgressHUD.showInfoWithStatus("保存出错")
+        } else {
+            SVProgressHUD.showInfoWithStatus("保存成功")
+        }
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3597D259-B53D-40E6-881B-6988CDA2E411</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>从 collectionView 中取出当前显示的图片</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>保存到相册</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

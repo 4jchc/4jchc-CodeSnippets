@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIScrollView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func viewForZoomingInScrollView(scrollView: UIScrollView) -&gt; UIView? {
+        return imageView
+    }
+    
+    // 缩放完成后会被调用一次
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
+        print(__FUNCTION__)
+        
+        // 滚动视图边距
+        let y = (self.view.bounds.height - imageView.frame.size.height) * 0.5
+        scrollView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
+    }
+    
+    // 缩放进行中会频繁调用
+    func scrollViewDidZoom(scrollView: UIScrollView) {
+        print(__FUNCTION__)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        // 滚动视图边距
+        let y = (self.view.bounds.height - imageView.frame.size.height) * 0.5
+        scrollView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>398CFB56-F04C-4A3F-B078-C9F3E5AB0621</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UIScrollView案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIScrollView案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

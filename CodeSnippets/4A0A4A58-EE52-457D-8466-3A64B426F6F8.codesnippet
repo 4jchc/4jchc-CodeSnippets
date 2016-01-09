@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>4jBiaoJi</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>    var is&lt;#PullupLoading#&gt; = false</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>4A0A4A58-EE52-457D-8466-3A64B426F6F8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>记录状态</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>标记记录状态</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

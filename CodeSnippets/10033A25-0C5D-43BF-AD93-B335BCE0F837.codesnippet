@@ -3,21 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>bibao3</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>weak var weakSelf = self
+
+&lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
+    
+     (&lt;#参数#&gt;:&lt;#Int#&gt;) in
+    
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>10033A25-0C5D-43BF-AD93-B335BCE0F837</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>3.控制器调用闭包</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>闭包</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

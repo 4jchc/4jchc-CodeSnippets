@@ -3,21 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>4jNSURLhuancunlujin</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>    ///  完整的 URL 缓存路径
+    func fullImageCachePath(urlString: String) -&gt; String {
+        let path = urlString.md5 as String
+
+
+        return   NSURL(fileURLWithPath: cachePath!).URLByAppendingPathComponent(path).path!
+        //return (cachePath! as NSString).stringByAppendingPathComponent(path)
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>EBA63EF4-05EB-48DB-BEBA-A798C32C6456</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>完整的URL缓存路径</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>URL缓存路径</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

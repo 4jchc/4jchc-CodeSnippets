@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jStringMuLu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension String {
+    ///  在字符串前拼接文档目录
+    func documentPath() -&gt; String {
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last
+        //path.stringByAppendingPathComponent(self)
+        return NSURL(fileURLWithPath: path!).URLByAppendingPathComponent(self).path!
+    }
+    
+    ///  在字符串前拼接缓存目录
+    func cachePath() -&gt; String {
+        let path = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).last
+        
+        return NSURL(fileURLWithPath: path!).URLByAppendingPathComponent(self).path!
+    }
+    
+    ///  在字符串前拼接缓存目录
+    func tempPath() -&gt; String {
+        
+        return NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent(self).path!
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ACE2F4A3-F8C0-4F4D-8321-48D9F4FCB6CE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>文档目录-缓存目录-缓存目录</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String-目录</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

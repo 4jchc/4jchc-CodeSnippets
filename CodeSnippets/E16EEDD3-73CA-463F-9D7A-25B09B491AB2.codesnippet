@@ -3,21 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>4jMingMinKongJian</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>        // 动态获取命名空间
+        let ns = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
+
+        
+        if  let i = NSClassFromString(ns + "." + "DictModelManager"){
+            
+            print("iIII\(i)")
+        }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>E16EEDD3-73CA-463F-9D7A-25B09B491AB2</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>命名空间</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>命名空间</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

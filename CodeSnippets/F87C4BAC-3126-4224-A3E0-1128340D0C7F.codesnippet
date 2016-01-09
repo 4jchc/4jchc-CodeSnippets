@@ -3,21 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>4jLazyStorboard</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>    lazy var &lt;#UIStoryboard#&gt;: &lt;#UIStoryboard#&gt;? = {
+        let sb = UIStoryboard(name: "&lt;#name#&gt;", bundle: nil)
+        return sb.instantiateInitialViewController() as? &lt;#UIStoryboard#&gt;
+    }()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>F87C4BAC-3126-4224-A3E0-1128340D0C7F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>懒加载UIStoryboard</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>懒加载UIStoryboard</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

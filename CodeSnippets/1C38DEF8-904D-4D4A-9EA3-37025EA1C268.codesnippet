@@ -3,13 +3,51 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUitabbarcontroller-fromstroybord</string>
+	<string>4jUITabBarController-案例</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    ///  添加子控制器
+	<string>import UIKit
+
+class MainTabBarController: UITabBarController {
+    
+    // 不能起 tabBar 的名字
+    @IBOutlet weak var mainTabBar: MainTabBar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        // 使用代码添加视图控制器
+        addControllers()
+        
+        ///*****✅3.闭包的调用
+        // 定义回调 - Swift 中的闭包同样会对外部变量进行强引用
+        // 提示：weak 变量必须是 var，不能使用 let
+        // 在 swift 中判断闭包的循环引用和 oc 中几乎是一样的，使用 deinit
+        weak var weakSelf = self
+        
+        mainTabBar.composedButtonClicked = {
+            print("hello")
+            // modal 撰写微博 视图控制器
+            let sb = UIStoryboard(name: "Compose", bundle: nil)
+            
+            weakSelf!.presentViewController(sb.instantiateInitialViewController()!, animated: true, completion: nil)
+        }
+        
+    }
+    
+
+    ///  deinit 和 OC 中的 dealloc 作用是类似的
+    deinit {
+        print("没有循环引用")
+    }
+    
+    
+    
+    ///  添加子控制器
     func addControllers() {
         addchildController("Home", "首页", "tabbar_home", "tabbar_home_highlighted")
         addchildController("Message", "消息", "tabbar_message_center", "tabbar_message_center_highlighted")
@@ -40,15 +78,19 @@
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orangeColor()], forState: UIControlState.Selected)
         
         self.addChildViewController(vc)
-    }</string>
+    }
+
+    
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6ECB9C2B-C136-40A4-98ED-FE17883DADAF</string>
+	<string>1C38DEF8-904D-4D4A-9EA3-37025EA1C268</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>从stroyboard添加按钮</string>
+	<string>UITabBarController-案例</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITabBarController添加按钮</string>
+	<string>UITabBarController-案例</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

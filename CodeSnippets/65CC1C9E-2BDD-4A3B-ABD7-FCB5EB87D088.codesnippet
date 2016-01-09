@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jTongZHi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            let WB_Login_Successed_Notification = "&lt;#WB_Login_Successed_Notification#&gt;"
+            
+NSNotificationCenter.defaultCenter().postNotificationName(WB_Login_Successed_Notification, object: nil)
+            // 添加通知监听，监听用户登录成功
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "&lt;#WB_Login_Successed_Notification#&gt;", name: WB_Login_Successed_Notification, object: nil)
+
+        // 通知在不需要的时候，要及时销毁
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: WB_Login_Successed_Notification, object: nil)
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65CC1C9E-2BDD-4A3B-ABD7-FCB5EB87D088</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>通知</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSNotificationCenter通知</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

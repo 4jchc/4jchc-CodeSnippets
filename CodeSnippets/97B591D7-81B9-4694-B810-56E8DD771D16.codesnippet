@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jblockhuidiaoanli</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 定义了一个类的完成闭包类型
+    typealias Completion = (result: AnyObject?, error: NSError?) -&gt; ()
+    ///  刷新微博数据 - 专门加载网络数据以及错误处理的回调
+    ///  一旦加载成功，负责字典转模型，回调传回转换过的模型数据
+    class func loadStatus(completion: (data: StatusesData?, error: NSError?)-&gt;()) {
+        
+        let net = NetworkManager.sharedNetworkManager
+        print("AccessToken.loadAccessToken()?.access_token---\(AccessToken.loadAccessToken()?.access_token)")
+        
+        if let token = AccessToken.loadAccessToken()?.access_token {
+            let params = ["access_token": token]
+            print("***tokentoken**\(token)")
+            // 发送网络异步请求
+            net.requestJSON(.GET, WB_Home_Timeline_URL, params) { (result, error) -&gt; () in
+                
+                if error != nil {
+                    // 错误处理
+                    completion(data: nil, error: error!)
+                    return
+                }
+                
+                // 字典转模型
+                let modelTools = DictModelManager.sharedManager
+                let data = modelTools.objectWithDictionary(result as! NSDictionary, cls: StatusesData.self) as? StatusesData
+                print("*****\(data)")
+                //MARK: -  回调 -&gt; 将模型通知给视图控制器
+                completion(data: data, error: nil)
+            }
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>97B591D7-81B9-4694-B810-56E8DD771D16</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>回调案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>block回调案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

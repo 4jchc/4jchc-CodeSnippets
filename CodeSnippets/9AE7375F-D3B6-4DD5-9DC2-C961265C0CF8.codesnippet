@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>bendishuju</string>
+	<string>4jBaoCunBenDiShuZu</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -78,7 +78,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>读取写入</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>数组保存本地</string>
+	<string>保存本地数组案例</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

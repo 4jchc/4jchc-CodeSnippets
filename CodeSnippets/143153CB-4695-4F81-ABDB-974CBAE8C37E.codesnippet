@@ -9,54 +9,51 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    ///定义闭包
-    typealias &lt;#闭包名称#&gt; = ((&lt;#参数#&gt;:&lt;#Int#&gt;) -&gt; Void)?
-    ///初始化闭包
-    var block:&lt;#闭包名称#&gt;!
-    ///闭包声明
-   self.block!!(&lt;#参数#&gt;: &lt;#名字#&gt;)
-    ///闭包实现
-    &lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
+	<string>// A( 1.定义闭包 &amp;&amp; 2.判断闭包并赋值) --&gt; B( 3.在控制器中调用闭包 )
+/// 1.定义闭包
+typealias &lt;#闭包名称#&gt; = ((&lt;#参数#&gt;:&lt;#Int#&gt;) -&gt; Void)?
+/// 2.初始化闭包
+var block:&lt;#闭包名称#&gt;!
+/// 3.判断闭包 &amp;&amp; 声明赋值
+self.block!!(&lt;#参数#&gt;: &lt;#名字#&gt;)
+/// 4.闭包实现
+&lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
     
     (&lt;#参数#&gt;:&lt;#Int#&gt;) in
     //赋值
     self.selectedIndex = selectedIndex
     
-    }
-    
-    
-    
-    
-    
-    /// 1.定义闭包
-    var &lt;#闭包名称#&gt;: (()-&gt;())?
-    
-    ///  2.判断闭包
-    func clickCompose() {
-        print("come here")
-        // 判断闭包是否被设置数值
-        if &lt;#闭包名称#&gt; != nil {
-            // 执行回调方法
-            &lt;#闭包名称#&gt;!()
-        }
-    }
-    
-    ///*****✅3.在控制器中调用闭包
-    // 定义回调 - Swift 中的闭包同样会对外部变量进行强引用
-    // 提示：weak 变量必须是 var，不能使用 let
-    // 在 swift 中判断闭包的循环引用和 oc 中几乎是一样的，使用 deinit
-    weak var weakSelf = self
-    
-    &lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
-        
-        &lt;#闭包名称#&gt;
-        
+}
 
+
+
+
+
+/// 1.定义闭包
+var &lt;#闭包名称#&gt;: ((&lt;#参数#&gt;:&lt;#Int#&gt;) -&gt; Void)?
+
+/// 2.判断闭包 &amp;&amp; 声明赋值
+func clickCompose() {
+    print("come here")
+    // 判断闭包是否被设置数值
+    if &lt;#闭包名称#&gt; != nil {
+        // 执行回调方法
+        &lt;#闭包名称#&gt;!()
     }
+}
+
+///*****✅3.在控制器中调用闭包
+// 定义回调 - Swift 中的闭包同样会对外部变量进行强引用
+// 提示：weak 变量必须是 var，不能使用 let
+// 在 swift 中判断闭包的循环引用和 oc 中几乎是一样的，使用 deinit
+weak var weakSelf = self
+
+&lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
+    
+     (&lt;#参数#&gt;:&lt;#Int#&gt;) in
     
     
-    
-    </string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>143153CB-4695-4F81-ABDB-974CBAE8C37E</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -21,9 +21,9 @@ enum &lt;#XMPPResult#&gt;Type {
 typealias &lt;#闭包名称#&gt; = (&lt;#参数#&gt;:&lt;#Int#&gt;) -&gt; Void
 /// 2.初始化闭包
 var block:&lt;#闭包名称#&gt;!
-///闭包声明
+/// 3.判断闭包 &amp;&amp; 声明赋值
 self.block!!(&lt;#参数#&gt;: &lt;#名字#&gt;)
-///闭包实现
+/// 4.闭包实现
 &lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
     
     (&lt;#参数#&gt;:&lt;#Int#&gt;) in
@@ -33,12 +33,13 @@ self.block!!(&lt;#参数#&gt;: &lt;#名字#&gt;)
 }
 
 
-/// 3.判断闭包
+/// 3.判断闭包 &amp;&amp; 声明赋值
 func clickCompose() {
     // 判断闭包是否被设置数值
     if &lt;#闭包名称#&gt; != nil {
         // 执行回调方法
-        &lt;#闭包名称#&gt;!()
+        self.&lt;#闭包名称#&gt;!(&lt;#参数#&gt;: &lt;#名字#&gt;)
+
     }
 }
 
@@ -50,10 +51,11 @@ weak var weakSelf = self
 
 &lt;#调用者#&gt;.&lt;#闭包名称#&gt; = {
     
-    &lt;#闭包名称#&gt;
+    (&lt;#参数#&gt;:&lt;#Int#&gt;) in
     
     
-}</string>
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5F03CB47-7F03-4B91-AF11-38E893E8CDA3</string>
 	<key>IDECodeSnippetLanguage</key>

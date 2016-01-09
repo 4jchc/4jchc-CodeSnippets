@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jTiHuan</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            // 1. 定义一个字符串
+            let str = &lt;#thumbnail_pic#&gt;! as NSString
+            // 2. 直接替换字符串
+            large_pic = str.stringByReplacingOccurrencesOfString("&lt;#thumbnail_pic#&gt;", withString: "&lt;#thumbnail_pic#&gt;")
+            
+            
+            // 1. 查找thumbnail_pic在字符串中出现的范围
+            let range = (str).rangeOfString("&lt;#thumbnail_pic#&gt;")
+            // 3. 处理字符串
+            // 判断是否找打对应的字符串
+            if range.location != NSNotFound {
+                // 拼接大图 url 地址
+                large_pic = str.substringToIndex(range.location) + "&lt;#thumbnail_pic#&gt;" + str.substringFromIndex(range.location + range.length)
+            }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65B02512-425C-483E-BE54-54BEED5DA952</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>String替换</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String替换</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -9,9 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>   static func &lt;#InputView#&gt;()-&gt;WCInputView {
+	<string>   static func &lt;#InputView#&gt;()-&gt;&lt;#InputView#&gt; {
         
-        return NSBundle.mainBundle().loadNibNamed("&lt;#WCInputView#&gt;", owner: nil, options: nil).first as! WCInputView
+        return NSBundle.mainBundle().loadNibNamed("&lt;#WCInputView#&gt;", owner: nil, options: nil).first as! &lt;#InputView#&gt;
         
     }</string>
 	<key>IDECodeSnippetIdentifier</key>

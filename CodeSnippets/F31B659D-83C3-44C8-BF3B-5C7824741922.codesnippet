@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIStoryboard-bibaodiaoyong</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 定义回调 - Swift 中的闭包同样会对外部变量进行强引用
+        // 提示：weak 变量必须是 var，不能使用 let
+        // 在 swift 中判断闭包的循环引用和 oc 中几乎是一样的，使用 deinit
+        weak var weakSelf = self
+        
+        mainTabBar.composedButtonClicked = {
+            print("hello")
+            // modal 撰写微博 视图控制器
+            let sb = UIStoryboard(name: "&lt;#name#&gt;", bundle: nil)
+            
+            weakSelf!.presentViewController(sb.instantiateInitialViewController()!, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
+
+    ///  deinit 和 OC 中的 dealloc 作用是类似的
+    deinit {
+        print("没有循环引用")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F31B659D-83C3-44C8-BF3B-5C7824741922</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>闭包调用弹出视图控制器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIStoryboard-闭包调用</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

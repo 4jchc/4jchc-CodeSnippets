@@ -3,21 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>bibao2</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>    // 判断闭包是否被设置数值
+    if &lt;#闭包名称#&gt; != nil {
+        // 执行回调方法
+        &lt;#闭包名称#&gt;!(&lt;#参数#&gt;:&lt;#Int#&gt;)
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>E9634317-F783-41A9-BA73-5E053F600645</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>2.判断闭包是否被设置数值</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>闭包</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

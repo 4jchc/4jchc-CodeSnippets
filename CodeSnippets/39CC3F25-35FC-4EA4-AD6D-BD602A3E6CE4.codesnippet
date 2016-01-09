@@ -3,21 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jFuncZhuShi</string>
+	<string>4jUIStoryboardSB</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///&lt;#view#&gt;</string>
+	<string>    // 从 sb 创建视图控制器
+    
+    class func &lt;#UIStoryboard#&gt;() -&gt; &lt;#UIStoryboard#&gt; {
+        
+        let sb = UIStoryboard(name: &lt;#name#&gt;, bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! &lt;#UIStoryboard#&gt;
+        
+        return vc
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A2688F64-DECA-4664-AC52-308E1C301033</string>
+	<string>39CC3F25-35FC-4EA4-AD6D-BD602A3E6CE4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释func</string>
+	<string>从 SB 创建视图控制器</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释func</string>
+	<string>UIStoryboard从 SB 创建视图控制器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

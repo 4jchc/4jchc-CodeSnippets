@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>baocunbendiNSUserDefaults</string>
+	<string>4jNSUserDefaults</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -136,6 +136,8 @@
 	<string>BA827641-832B-42D5-AEA5-37CD16BDA225</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>存储案例</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>NSUserDefaults存储案例</string>
 	<key>IDECodeSnippetUserSnippet</key>

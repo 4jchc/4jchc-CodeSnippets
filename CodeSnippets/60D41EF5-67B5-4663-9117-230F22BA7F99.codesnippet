@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jzidian-pinjieString</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///  根据参数字典生成---拼接--查询字符串
+    ///
+    ///  :param: params 参数字典
+    ///
+    ///  :returns: 查询参数
+    func quertString(params: [String: String]?) -&gt; String? {
+        
+        if params == nil {
+            return nil
+        }
+        
+        // 查询字符串数组
+        var query = [String]()
+        for (k, v) in params! {
+            
+            let str = k + "=" + v.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            
+            query.append(str)
+       
+        }
+        
+        return query.joinWithSeparator("&amp;")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>60D41EF5-67B5-4663-9117-230F22BA7F99</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>字典拼接成字符串</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>字典拼接成字符串</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
