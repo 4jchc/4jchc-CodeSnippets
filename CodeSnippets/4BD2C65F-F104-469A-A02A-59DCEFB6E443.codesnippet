@@ -3,24 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>printself.class</string>
+	<string>4jBaoCunMoXing3</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>print("\(&lt;#self.classForCoder#&gt;)")</string>
+	<string>///*****✅懒加载读取本地的保存数组
+lazy var &lt;#anim#&gt;:&lt;#UIDynamicAnimator#&gt; = {
+    
+    let ani = NSKeyedUnarchiver.unarchiveObjectWithFile(getFilePath() as String) as? NSMutableArray
+    if &lt;#数组名字#&gt; == nil {
+        &lt;#数组名字#&gt; =  NSMutableArray()
+        
+    }}
+
+    return ani
+}()
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>2C5E1AC4-C35E-4B48-BACF-441F61F8C8D9</string>
+	<string>4BD2C65F-F104-469A-A02A-59DCEFB6E443</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>打印父类</string>
+	<string>保存数组模型到本地-3 加载数组</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>输出</string>
+	<string>保存数组模型到本地-3 加载数组</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

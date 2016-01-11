@@ -3,30 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jdebugDescription</string>
+	<string>4jExtension</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///*****✅/  extension 是一个分类，分类不允许有存储能力
-///  如果要打印对象信息，OC 中的 description，在 swift 中需要遵守协议 DebugPrintable
-extension &lt;#AccessToken#&gt;: CustomDebugStringConvertible{
+	<string>extension &lt;#naem#&gt; {
     
-    override var debugDescription: String {
-        ///*****✅对象转字典
-        let dict = self.dictionaryWithValuesForKeys(["access_token", "expiresDate", "uid"])
-        return "\(dict)"
+    func &lt;#naem#&gt;(&lt;#naem#&gt;) {
+
     }
+    
+   
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>28DA0BD1-A73B-4810-B8D5-4E8105922A92</string>
+	<string>64161097-B60B-4D40-ABCD-1C5E46785D10</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>打印数组详细信息</string>
+	<string>extension扩展延伸</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>打印数组详细信息</string>
+	<string>extension扩展延伸</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

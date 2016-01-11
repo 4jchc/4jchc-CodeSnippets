@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jBaoCunMoXing1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class Person: NSObject {
+    
+    ///*****✅类模型方法必须调用
+    var &lt;#previousLocation#&gt;:&lt;#CLLocation#&gt;
+    var &lt;#previousLocation#&gt;:&lt;#CLLocation#&gt;
+    var &lt;#previousLocation#&gt;:&lt;#CLLocation#&gt;
+    var &lt;#previousLocation#&gt;:&lt;#CLLocation#&gt;
+    
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+    let &lt;#成员#&gt;Key = "&lt;#成员#&gt;"
+
+    init(&lt;#成员#&gt;){
+
+
+    }
+    ////*****✅/ 在对象归档的时候调用
+    // 哪些属性需要归档
+    // 这些属性怎么归档
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+        aCoder.encodeObject(&lt;#成员#&gt;, forKey: &lt;#宏定义名字#&gt;)
+    }
+    
+    
+    ////*****✅/ 在对象解档的时候调用
+    // 哪些属性需要解档
+    // 这些属性怎么解档
+    required init?(coder aDecoder: NSCoder) {
+        // 当父类实现了NSCoding，就能调用 [super initWithCoder]
+        
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+        &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
+    }
+
+    
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5C38FDCF-707F-4BF5-BD06-49456D79D2F7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>保存数组模型到本地-1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>保存数组模型到本地-1 归档</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

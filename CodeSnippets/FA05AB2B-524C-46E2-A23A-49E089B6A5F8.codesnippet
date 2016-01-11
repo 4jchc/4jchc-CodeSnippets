@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bbbbbb</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class DataModel: NSObject {
+    
+    var userList = [&lt;#UserInfo#&gt;]()
+    
+    override init(){
+        super.init()
+        print("沙盒文件夹路径：\(documentsDirectory())")
+        print("数据文件路径：\(dataFilePath())")
+    }
+    
+    ///*****💗/保存数据
+    func saveData() {
+        let data = NSMutableData()
+        ///申明一个归档处理对象
+        let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
+        ///将lists以对应Checklist关键字进行编码
+        archiver.encodeObject(userList, forKey: "userList")
+        ///编码结束
+        archiver.finishEncoding()
+        ///数据写入
+        data.writeToFile(dataFilePath(), atomically: true)
+    }
+    
+    ///*****💗/读取数据
+    func loadData() {
+        ///获取本地数据文件地址
+        let path = self.dataFilePath()
+        ///声明文件管理器
+        let defaultManager = NSFileManager()
+        ///通过文件地址判断数据文件是否存在
+        if defaultManager.fileExistsAtPath(path) {
+            ///读取文件数据
+            let data = NSData(contentsOfFile: path)
+            ///解码器
+            let unarchiver = NSKeyedUnarchiver(forReadingWithData: data!)
+            ///通过归档时设置的关键字Checklist还原lists
+            userList = unarchiver.decodeObjectForKey("userList") as! Array
+            ///结束解码
+            unarchiver.finishDecoding()
+            
+            ////*****💗 模型转数组
+            
+            
+            for var i:Int = 0; i &lt; userList.count; i++ {
+                
+                let pe:UserInfo = userList[i] as UserInfo
+                // print("💗\(pe)")
+                print("\(pe.name)")
+                print("\(pe.phone)")
+            }
+        }
+    }
+    
+    ///获取沙盒文件夹路径
+    func documentsDirectory()-&gt;String {
+        let paths = NSSearchPathForDirectoriesInDomains(
+            NSSearchPathDirectory.DocumentationDirectory,NSSearchPathDomainMask.UserDomainMask,true)
+        let documentsDirectory:String = paths.first!
+        return documentsDirectory
+    }
+    
+    ///获取数据文件地址
+    func dataFilePath ()-&gt;String{
+        return self.documentsDirectory().stringByAppendingString("userList.plist")
+    }
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FA05AB2B-524C-46E2-A23A-49E089B6A5F8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>bbbbbb</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>bbbbbb</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

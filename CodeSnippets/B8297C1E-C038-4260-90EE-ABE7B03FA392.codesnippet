@@ -9,26 +9,25 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    ///  如果要打印对象信息，OC 中的 description，在 swift 中需要遵守协议 DebugPrintable
-    extension HWTextPart: CustomDebugStringConvertible {
-        
-        override var debugDescription: String {
-            
-            let dict = NSString(format: "%@ - %@", self.text!, NSStringFromRange(self.range!))
-            return "\(dict)"
-        }
+	<string>///  如果要打印对象信息，OC 中的 description，在 swift 中需要遵守协议 DebugPrintable
+extension HWTextPart: CustomDebugStringConvertible {
+    
+    override var debugDescription: String {
+        ///*****✅对象转字典
+        let dict = self.dictionaryWithValuesForKeys(["access_token", "expiresDate", "uid"])
+        let dict = NSString(format: "%@ - %@", self.text!, NSStringFromRange(self.range!))
+        return "\(dict)"
     }
+}
 
 
-    override var description: String {
-        
-        let dict = NSString(format: "%@-%@", self.name!, self.pricew!)
-     
-        
-        return "\r\n\(dict)"
-    }
-
-</string>
+override var description: String {
+    
+    let dict = NSString(format: "%@-%@", self.name!, self.pricew!)
+    
+    
+    return "\r\n\(dict)"
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B8297C1E-C038-4260-90EE-ABE7B03FA392</string>
 	<key>IDECodeSnippetLanguage</key>

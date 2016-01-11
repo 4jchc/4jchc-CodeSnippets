@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jBaoCunMoXing2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class DataModel: NSObject {
+    
+    var userList = [UserInfo]()
+    
+    override init(){
+        super.init()
+        print("数据文件路径：\(dataFilePath())")
+    }
+    
+    ///*****💗/保存数据
+    func saveData() {
+        let data = NSMutableData()
+        ///申明一个归档处理对象
+        let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
+        ///将lists以对应Checklist关键字进行编码
+        archiver.encodeObject(userList, forKey: "userList")
+        ///编码结束
+        archiver.finishEncoding()
+        ///数据写入
+        data.writeToFile(dataFilePath(), atomically: true)
+    }
+    
+    ///*****💗/读取数据
+    func loadData() {
+        ///获取本地数据文件地址
+        let path = self.dataFilePath()
+        ///声明文件管理器
+        let defaultManager = NSFileManager()
+        ///通过文件地址判断数据文件是否存在
+        if defaultManager.fileExistsAtPath(path) {
+            ///读取文件数据
+            let data = NSData(contentsOfFile: path)
+            ///解码器
+            let unarchiver = NSKeyedUnarchiver(forReadingWithData: data!)
+            ///通过归档时设置的关键字Checklist还原lists
+            userList = unarchiver.decodeObjectForKey("userList") as! Array
+            ///结束解码
+            unarchiver.finishDecoding()
+            
+            ////*****💗 模型转数组
+            
+            
+            for var i:Int = 0; i &lt; userList.count; i++ {
+                
+                let pe:UserInfo = userList[i] as UserInfo
+                // print("💗\(pe)")
+                print("\(pe.name)")
+                print("\(pe.phone)")
+            }
+        }
+    }
+    
+    
+    
+    ///获取数据文件地址
+    func dataFilePath ()-&gt;String{
+        ///获取沙盒文件夹路径
+        let paths = NSSearchPathForDirectoriesInDomains(
+            NSSearchPathDirectory.DocumentationDirectory,NSSearchPathDomainMask.UserDomainMask,true)
+        let documentsDirectory:String = paths.first!
+        return documentsDirectory.stringByAppendingString("userList.plist")
+    }
+}
+
+
+
+//--------------------------------------------------
+///*****💗要保存的本地的地址
+func getFilePath() -&gt; NSString{
+    ///*****✅地址
+    let docPath:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+    ///*****✅拼接文件路径
+    let filePath:NSString = docPath.stringByAppendingPathComponent("&lt;#数组名字#&gt;.data")
+    return filePath
+}
+
+////*****💗/数组归档保存到本地
+func saveToBenDi(){
+    ///*****✅保存文件
+    NSKeyedArchiver.archiveRootObject(self.&lt;#数组名字#&gt;, toFile: getFilePath() as String)
+}
+
+///*****💗/读取本地数据
+func redBenDi(){
+    ///*****✅获取文件----数组名
+    &lt;#数组名字#&gt; = NSKeyedUnarchiver.unarchiveObjectWithFile(getFilePath() as String) as! Array
+    
+}
+
+
+//--------------方法2
+    ///*****💗/读取数据
+    func red(){
+        
+        ///*****✅地址
+        let docPath:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        ///*****✅拼接文件路径
+        let filePath:NSString = docPath.stringByAppendingPathComponent("person.data")
+        ///*****✅获取文件
+        
+        let p:HMPerson = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath as String) as! HMPerson
+        
+        
+        print("\(p.age)")
+        print("\(p.hight)")
+    }
+    
+    ///*****💗/保存数据
+    func save(){
+        
+        ///*****✅地址
+        let docPath:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        ///*****✅ 拼接文件路径
+        let filePath:NSString = docPath.stringByAppendingPathComponent("person.data")
+        ///*****✅保存文件
+        NSKeyedArchiver.archiveRootObject(d, toFile: filePath as String)
+        
+        
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A268B8C0-B0FC-40BA-9993-DC4D7C97D94A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>保存数组模型到本地-2 保存-文件形式</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>保存数组模型到本地-2 保存-文件形式</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
