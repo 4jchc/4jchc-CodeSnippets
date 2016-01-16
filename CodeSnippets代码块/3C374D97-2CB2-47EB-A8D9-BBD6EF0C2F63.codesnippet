@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGuiDang1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+//MARK: - 第一步模型类
+class HMPerson: NSObject {
+
+    var age:Int = 0
+    var hight:Float = 0
+    
+    init(age:Int,hight:Float) {
+       super.init()
+        self.age = age
+        self.hight = hight
+        
+    }
+    
+    ////*****✅/ 在对象归档的时候调用
+    // 哪些属性需要归档
+    // 这些属性怎么归档
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        var count:UInt32 = 0
+        let ivars:UnsafeMutablePointer&lt;Ivar&gt; = class_copyIvarList(HMPerson.classForCoder(), &amp;count);
+        for var i:Int = 0; i &lt; Int(count) ; i++ {
+            
+            // 取出i位置对应的成员变量
+            let ivar:Ivar = ivars[i];
+            
+            // 查看成员变量
+            let name:UnsafePointer&lt;Int8&gt; = ivar_getName(ivar)
+  
+            // 归档
+            let key:NSString = NSString(UTF8String: name)!
+            let value:AnyObject = self.valueForKey(key as String)!
+            aCoder.encodeObject(value, forKey: key as String)
+        }
+        
+        free(ivars)
+    }
+    
+    ////*****✅/ 在对象解档的时候调用
+    // 哪些属性需要解档
+    // 这些属性怎么解档
+    required init?(coder aDecoder: NSCoder) {
+
+        super.init()
+        var count:UInt32 = 0
+        let ivars:UnsafeMutablePointer&lt;Ivar&gt; = class_copyIvarList(self.dynamicType, &amp;count);
+        for var i:Int = 0; i &lt; Int(count) ; i++ {
+            
+            // 取出i位置对应的成员变量
+            let ivar:Ivar = ivars[i];
+            
+            // 查看成员变量
+            let name:UnsafePointer&lt;Int8&gt; = ivar_getName(ivar)
+            
+            // 解档
+            let key:NSString = NSString(UTF8String: name)!
+            let value:AnyObject = aDecoder.decodeObjectForKey(key as String)!
+            
+            self.setValue(value, forKey: key as String)
+        }
+        
+        free(ivars)
+    }
+
+}
+
+
+//MARK: - 第二步保存读取数据类
+class DataMode: NSObject {
+    
+    let per:HMPerson = HMPerson.self.init(age:30,hight:23.3)
+    
+    let d :HMPerson = HMPerson.self.init(age:44,hight:288.3)
+    
+    override init() {
+        
+    }
+    ///*****💗/读取数据
+    func red(){
+        
+        ///*****✅地址
+        let docPath:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        ///*****✅拼接文件路径
+        let filePath:NSString = docPath.stringByAppendingPathComponent("person.data")
+        ///*****✅获取文件
+        
+        let p:HMPerson = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath as String) as! HMPerson
+        
+        
+        print("\(p.age)")
+        print("\(p.hight)")
+    }
+    
+    ///*****💗/保存数据
+    func save(){
+        
+        ///*****✅地址
+        let docPath:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        ///*****✅ 拼接文件路径
+        let filePath:NSString = docPath.stringByAppendingPathComponent("person.data")
+        ///*****✅保存文件
+        NSKeyedArchiver.archiveRootObject(d, toFile: filePath as String)
+        
+        
+    }
+    
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3C374D97-2CB2-47EB-A8D9-BBD6EF0C2F63</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>归档解档保存读取-案例1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>归档解档保存读取-案例1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

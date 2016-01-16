@@ -3,24 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jweakself</string>
+	<string>4jInt</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-        weak var weakSelf = self
-        
-        weakSelf?.&lt;#_monsters.removeObject(monster)#&gt;</string>
+	<string>Int(&lt;#int#&gt;)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>601DEC50-5783-44CA-8971-71AEE9423ECE</string>
+	<string>547932E6-983B-4E47-B01E-4FC4CE9E6A8E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>self的弱引用</string>
+	<string>int转换</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>weakself</string>
+	<string>int转换</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

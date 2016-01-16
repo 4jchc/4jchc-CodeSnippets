@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGCD4NSBlockOperation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func blockOperation1(){
+        let operation :NSBlockOperation = NSBlockOperation()
+        operation.cancel()
+        operation.addExecutionBlock { () -&gt; Void in
+            NSLog("---下载图片----1---%@", NSThread.currentThread())
+        }
+        operation.addExecutionBlock { () -&gt; Void in
+            NSLog("---下载图片----2---%@", NSThread.currentThread())
+        }
+        ////*****✅/ 任务数量 &gt; 1，才会开始异步执行
+        operation.start()
+        
+        
+    }
+    func blockOperationQueue(){
+        
+        
+        let operation :NSBlockOperation = NSBlockOperation { () -&gt; Void in
+            NSLog("---下载图片----22---%@", NSThread.currentThread())
+            
+        }
+        operation.addExecutionBlock { () -&gt; Void in
+            NSLog("---下载图片----33---%@", NSThread.currentThread())
+        }
+        let operation1 :NSBlockOperation = NSBlockOperation { () -&gt; Void in
+            NSLog("---下载图片----22---%@", NSThread.currentThread())
+            
+        }
+        /// 1.创建一个队列（非主队列）
+        let queue:NSOperationQueue = NSOperationQueue()
+        /// 主队列
+        //let queue:NSOperationQueue = NSOperationQueue.mainQueue()
+        // 2.设置最大并发(最多同时并发执行3个任务)
+        queue.maxConcurrentOperationCount = 3
+        
+        /// 2.添加操作到队列中（自动异步执行）
+        queue.addOperation(operation)
+        queue.addOperation(operation1)
+        /// 设置依赖
+        operation.addDependency(operation1)
+        queue.addOperationWithBlock { () -&gt; Void in
+            NSLog("---下载图片----11---%@", NSThread.currentThread())
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>282EED05-153F-4206-BA26-F40F58157EE8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD4-NSBlockOperation面向对象的线程技术</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD4-NSBlockOperation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

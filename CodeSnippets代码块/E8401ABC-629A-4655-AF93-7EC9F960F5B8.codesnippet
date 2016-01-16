@@ -3,21 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jwweakself</string>
+	<string>4jxingzeng</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>weakSelf?</string>
+	<string>//MARK: - 新增&lt;#2#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B69056A6-09C3-4917-A6DE-1B5E7DC2F86E</string>
+	<string>E8401ABC-629A-4655-AF93-7EC9F960F5B8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>weakself?</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>weakself</string>
+	<string>新增</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

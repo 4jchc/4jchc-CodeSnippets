@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGCD3</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: - async -- 主队列(很常用)
+    
+    func asyncMainQueue(){
+        // 1.主队列(添加到主队列中的任务，都会自动放到主线程中去执行)
+        let queue:dispatch_queue_t = dispatch_get_main_queue()
+        
+        
+        // 2.添加 任务 到主队列中 异步 执行
+        dispatch_async(queue) { () -&gt; Void in
+            NSLog("-----下载图片1---%@", NSThread.currentThread())
+        }
+        dispatch_async(queue) { () -&gt; Void in
+            NSLog("-----下载图片2---%@", NSThread.currentThread())
+        }
+
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>76338A86-D635-4C87-A5E6-4FE2F14F88C9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD3-主队列(很常用)会自动放到主线程中去执行</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD3-主队列(很常用)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

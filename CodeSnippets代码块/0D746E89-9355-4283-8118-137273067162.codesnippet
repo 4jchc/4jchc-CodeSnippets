@@ -3,39 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDescription2</string>
+	<string>4jDescription</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override var description: String {
-    
-    let dict = NSString(format: "%@-%@", self.name!, self.pricew!)
-    
-    
-    return "\r\n\(dict)"
-}
+	<string>    override var description: String {
+        return descriptionWithPropertyList
+    }
 
+}
+///*****✅/  extension 是一个分类，分类不允许有存储能力
 ///  如果要打印对象信息，OC 中的 description，在 swift 中需要遵守协议 DebugPrintable
-extension HWTextPart: CustomDebugStringConvertible {
+extension HMPerson: CustomDebugStringConvertible{
     
     override var debugDescription: String {
         ///*****✅对象转字典
-        let dict = self.dictionaryWithValuesForKeys(["access_token", "expiresDate", "uid"])
-        let dict = NSString(format: "%@ - %@", self.text!, NSStringFromRange(self.range!))
-        return "\(dict)"
+       // let dict = self.dictionaryWithValuesForKeys(["access_token", "expiresDate", "uid"])
+        
+        return descriptionWithPropertyList
     }
 }
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B8297C1E-C038-4260-90EE-ABE7B03FA392</string>
+	<string>0D746E89-9355-4283-8118-137273067162</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>遍历打印</string>
+	<string>打印</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>description2</string>
+	<string>打印</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

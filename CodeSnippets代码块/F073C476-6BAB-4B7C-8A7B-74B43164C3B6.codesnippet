@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGCD1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: - async -- 并发队列（最常用）
+    // 会不会创建线程：会，一般同时开多条
+    // 任务的执行方式：并发执行
+    
+    func asyncGlobalQueue(){
+        
+        /// 获得全局的并发队列
+        
+        let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        
+        /// 将 任务 添加 全局队列 中去 异步 执行
+        dispatch_async(queue) { () -&gt; Void in
+            NSLog("-----下载图片1---%@", NSThread.currentThread())
+        }
+        dispatch_async(queue) { () -&gt; Void in
+            NSLog("-----下载图片4---%@", NSThread.currentThread())
+        }
+        dispatch_async(queue) { () -&gt; Void in
+            //处理耗时操作的代码块...
+            print("do work")
+            let url:NSURL = NSURL(string: "http://hangge.com/blog/images/logo.png")!
+            
+            
+            let data:NSData? = NSData(contentsOfURL: url)!
+            print("do work")
+            let image:UIImage = UIImage(data: data!)!
+            
+            print("do work")
+            
+            //操作完成，调用主线程来刷新界面
+            dispatch_async(dispatch_get_main_queue(), { () -&gt; Void in
+                
+                self.button.setImage(image, forState: UIControlState.Normal)
+                self.newImageView.image = image
+                print("*****\(image)")
+                
+                print("main refresh")
+            })
+        }
+        
+    
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F073C476-6BAB-4B7C-8A7B-74B43164C3B6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>GCD1-并发队列一般同时开多条并发执行</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD1-并发队列（最常用）</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

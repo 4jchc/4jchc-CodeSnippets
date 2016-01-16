@@ -3,24 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jweakself</string>
+	<string>4jXYWH</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-        weak var weakSelf = self
-        
-        weakSelf?.&lt;#_monsters.removeObject(monster)#&gt;</string>
+	<string>       let x:CGFloat = &lt;#locations.last#&gt;
+    let y:CGFloat = &lt;#locations.last#&gt;
+    let &lt;#w#&gt;:CGFloat = &lt;#locations.last#&gt;
+    let &lt;#h#&gt;:CGFloat =&lt;#locations.last#&gt;
+    
+    var &lt;#w#&gt;:CGFloat = &lt;#locations.last#&gt;
+    var &lt;#h#&gt;:CGFloat =&lt;#locations.last#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>601DEC50-5783-44CA-8971-71AEE9423ECE</string>
+	<string>18A9FCDB-194C-402B-B67C-568F086D532E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>self的弱引用</string>
+	<string>X-Y-W-H</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>weakself</string>
+	<string>X-Y-W-H</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

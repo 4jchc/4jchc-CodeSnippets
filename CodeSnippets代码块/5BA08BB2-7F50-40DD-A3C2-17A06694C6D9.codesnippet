@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jKVO1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class MyObjectToObserve: NSObject {
+    dynamic var myDate = NSDate()
+    func updateDate() {
+        myDate = NSDate()
+    }
+}
+
+private var myContext = 0
+
+class MyObserver: NSObject {
+    var objectToObserve = MyObjectToObserve()
+    override init() {
+        super.init()
+        objectToObserve.addObserver(self, forKeyPath: "myDate", options: .New, context: &amp;myContext)
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer&lt;Void&gt;) {
+        if context == &amp;myContext {
+            if let newValue = change?[NSKeyValueChangeNewKey] {
+                print("Date changed: \(newValue)")
+            }
+        } else {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        }
+    }
+    
+    deinit {
+        objectToObserve.removeObserver(self, forKeyPath: "myDate", context: &amp;myContext)
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5BA08BB2-7F50-40DD-A3C2-17A06694C6D9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>KVO案例1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>KVO案例1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
