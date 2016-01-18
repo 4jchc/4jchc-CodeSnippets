@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mmfeng</string>
+	<string>4jLetCGFloat</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#mark - &lt;#3#&gt;</string>
+	<string>let &lt;#h#&gt;:CGFloat = &lt;#locations.last#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6DEA0E34-DC43-48DA-AF39-E9BD5CEA378D</string>
+	<string>152EBBBA-E729-4651-83AD-17240DB3645B</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释oc</string>
+	<string>letCGFloat</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释oc</string>
+	<string>letCGFloat</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

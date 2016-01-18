@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jMMF</string>
+	<string>4jDouble</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//MARK: - &lt;#照片浏览的 cell#&gt;
-///  &lt;#照片浏览的 cell#&gt;</string>
+	<string>Double(&lt;#distance#&gt;)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>74D4AFC0-3D0E-483E-87CA-F777F5AFF8AF</string>
+	<string>05943D70-B825-44E2-82F0-384CBBC2907D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Mark和Func类名-注释</string>
+	<string>Double</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Mark和Func类名-注释</string>
+	<string>Double</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
