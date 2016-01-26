@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jMMxin</string>
+	<string>lazyVar</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//MARK: 💗-&lt;#8888#&gt;</string>
+	<string>lazy var &lt;#panda#&gt; = &lt;#panda#&gt;()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C2D0C450-ECF5-455A-BC8B-373288E08E9E</string>
+	<string>92CD6C2C-2CD7-426A-AE3E-5F1147D4447D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释</string>
+	<string>lazy var</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>mark-❤️</string>
+	<string>lazy var</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

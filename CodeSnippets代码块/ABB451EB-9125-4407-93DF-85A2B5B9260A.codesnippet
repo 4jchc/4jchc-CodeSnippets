@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4SPhysicsBody</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 碰撞体
+        self.physicsBody = SKPhysicsBody(rectangleOfSize:&lt;#texture.size()#&gt;)
+        // 重力不响应响应物理效果
+        self.physicsBody!.dynamic = &lt;#false#&gt;
+        // 不旋转
+        self.physicsBody!.allowsRotation = &lt;#false#&gt;
+        // 摩擦力弹性0
+        self.physicsBody!.restitution = &lt;#0#&gt;
+        // 类别掩码(CategoryBitmask)
+        self.physicsBody!.categoryBitMask = &lt;#BitMaskType.panda#&gt;
+        // 接触掩码（ContactTestBitmask）
+        self.physicsBody!.contactTestBitMask = &lt;#BitMaskType.panda#&gt; | &lt;#BitMaskType.panda#&gt;
+        // 碰撞掩码(CollisionBitmask)
+        self.physicsBody!.collisionBitMask = &lt;#BitMaskType.panda#&gt;
+
+
+
+    
+    func didBeginContact(contact: SKPhysicsContact!) {
+        
+        // 熊猫和台子碰撞
+        if (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask) == (BitMaskType.platform | BitMaskType.panda){
+            panda.run()
+            
+        }
+        
+        // 熊猫和场景碰撞
+        if (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask) == ( BitMaskType.scene | BitMaskType.panda ){
+            println("游戏结束！")
+        }
+    }
+
+// 位掩码(BitMask)
+class BitMaskType {
+    
+    class var &lt;#panda#&gt;:UInt32{
+        return 1&lt;&lt;0
+    }
+    class var &lt;#panda#&gt;:UInt32{
+        return 1&lt;&lt;1
+    }
+    class var &lt;#panda#&gt;:UInt32{
+        return 1&lt;&lt;2
+    }
+    class var &lt;#panda#&gt;:UInt32{
+        return 1&lt;&lt;3
+    }
+}
+        </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ABB451EB-9125-4407-93DF-85A2B5B9260A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>碰撞检测</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SpriteKit-碰撞检测</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

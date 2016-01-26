@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4SSKLabelNode</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>         
+        var beginGame:SKLabelNode = SKLabelNode(fontNamed: "&lt;#Chalkduster#&gt;")
+        beginGame.text = "&lt;#Chalkduster#&gt;"
+        beginGame.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        beginGame.fontSize = &lt;#Chalkduster#&gt;
+        beginGame.fontColor = SKColor.&lt;#Chalkduster#&gt;
+        beginGame.position = CGPointMake(self.size.width/&lt;#2#&gt;, self.size.height/&lt;#2#&gt;-&lt;#2#&gt;)
+        beginGame.name = "&lt;#Chalkduster#&gt;"
+        beginGame.zPosition = 4
+        self.addChild(beginGame)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>752BDD29-A25B-46AE-863E-7F2D3ED33123</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>SKLabelNode</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SpriteKit-SKLabelNode</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

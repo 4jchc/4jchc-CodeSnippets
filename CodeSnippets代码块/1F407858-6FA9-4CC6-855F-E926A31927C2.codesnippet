@@ -9,8 +9,14 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/// 1.定义闭包
-var &lt;#闭包名称#&gt;: ((&lt;#参数#&gt;:&lt;#Int#&gt;) -&gt; Void)?</string>
+	<string>
+    //A1.声明闭包
+    //A2.加入Func
+    //B1.调用Func
+
+/// 1.定义闭包
+var &lt;#闭包名称#&gt;: ((&lt;#参数#&gt;:&lt;#Int#&gt;) -&gt; Void)?
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1F407858-6FA9-4CC6-855F-E926A31927C2</string>
 	<key>IDECodeSnippetLanguage</key>

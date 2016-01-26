@@ -9,7 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///*****✅1.1定义代理协议
+	<string>//A定义代理.遵守协议.实现方法
+//B继承代理,调用方法,传值
+///*****✅1.1定义代理协议
 protocol &lt;#代理名字#&gt;Delegate:NSObjectProtocol{
 
 

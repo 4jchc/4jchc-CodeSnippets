@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jMMxin</string>
+	<string>4jDaKuoHao</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//MARK: 💗-&lt;#8888#&gt;</string>
+	<string>【&lt;#01闭包-通知-代理#&gt;】</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C2D0C450-ECF5-455A-BC8B-373288E08E9E</string>
+	<string>32A7D1DB-5A39-4840-B988-E88B69B60021</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释</string>
+	<string>大括号</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>mark-❤️</string>
+	<string>大括号</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4SMove</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /// 移动--遍历数组然后移动平台位置
+    func move(speed:CGFloat){
+        // 遍历数组
+        for p in  platformsArray{
+            //x坐标的变化产生水平移动的动画
+            p.position.x -= speed
+        }
+        // 移除平台
+        if platformsArray.count &gt; 0{
+            
+            if  platformsArray[0].position.x &lt; -platformsArray[0].width {
+                platformsArray[0].removeFromParent()
+                platformsArray.removeAtIndex(0)
+            }
+        }
+
+    }
+
+
+    /// 重置方法
+    func reSet(){
+        // 移除-动画-视图-清空数组
+        self.removeAllActions()
+        // 清除所有子对象
+        self.removeAllChildren()
+        // 清空平台数组
+        platformsArray.removeAll(keepCapacity: false)//保存容量
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F9929955-2960-475D-BFAA-1ABB728BAF66</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>移动sknode节点重置方法</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SpriteKit-Move+ReSet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

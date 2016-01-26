@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jTouchesBegan</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func touchesBegan(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+       /* Called when a touch begins */
+        
+        for touch in touches {
+            let location = touch.locationInNode(self)
+ 
+            _emitter.position = location
+
+        }
+        
+    }
+    override func touchesMoved(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            
+            _emitter.position = location
+            
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E1387DED-C043-4F9B-A9CC-DC41EB5C91EC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>touchesBegan</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>touchesBegan</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4SSKAction</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            //获取文本节点
+            let labelNode = self.childNodeWithName("label")
+            //向上移动的动作
+            let moveUp = SKAction.moveByX(0, y: 100, duration: 0.5)
+            //放大动作
+            let zoom = SKAction.scaleTo(2.0, duration: 0.25)
+            //暂停的动作
+            let pause = SKAction.waitForDuration(0.5)
+            //淡出的动作
+            let fadeAway = SKAction.fadeOutWithDuration(0.25)
+            //从父对象移除的动作
+            let remove = SKAction.removeFromParent()
+            //动作序列
+            let moveSequence = SKAction.sequence([moveUp,zoom,pause,fadeAway,remove])
+            //文本节点执行动作序列
+            labelNode?.runAction(moveSequence)
+
+//***********
+    //起跳特效
+    var jumpEffect = SKSpriteNode()
+        //先将特效取消隐藏
+        jumpEffect.hidden = false
+        //利用action播放特效
+        let action = SKAction.animateWithTextures( &lt;#jumpEffectFrames#&gt;, timePerFrame: 0.05)
+        //执行闭包，再次隐藏特效
+        let removeAction = SKAction.runBlock({() in
+            self.jumpEffect.hidden = true
+        })
+        //组成序列Action进行执行(先显示，后隐藏)
+        jumpEffect.runAction(SKAction.sequence([action,removeAction]))
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D9476DCC-95F5-480C-9329-99E847B3AD16</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>SKAction</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SpriteKit-SKAction</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

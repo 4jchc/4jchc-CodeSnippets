@@ -3,21 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jMMxin</string>
+	<string>4jPlayMusic</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//MARK: 💗-&lt;#8888#&gt;</string>
+	<string>        // 获取apple.mp3文件地址
+        let bgMusicURL:NSURL =  NSBundle.mainBundle().URLForResource("&lt;#apple#&gt;", withExtension: "&lt;#mp3#&gt;")!
+        // 根据背景音乐地址生成播放器
+        bgMusicPlayer = try! AVAudioPlayer(contentsOfURL: bgMusicURL)
+        // 设置为循环播放
+        bgMusicPlayer.numberOfLoops = -1
+        // 准备播放音乐
+        bgMusicPlayer.prepareToPlay()
+        // 播放音乐
+        bgMusicPlayer.play()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C2D0C450-ECF5-455A-BC8B-373288E08E9E</string>
+	<string>0A8DF85A-F149-4212-89B7-95FC7D78A749</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>注释</string>
+	<string>MusicPlayer.</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>mark-❤️</string>
+	<string>播放音乐</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

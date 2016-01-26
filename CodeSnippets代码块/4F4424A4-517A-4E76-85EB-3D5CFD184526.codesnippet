@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jBiBaoAnLi2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //A1.声明闭包
+    //A2.加入Func
+    //B1.调用Func
+    typealias AssetLoadCompletionHandler = () -&gt; Void
+    
+    /**
+     *  加载场景需要使用的素材
+     *
+     *  @param callback 回调方法
+     */
+     //MARK: - 加载场景需要使用的素材
+    static func loadSceneAssetsWithCompletionHandler(callback:AssetLoadCompletionHandler?){
+        
+        
+        let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let weakSelf = self
+        dispatch_async(queue) { () -&gt; Void in
+            
+            //处理耗时操作的代码块...
+            weakSelf.loadSceneAssets()
+            if callback != nil{
+                //因为回调函数涉及到实例化场景以及展现，因此需要在主线程执行
+                dispatch_async(dispatch_get_main_queue(), { () -&gt; Void in
+                    NSLog("实例化场景2： %@", NSThread.currentThread());
+                    callback!();
+                })
+            }
+        }
+    }
+    
+    //B1.调用Func</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4F4424A4-517A-4E76-85EB-3D5CFD184526</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>A1.声明闭包 A2.加入Func B1.调用Func</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>闭包案例2</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
