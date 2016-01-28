@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jDongHua360°</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // MARK: - 内部控制方法创建动画
+    private func startAnimation(){
+        // 1.创建动画
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        // 2.设置动画属性
+        anim.toValue = 2 * M_PI
+        anim.duration = 20
+        anim.repeatCount = MAXFLOAT
+        
+        // 该属性默认为YES, 代表动画只要执行完毕就移除
+        anim.removedOnCompletion = false
+        // 3.将动画添加到图层上
+        &lt;#iconView#&gt;.layer.addAnimation(anim, forKey: nil)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5C807518-A9AB-4AF2-9CAA-8CD1F8B37AB6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>360°旋转</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CABasicAnimation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jZhuXianChenDelay</string>
+	<string>4jDelayFunc</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -16,7 +16,7 @@
 func delay(delta: Double, callFunc: ()-&gt;()) {
     
     dispatch_after(
-        dispatch_time(DISPATCH_TIME_NOW, Int64(delta * Double(NSEC_PER_SEC))),
+        dispatch_time(DISPATCH_TIME_NOW, &lt;#1#&gt; * Int64(NSEC_PER_SEC)),
         dispatch_get_main_queue()) {
             
             callFunc()

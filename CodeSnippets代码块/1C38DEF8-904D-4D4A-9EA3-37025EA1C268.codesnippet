@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITabBarController-案例</string>
+	<string>4jUITabBarController-UIStoryboard版案例</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -88,9 +88,9 @@ class MainTabBarController: UITabBarController {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITabBarController-案例</string>
+	<string>UIStoryboard版案例</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITabBarController-案例</string>
+	<string>UITabBarController</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ljzkebianshuzhu</string>
+	<string>4jLaZyNSMutableArray</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -11,9 +11,9 @@
 	<key>IDECodeSnippetContents</key>
 	<string>    lazy var &lt;#name#&gt;:NSMutableArray = {
         
-        var New&lt;#name#&gt; = NSMutableArray()
+        var New = NSMutableArray()
         
-        return New&lt;#name#&gt;
+        return New
     }()</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0129D493-9D68-4741-BEB7-2F126709FE7E</string>

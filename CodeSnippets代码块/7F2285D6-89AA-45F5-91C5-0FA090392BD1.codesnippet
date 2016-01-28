@@ -9,36 +9,28 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//A定义代理.遵守协议.实现方法
+	<string>//A定义代理.保存代理对象的方法
 //B继承代理,调用方法,传值
-///*****✅1.1定义代理协议
+
+//A.1定义代理协议
 protocol &lt;#代理名字#&gt;Delegate:NSObjectProtocol{
-
-
-    func &lt;#代理名字#&gt;(&lt;#参数#&gt;:&lt;#类型#&gt;, &lt;#参数#&gt; &lt;#参数#&gt;:&lt;#类型#&gt;)
-
-
-
-}
-///*****✅1.2初始化代理协议
-weak var delegate:&lt;#代理名字#&gt;Delegate!
-
-
-////*****✅1.3判断代理并通知代理
-if delegate != nil {
     
-    delegate.&lt;#方法#&gt;
+    func &lt;#代理名字#&gt;(&lt;#参数#&gt;:&lt;#类型#&gt;, &lt;#参数#&gt; &lt;#参数#&gt;:&lt;#类型#&gt;)
+    
 }
-///*****✅2.1通知代理
+//A.2初始化代理协议一定要加上weak, 避免循环引用
+weak var delegate:&lt;#代理名字#&gt;Delegate?
+
+//A.3保存代理对象的方法
+    delegate?.&lt;#方法#&gt;
+
+//B.1通知代理
 &lt;#代理名字#&gt;.delegate = self
 
-
-
-///*****✅2.2代理实现
+//B.2继承协议实现方法
 func &lt;#代理名字#&gt; {
     &lt;#实现方法#&gt;
-}
-</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>7F2285D6-89AA-45F5-91C5-0FA090392BD1</string>
 	<key>IDECodeSnippetLanguage</key>

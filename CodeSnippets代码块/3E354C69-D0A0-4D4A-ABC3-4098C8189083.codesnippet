@@ -3,21 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jMdailifangfa</string>
+	<string>4jChunDMRootViewController</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: - &lt;#SWCollectionViewControllerDelegate#&gt; 代理事件</string>
+	<string>        // 1.创建window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        // 2.创建根控制器
+        window?.rootViewController = &lt;#MainViewController#&gt;()
+        window?.makeKeyAndVisible()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4578C48D-8A5E-4391-BE55-E095F53B0CD8</string>
+	<string>3E354C69-D0A0-4D4A-ABC3-4098C8189083</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>代理方法</string>
+	<string>纯代码创建根控制器</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>注释代理方法</string>
+	<string>纯代码创建根控制器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

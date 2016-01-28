@@ -3,24 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>cx</string>
+	<string>4jNSTimer</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>center.x</string>
+	<string>        //定时器
+        var timer = NSTimer()
+        
+        //启动的定时器
+        timer = NSTimer.scheduledTimerWithTimeInterval( &lt;#0.2#&gt;, target: self, selector: "&lt;#createApple#&gt;", userInfo: nil, repeats: &lt;#true#&gt;)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>901E5989-4900-4A0E-96C7-D98B55543878</string>
+	<string>2AD9259E-2CC4-477D-99DD-508EA2568089</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>中心点的x</string>
+	<string>定时器</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>中心点的x</string>
+	<string>定时器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

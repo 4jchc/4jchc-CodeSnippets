@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jJsonJieXi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 1.获取json文件的路径
+        let path = NSBundle.mainBundle().pathForResource("&lt;#MainVCSettings#&gt;.json", ofType: nil)
+        // 2.通过文件路径创建NSData
+        if let jsonPath = path{
+            let jsonData = NSData(contentsOfFile: jsonPath)
+            
+            do{
+                // 有可能发生异常的代码放到这里
+                // 3.序列化json数据 --&gt; Array
+                // try : 发生异常会跳到catch中继续执行
+                // try! : 发生异常程序直接崩溃
+                let dictArr = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)
+                //                print(dictArr)
+                // 4.遍历数组, 动态创建控制器和设置数据
+                // 在Swift中, 如果需要遍历一个数组, 必须明确数据的类型
+                for dict in dictArr as! [[String: String]]
+                {
+                    &lt;#遍历数组#&gt;
+    
+                }
+                
+            }catch
+            {
+                // 发生异常之后会执行的代码
+                print(error)
+
+            }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B5AE34F4-B6A7-49F0-9E5C-214411A0DBA0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>遍历字典do-catch使用</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Json解析遍历字典do-catch使用</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -3,21 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>cy</string>
+	<string>4jDoCatch</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>center.y</string>
+	<string>        do{
+            // try : 发生异常会跳到catch中继续执行
+            // try! : 发生异常程序直接崩溃
+            &lt;# 有可能发生异常的代码放到这里#&gt;
+            
+        }catch{
+            
+            &lt;# 发生异常之后会执行的代码#&gt;
+            &lt;#print(error)#&gt;
+            
+        }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E9EAD1F3-8201-4563-B0E2-F459FCC9709D</string>
+	<string>C9CA9B9C-7857-4DA7-B289-22D5D4D85322</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>中心点的y</string>
+	<string>捕获异常处理</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>中心点的y</string>
+	<string>Do-Catch捕获异常处理</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

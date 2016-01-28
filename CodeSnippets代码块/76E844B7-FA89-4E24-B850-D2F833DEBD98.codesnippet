@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDaKuoHao</string>
+	<string>4jDD</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>【&lt;#01闭包-通知-代理#&gt;】</string>
+	<string>&lt;# &lt;#6#&gt; #</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>32A7D1DB-5A39-4840-B988-E88B69B60021</string>
+	<string>76E844B7-FA89-4E24-B850-D2F833DEBD98</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>大括号</string>
+	<string>段段</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>大括号</string>
+	<string>段段</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jLazyUIButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // MARK: - 懒加载
+    private lazy var &lt;#composeBtn#&gt;:UIButton = {
+        let btn = UIButton()
+        
+        // 2.设置前景图片
+        btn.setImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;_highlighted"), forState: UIControlState.Highlighted)
+        
+        // 3.设置背景图片
+        btn.setBackgroundImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;_highlighted"), forState: UIControlState.Highlighted)
+        
+        // 4.添加监听
+        btn.addTarget(self, action: "&lt;#tabbar_compose_icon_add#&gt;", forControlEvents: UIControlEvents.TouchUpInside)
+        return btn
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>103F000C-D4A0-4F50-84EB-17504CB86727</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>懒加载UIButton的前景和背景图片</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
