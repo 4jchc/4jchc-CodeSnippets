@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jLazyLable</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    private lazy var newStatusLabel: UILabel = {
+        let label = UILabel()
+        let height: CGFloat = 44
+        //        label.frame =  CGRect(x: 0, y: -2 * height, width: UIScreen.mainScreen().bounds.width, height: height)
+        label.frame =  CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: height)
+        
+        label.backgroundColor = UIColor.orangeColor()
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        
+&lt;#self.navigationController?.navigationBar.insertSubview(label, atIndex: 0)#&gt;
+        
+        label.hidden = true
+        return label
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>814DF044-DB79-4AD7-8C19-10816BA63392</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>懒加载Lable</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载Lable</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

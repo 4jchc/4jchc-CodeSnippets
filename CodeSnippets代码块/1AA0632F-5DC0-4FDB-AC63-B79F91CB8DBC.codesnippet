@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jPresent</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 弹出Nav&lt;#登录#&gt;界面
+        let oauthVC = &lt;#OAuthViewController#&gt;()
+        let nav = UINavigationController(rootViewController: oauthVC)
+        presentViewController(nav, animated: true, completion: nil)
+        
+        
+        // 弹出&lt;#登录#&gt;UIStoryboard界面
+        let sb = UIStoryboard(name: "&lt;#QRCodeViewController#&gt;", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        presentViewController(vc!, animated: true, completion: nil)
+        
+        
+        
+        navigationItem.title = "4jchc微博"
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "registerBtnWillClick")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "loginBtnWillClick")
+        
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItemStyle.Plain, target: self, action: "close")
+        func close()
+        {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        
+        @IBAction func closeBtnClick(sender: AnyObject) {
+            
+            dismissViewControllerAnimated(true, completion: nil)
+            
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1AA0632F-5DC0-4FDB-AC63-B79F91CB8DBC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>presentViewController</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>弹出带Nav&amp;StroBD的控制器左右按钮点击消失</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -30,7 +30,7 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>GCD3-主队列(很常用)会自动放到主线程中去执行</string>
+	<string>GCD3-会自动放到主线程中去执行</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>GCD3-主队列(很常用)</string>
 	<key>IDECodeSnippetUserSnippet</key>

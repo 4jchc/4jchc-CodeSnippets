@@ -3,33 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDictLagerVarlue</string>
+	<string>4jPresentNav</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        
-        lazy var maxYDict = [Int: CGFloat]()
-        // 找到最长那一列
-        var maxYColumn = 0
-        for (column, maxY) in maxYDict {
-            if maxY &gt; maxYDict[maxYColumn] {
-                maxYColumn = column
-            }
-        }
-        // 清空每一列的最大Y值
-        for i in 0..&lt;self.columnsCount! {
-            maxYDict[i] = self.sectionInset.top
-        }</string>
+	<string>        let composeVC = &lt;#ComposeViewController#&gt;()
+        let nav = UINavigationController(rootViewController: composeVC)
+        presentViewController(nav, animated: true, completion: nil)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>37419CCA-0FFB-4C1F-8172-61EA28495E67</string>
+	<string>AA966217-66FA-4B14-85EE-12302BDAB6CA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>字典中value最大值</string>
+	<string>presentViewController</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>字典中value最大值</string>
+	<string>presentViewController</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

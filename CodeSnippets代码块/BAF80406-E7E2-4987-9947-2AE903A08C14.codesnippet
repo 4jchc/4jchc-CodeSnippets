@@ -39,9 +39,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>GCD2-串行队列（有时候用）一般只开1条线程</string>
+	<string>GCD2-异步 顺序执行一般只开1条线程</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>GCD2-串行队列（有时候用）</string>
+	<string>GCD2-串行队列（有时候用</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

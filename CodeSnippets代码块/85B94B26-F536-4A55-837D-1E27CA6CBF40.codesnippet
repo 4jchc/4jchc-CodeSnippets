@@ -3,28 +3,50 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jdanli</string>
+	<string>4jdanliAnLi</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//单例
-static let shared&lt;#类名#&gt; = &lt;#类名#&gt;()
-
+	<string>    /*
+    // 在Swift中, 类方法中是不允许定义静态变量的
+    static var once_t: dispatch_once_t = 0
+    static var instance: NetWorkTools?
+    
+    /// 用于获取单粒对象的类方法
+    class func shareNetWorkTools() -&gt; NetWorkTools{
+        
+        dispatch_once(&amp;once_t) { () -&gt; Void in
+            instance = NetWorkTools()
+        }
+        
+        return instance!
+    }
+    */
+    
+    // Swift中的let是线程安全的
+    // 用到时才会创建
+    static let instance: &lt;#类名#&gt; = &lt;#类名#&gt;()
+    
+    class func shared&lt;#类名#&gt;() -&gt; &lt;#类名#&gt; {
+        return instance
+    }
+    //单例
+    static let shared&lt;#类名#&gt; = &lt;#类名#&gt;()
+    
     ////*****✅/ 单例的概念：
     // 1. 内存中有一个唯一的实例
     // 2. 提供唯一的全局访问入口
     // let 是定义常量，而且在 swift 中，let 是线程安全的
     private static let instance = &lt;#类名#&gt;()
-
+    
     /// 定义一个类变量，提供全局的访问入口
     class var shared&lt;#类名#&gt;: &lt;#类名#&gt; {
-        
-        return instance
-        
-    }
-</string>
+    
+    return instance
+    
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>85B94B26-F536-4A55-837D-1E27CA6CBF40</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -32,7 +54,7 @@ static let shared&lt;#类名#&gt; = &lt;#类名#&gt;()
 	<key>IDECodeSnippetSummary</key>
 	<string>单例</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例</string>
+	<string>单例案例</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -36,7 +36,18 @@
                 print(error)
 
             }
-        }</string>
+        }
+
+
+                do{
+                // 验证expires_in不是字符串Serialization
+                let data = try NSJSONSerialization.dataWithJSONObject(JSON!, options: NSJSONWritingOptions.PrettyPrinted)
+                let str =  NSString(data: data, encoding: NSUTF8StringEncoding)
+                print(str)
+                
+                }catch{
+                
+                }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B5AE34F4-B6A7-49F0-9E5C-214411A0DBA0</string>
 	<key>IDECodeSnippetLanguage</key>

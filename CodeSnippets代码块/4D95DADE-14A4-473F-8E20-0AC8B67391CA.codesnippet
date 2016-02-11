@@ -3,32 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>lanjiazacellshitu</string>
+	<string>4jDictToModle</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    var _&lt;#名字#&gt;:&lt;#类型#&gt;!
-    var &lt;#名字#&gt;:&lt;#类型#&gt; {
-        
-        if _&lt;#名字#&gt; == nil {
-            
-            _&lt;#名字#&gt; = &lt;#类型#&gt;.init()
-            
-            self.contentView.addSubview(_&lt;#名字#&gt;)
+	<string>    /// 将字典数组转换为模型数组
+    class func dict2Model(list: [[String: AnyObject]]) -&gt; [Status] {
+        var models = [Status]()
+        for dict in list
+        {
+            models.append(Status(dict: dict))
         }
-        return _&lt;#名字#&gt;
-    }
-</string>
+        return models
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>026F64B2-6062-458E-AFF6-2EE1EC0C0C88</string>
+	<string>4D95DADE-14A4-473F-8E20-0AC8B67391CA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>懒加载</string>
+	<string>字典转模型</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>自定义cell增加视图</string>
+	<string>字典转模型</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

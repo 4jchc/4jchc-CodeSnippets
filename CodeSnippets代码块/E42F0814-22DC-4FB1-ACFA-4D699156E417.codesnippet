@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jLaZyCoverView蒙版</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // MARK: - 懒加载蒙版
+    private lazy var coverView: UIView = {
+        // 1.创建view
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
+        view.frame = UIScreen.mainScreen().bounds
+        
+        // 2.添加监听
+        let tap = UITapGestureRecognizer(target: self, action: "close")
+        view.addGestureRecognizer(tap)
+        return view
+    }()
+    
+    func close(){
+        // presentedViewController拿到当前弹出的控制器
+        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E42F0814-22DC-4FB1-ACFA-4D699156E417</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>懒加载蒙版Cover</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载蒙版Cover</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

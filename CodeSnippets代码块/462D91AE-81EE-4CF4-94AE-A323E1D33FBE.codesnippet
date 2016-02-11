@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUICollectionViewFlowLayout</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class PhotoBrowserLayout : UICollectionViewFlowLayout {
+    
+    override func prepareLayout() {
+        itemSize = UIScreen.mainScreen().bounds.size
+        minimumInteritemSpacing = 0
+        minimumLineSpacing = 0
+        // 滚动Direction方向
+        scrollDirection = UICollectionViewScrollDirection.Horizontal
+        // 显示Horizontal水平滚动Indicator指示器
+        collectionView?.showsHorizontalScrollIndicator = false
+        // 翻页效果
+        collectionView?.pagingEnabled = true
+        // 弹簧效果
+        collectionView?.bounces =  false
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>462D91AE-81EE-4CF4-94AE-A323E1D33FBE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自定义流动布局</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UICollectionViewFlowLayout</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

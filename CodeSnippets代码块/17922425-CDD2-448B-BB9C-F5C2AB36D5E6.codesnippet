@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jScanNer扫描器</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // emoji表情对应的十六进制
+        let code = "0x2600"
+        
+        // 1.从字符串中取出十六进制的数
+        // 创建一个扫描器, 扫描器可以从字符串中提取我们想要的数据
+        let scanner = NSScanner(string: code)
+        
+        // 2.将十六进制转换为字符串
+        var result:UInt32 = 0
+        scanner.scanHexInt(&amp;result)
+    
+        // 3.将十六进制转换为emoji字符串
+        let emojiStr = Character(UnicodeScalar(result))
+        
+        // 3.显示
+        customLabel.text = String(emojiStr)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>17922425-CDD2-448B-BB9C-F5C2AB36D5E6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>scanner扫描器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>scanner扫描器</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

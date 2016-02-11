@@ -3,33 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDictLagerVarlue</string>
+	<string>4jDescription</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        
-        lazy var maxYDict = [Int: CGFloat]()
-        // 找到最长那一列
-        var maxYColumn = 0
-        for (column, maxY) in maxYDict {
-            if maxY &gt; maxYDict[maxYColumn] {
-                maxYColumn = column
-            }
-        }
-        // 清空每一列的最大Y值
-        for i in 0..&lt;self.columnsCount! {
-            maxYDict[i] = self.sectionInset.top
-        }</string>
+	<string>    override var description: String{
+        // 1.定义属性数组
+        let properties = ["&lt;#access_token#&gt;", "&lt;#access_token#&gt;", "&lt;#access_token#&gt;"]
+        // 2.根据属性数组, 将属性转换为字典
+        let dict =  self.dictionaryWithValuesForKeys(properties)
+        //let dict = NSString(format: "%@-%@", self.name!, self.pricew!)
+        // 3.将字典转换为字符串
+        return "\(dict)"
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>37419CCA-0FFB-4C1F-8172-61EA28495E67</string>
+	<string>AF5663CC-8717-4D10-9827-5DBA03AB40C7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>字典中value最大值</string>
+	<string>遍历打印数组字典</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>字典中value最大值</string>
+	<string>Description1</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

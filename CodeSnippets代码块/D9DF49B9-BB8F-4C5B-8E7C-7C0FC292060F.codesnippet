@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jDrawRect</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let viewRect = CGRect(x: 50, y: 50, width: 100, height: 100)
+        let view1 = MyCanvas(frame: viewRect)
+        self.view.addSubview(view1)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+//MARK: - 自定义UIView
+class MyCanvas: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //把背景色设为透明
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func drawRect(rect: CGRect) {
+        let pathRect = CGRectInset(self.bounds, 1, 1)
+        let path = UIBezierPath(roundedRect: pathRect, cornerRadius: 10)
+        path.lineWidth = 3
+        UIColor.greenColor().setFill()
+        // Stroke笔划边框
+        UIColor.blueColor().setStroke()
+        path.fill()
+        path.stroke()
+    }
+}
+class MyCanvas: UIView {
+    override func drawRect(rect: CGRect) {
+        UIColor.greenColor().setFill()
+        let path = UIBezierPath(rect: self.bounds)
+        path.fill()
+    }
+}
+/*
+//MARK: - 下面演示使用UIBezierPath绘制一个不规则图形：
+（1）画笔移动到矩形区域左上角
+（2）从笔的当前位置向右上角的点画一条直线
+（3）从笔的当前位置向左下角的点画一条直线
+（4）从笔的当前位置向右下角画一条曲线，曲线弯曲程度的两个控制点是矩形区域的中点
+（5）从笔的当前位置向左上角的点绘制一条直线，使路径闭合
+*/
+class MyCanvas: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //把背景色设为透明
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func drawRect(rect: CGRect) {
+        let bezierPath = UIBezierPath()
+        
+        //创建一个矩形，它的所有边都内缩5%
+        let drawingRect = CGRectInset(self.bounds,
+            self.bounds.size.width * 0.05,
+            self.bounds.size.height * 0.05)
+        
+        //确定组成绘画的点
+        let topLeft = CGPointMake(CGRectGetMinX(drawingRect),
+            CGRectGetMinY(drawingRect))
+        
+        let topRight = CGPointMake(CGRectGetMaxX(drawingRect),
+            CGRectGetMinY(drawingRect))
+        
+        let bottomRight = CGPointMake(CGRectGetMaxX(drawingRect),
+            CGRectGetMaxY(drawingRect))
+        
+        let bottomLeft = CGPointMake(CGRectGetMinX(drawingRect),
+            CGRectGetMaxY(drawingRect))
+        
+        let center = CGPointMake(CGRectGetMidX(drawingRect),
+            CGRectGetMidY(drawingRect))
+        
+        //开始绘制
+        bezierPath.moveToPoint(topLeft)
+        bezierPath.addLineToPoint(topRight)
+        bezierPath.addLineToPoint(bottomLeft)
+        //Curve曲线
+        bezierPath.addCurveToPoint(bottomRight, controlPoint1: center, controlPoint2: center)
+        
+        //使路径闭合，结束绘制
+        bezierPath.closePath()
+        
+        //设定颜色，并绘制它们
+        UIColor.greenColor().setFill()
+        UIColor.blackColor().setStroke()
+        
+        bezierPath.fill()
+        bezierPath.stroke()
+    }
+    
+    
+}
+
+//MARK: - 下面将圆形子路径和圆角矩形子路径进行合并
+class MyCanvas: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //把背景色设为透明
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func drawRect(rect: CGRect) {
+        //创建一条空Bezier路径作为主路径
+        let bezierPath = UIBezierPath()
+        
+        //为两个组成部分定义矩形
+        let squareRect = CGRectInset(self.bounds,
+            self.bounds.size.width * 0.05,
+            self.bounds.size.height * 0.45)
+        
+        let circleRect = CGRectInset(self.bounds,
+            self.bounds.size.width * 0.3,
+            self.bounds.size.height * 0.3)
+        
+        //创建路径
+        let circlePath = UIBezierPath(ovalInRect: circleRect)
+        let squarePath = UIBezierPath(roundedRect: squareRect, cornerRadius: 20)
+        
+        //将它们添加到主路径
+        squarePath.appendPath(circlePath)
+        bezierPath.appendPath(squarePath)
+        
+        //设定颜色，并绘制它们
+        UIColor.greenColor().setFill()
+        UIColor.blackColor().setStroke()
+        
+        //设定颜色并绘制它们
+        bezierPath.fill()
+        bezierPath.stroke()
+    }
+}
+    /*
+    //MARK: - 阴影是在图形中呈现深度的一种好办法，使用阴影可以让图像更加具有立体感。
+    
+    1，设置阴影的三个要素
+    （1）阴影颜色
+    （2）阴影偏移量
+    （3）阴影模糊程度
+    
+    2，保存和恢复图形上下文
+    （1）使用 CGContextSetShadowWithColor() 方法创建和设置阴影以后，阴影会被应用到绘制的任何东西上，而且会一直持续下去。
+    （2）但如果想要先绘制一个带阴影的对象，然后再绘制一个不带阴影的对象。就需要使用 CGContextSaveGState() 和 CGContextRestoreGState() 来进行保存和恢复图形上下文。（应用阴影前先保存，绘制完毕后恢复上下文设置，再绘制其他图形。）
+    
+    3，下面是使用样例
+    外层的圆角矩形使用阴影，内部再绘制一个没有阴影的小矩形。
+    
+    */
+    
+    class MyCanvas: UIView {
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            //把背景色设为透明
+            self.backgroundColor = UIColor.clearColor()
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        override func drawRect(rect: CGRect) {
+            //获取绘制上下文
+            let context = UIGraphicsGetCurrentContext()
+            
+            //计算要在其中绘制的矩形
+            let pathRect = CGRectInset(self.bounds,
+                self.bounds.size.width * 0.1,
+                self.bounds.size.height * 0.1)
+            
+            //创建一个圆角矩形路径
+            let rectanglePath = UIBezierPath(roundedRect: pathRect, cornerRadius: 20)
+            
+            //保存绘制设置
+            CGContextSaveGState(context)
+            
+            //准备阴影
+            let shadowColor = UIColor.blackColor().CGColor
+            let shadowOffet = CGSize(width: 3, height: 3)
+            let shadowBlurRadius:CGFloat = 5.0
+            
+            //创建和应用阴影
+            CGContextSetShadowWithColor(context, shadowOffet, shadowBlurRadius, shadowColor)
+            
+            //绘制带有阴影的路径
+            UIColor.blueColor().setFill()
+            rectanglePath.fill()
+            
+            //还原绘制设置
+            CGContextRestoreGState(context)
+            
+            //绘制另一个矩形（不带阴影）
+            let pathRect2 = CGRectInset(self.bounds,
+                self.bounds.size.width * 0.3,
+                self.bounds.size.height * 0.3)
+            let rectanglePath2 = UIBezierPath(rect: pathRect2)
+            UIColor.yellowColor().setFill()
+            rectanglePath2.fill()
+        }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D9DF49B9-BB8F-4C5B-8E7C-7C0FC292060F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>画图UIView drawRect</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>画图UIView drawRect</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

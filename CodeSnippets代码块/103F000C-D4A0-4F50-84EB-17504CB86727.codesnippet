@@ -3,26 +3,63 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jLazyUIButton</string>
+	<string>4jLazyUIButton前景和背景图片</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // MARK: - 懒加载
-    private lazy var &lt;#composeBtn#&gt;:UIButton = {
+	<string>// MARK: - 懒加载
+private lazy var &lt;#composeBtn#&gt;:UIButton = {
+    let btn = UIButton()
+    
+    // 2.设置前景图片
+    btn.setImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;"), forState: UIControlState.Normal)
+    btn.setImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;_highlighted"), forState: UIControlState.Highlighted)
+    
+    // 3.设置背景图片
+    btn.setBackgroundImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;"), forState: UIControlState.Normal)
+    btn.setBackgroundImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;_highlighted"), forState: UIControlState.Highlighted)
+    
+    // 4.添加监听
+    btn.addTarget(self, action: "&lt;#tabbar_compose_icon_add#&gt;", forControlEvents: UIControlEvents.TouchUpInside)
+    return btn
+}()
+
+
+func close()
+{
+    dismissViewControllerAnimated(true, completion: nil)
+}
+func save()
+{
+    print(__FUNCTION__)
+}
+
+// MARK: - 懒加载
+private lazy var closeBtn: UIButton = {
+    let btn = UIButton()
+    btn.setTitle("关闭", forState: UIControlState.Normal)
+    btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+    btn.backgroundColor = UIColor.darkGrayColor()
+    
+    btn.addTarget(self, action: "close", forControlEvents: UIControlEvents.TouchUpInside)
+    return btn
+}()
+
+private lazy var saveBtn: UIButton = {
+    let btn = UIButton()
+    btn.setTitle("保存", forState: UIControlState.Normal)
+    btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+    btn.backgroundColor = UIColor.darkGrayColor()
+    
+    btn.addTarget(self, action: "save", forControlEvents: UIControlEvents.TouchUpInside)
+    return btn
+}()
+
+    private lazy var iconButton: UIButton = {
         let btn = UIButton()
-        
-        // 2.设置前景图片
-        btn.setImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;"), forState: UIControlState.Normal)
-        btn.setImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;_highlighted"), forState: UIControlState.Highlighted)
-        
-        // 3.设置背景图片
-        btn.setBackgroundImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;"), forState: UIControlState.Normal)
-        btn.setBackgroundImage(UIImage(named:"&lt;#tabbar_compose_icon_add#&gt;_highlighted"), forState: UIControlState.Highlighted)
-        
-        // 4.添加监听
-        btn.addTarget(self, action: "&lt;#tabbar_compose_icon_add#&gt;", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.titleLabel?.font = UIFont.systemFontOfSize(32)
         return btn
     }()</string>
 	<key>IDECodeSnippetIdentifier</key>
@@ -30,9 +67,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>懒加载UIButton的前景和背景图片</string>
+	<string>懒加载UIButton</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>懒加载</string>
+	<string>懒加载UIButton的前景和背景图片</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

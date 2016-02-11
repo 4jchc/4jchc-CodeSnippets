@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jBaoCunMoXing1</string>
+	<string>4jGuiDang1</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -26,6 +26,18 @@
 
 
     }
+    override init() {
+        
+    }
+    init(dict: [String: AnyObject])
+    {
+        &lt;#成员#&gt; = dict["&lt;#成员#&gt;"] as? String
+        &lt;#成员#&gt; = dict["&lt;#成员#&gt;"] as? String
+        &lt;#成员#&gt; = dict["&lt;#成员#&gt;"] as? NSNumber
+      
+    }
+
+
     ////*****✅/ 在对象归档的时候调用
     // 哪些属性需要归档
     // 这些属性怎么归档
@@ -50,6 +62,38 @@
         &lt;#成员#&gt; = aDecoder.decodeObjectForKey(&lt;#宏定义名字#&gt;) as! String
     }
 
+    
+
+        override var description: String{
+        // 1.定义属性数组
+        let properties = ["&lt;#成员#&gt;", "&lt;#成员#&gt;", "&lt;#成员#&gt;"]
+        // 2.根据属性数组, 将属性转换为字典
+        let dict =  self.dictionaryWithValuesForKeys(properties)
+        // 3.将字典转换为字符串
+        return "\(dict)"
+    }
+    
+    // MARK: - 保存和读取  Keyed
+    /**
+    保存授权模型
+    */
+    func saveAccount()
+    {
+        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!
+        let filePath = (path as NSString).stringByAppendingPathComponent("&lt;#成员#&gt;.plist")
+        print("filePath \(filePath)")
+        NSKeyedArchiver.archiveRootObject(self, toFile: filePath)
+    }
+    
+    /// 加载授权模型
+    class func loadAccount() -&gt; UserAccount? {
+        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!
+        let filePath = (path as NSString).stringByAppendingPathComponent("&lt;#成员#&gt;.plist")
+        print("filePath \(filePath)")
+        
+        let account =  NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount
+        return account
+    }
     
     
 }</string>

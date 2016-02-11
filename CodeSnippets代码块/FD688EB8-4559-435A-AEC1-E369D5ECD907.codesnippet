@@ -9,9 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        ///*****✅存储
-        NSUserDefaults.standardUserDefaults().setObject(&lt;#start.text#&gt;, forKey: &lt;#start.text#&gt; as String)
+	<string>        // 1.获取当前软件的版本号 --&gt; info.plist
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["&lt;#CFBundleShortVersionString#&gt;"] as! String
         
+        ///*****✅存储
+        NSUserDefaults.standardUserDefaults().setObject(&lt;#start.text#&gt;, forKey: &lt;#start.text#&gt; as String)
+        // iOS7以后就不用调用同步方法了
         NSUserDefaults.standardUserDefaults().synchronize()
         
         ///*****✅读取
@@ -21,9 +24,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>读取本地字符</string>
+	<string>读取本地字符NSUserDefaults</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>保存本地字符</string>
+	<string>保存本地字符NSUserDefaults</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

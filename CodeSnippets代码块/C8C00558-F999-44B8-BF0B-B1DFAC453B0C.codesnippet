@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jPanDuanVersion</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    private func isNewupdate() -&gt; Bool{
+        // 1.获取当前软件的版本号 --&gt; info.plist
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        // 2.获取以前的软件版本号 --&gt; 从本地文件中读取(以前自己存储的)
+        let sandboxVersion =  NSUserDefaults.standardUserDefaults().objectForKey("CFBundleShortVersionString") as? String ?? ""
+        
+        print("current = \(currentVersion) sandbox = \(sandboxVersion)")
+        
+        // 3.比较当前版本号和以前版本号
+        //   2.0                    1.0
+        if currentVersion.compare(sandboxVersion) == NSComparisonResult.OrderedDescending{
+            // 3.1如果当前&gt;以前 --&gt; 有新版本
+            // 3.1.1存储当前最新的版本号
+            // iOS7以后就不用调用同步方法了
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            return true
+        }
+        
+        // 3.2如果当前&lt; | ==  --&gt; 没有新版本
+        return false
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C8C00558-F999-44B8-BF0B-B1DFAC453B0C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>判断版本号</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>判断版本号</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

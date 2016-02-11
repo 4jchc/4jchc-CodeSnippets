@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jDongHuaNSLayoutConstraint</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        self.scanLineView.alpha = 0.1
+        self.scanLineCons.constant = -self.containerHeightCons.constant
+        //self.scanLineView.layoutIfNeeded()//会变形
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(1.5, animations: { () -&gt; Void in
+            
+            // 设置动画指定的次数
+            UIView.setAnimationRepeatCount(MAXFLOAT)
+            self.scanLineCons.constant = 0
+            self.scanLineView.alpha = 1
+            // 2.更新界面
+            self.view.layoutIfNeeded()
+        })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B6985FDC-310C-4C1B-B486-C3C950D3DB91</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>从上往下动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSLayoutConstraint动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -3,33 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDictLagerVarlue</string>
+	<string>4jMMFW</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        
-        lazy var maxYDict = [Int: CGFloat]()
-        // 找到最长那一列
-        var maxYColumn = 0
-        for (column, maxY) in maxYDict {
-            if maxY &gt; maxYDict[maxYColumn] {
-                maxYColumn = column
-            }
-        }
-        // 清空每一列的最大Y值
-        for i in 0..&lt;self.columnsCount! {
-            maxYDict[i] = self.sectionInset.top
-        }</string>
+	<string>    //MARK:  &lt;#照片浏览的 cell#&gt;
+    ///  &lt;#照片浏览的 cell#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>37419CCA-0FFB-4C1F-8172-61EA28495E67</string>
+	<string>3D0DB694-6E49-4C8E-9A97-4F4A68CC90AD</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>字典中value最大值</string>
+	<string>注释mark&amp;func</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>字典中value最大值</string>
+	<string>注释mark&amp;func</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

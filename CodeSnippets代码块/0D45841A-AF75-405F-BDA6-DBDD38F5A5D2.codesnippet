@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIPresentationController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+/*
+0.显示标题菜单
+1.图片拉升单词:tiles平铺stretches伸长(展开,铺设;adj.弹性的)会填充屏幕
+2.默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
+如果自定义转场, 那么就不会移除以前控制器的view
+3.自定义转场步奏
+A1 .设置代理vc?.transitioningDelegate = self
+A2 .设置转场的样式modalPresentationStyle.Custom
+A3 .实现代理方法, 告诉系统谁来负责转场动画
+presentationControllerForPresentedViewController
+iOS8推出的专门用于负责转场动画的
+
+*/
+
+
+class PopoverPresentationController: UIPresentationController {
+    
+    /**
+     初始化方法, 用于创建负责转场动画的对象
+     
+     :param: presentedViewController  被展现的控制器
+     :param: presentingViewController 发起的控制器, Xocde6是nil, Xcode7是野指针
+     
+     :returns: 负责转场动画的对象
+     */
+    override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
+        super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
+        
+        print(presentedViewController)
+        //        print(presentingViewController)
+    }
+    
+    /**
+     即将布局转场子视图时调用
+     */
+    override func containerViewWillLayoutSubviews()
+    {
+        // 1.修改弹出视图的大小
+        //        containerView; // 容器视图
+        //        presentedView() // 被展现的视图
+        presentedView()?.frame = CGRect(x: 100, y: 56, width: 200, height: 200)
+        
+        // 2.在容器视图上添加一个蒙版, 插入到展现视图的下面
+        // 因为展现视图和蒙版都在都一个视图上, 而后添加的会盖住先添加的
+        containerView?.insertSubview(coverView, atIndex: 0)
+    }
+    
+    // MARK: - 懒加载
+    private lazy var coverView: UIView = {
+        // 1.创建view
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
+        view.frame = UIScreen.mainScreen().bounds
+        
+        // 2.添加监听
+        let tap = UITapGestureRecognizer(target: self, action: "close")
+        view.addGestureRecognizer(tap)
+        return view
+    }()
+    
+    func close(){
+        // presentedViewController拿到当前弹出的控制器
+        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+
+/*
+func titleBtnClick(btn: TitleButton)
+{
+    // 1.修改箭头方向
+    btn.selected = !btn.selected
+    
+    // 2.弹出菜单
+    let sb = UIStoryboard(name: "PopoverViewController", bundle: nil)
+    let vc = sb.instantiateInitialViewController()
+    // 2.1设置转场代理
+    // 默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
+    // 如果自定义转场, 那么就不会移除以前控制器的view
+    vc?.transitioningDelegate = self
+    // 2.2设置转场的样式
+    vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
+    
+    presentViewController(vc!, animated: true, completion: nil)
+    
+}
+*/
+
+/*
+extension HomeTableViewController: UIViewControllerTransitioningDelegate
+{
+    // 实现代理方法, 告诉系统谁来负责转场动画
+    // UIPresentationController iOS8推出的专门用于负责转场动画的
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -&gt; UIPresentationController?
+    {
+        return PopoverPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+}
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0D45841A-AF75-405F-BDA6-DBDD38F5A5D2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIPresentationController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

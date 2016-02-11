@@ -3,17 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jxibjiazai</string>
+	<string>4jXIB</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>   static func &lt;#InputView#&gt;()-&gt;&lt;#InputView#&gt; {
-        
-        return NSBundle.mainBundle().loadNibNamed("&lt;#WCInputView#&gt;", owner: nil, options: nil).first as! &lt;#InputView#&gt;
-        
-    }</string>
+	<string>/// 加载XIB
+static func &lt;#InputView#&gt;()-&gt;&lt;#InputView#&gt; {
+    
+    return NSBundle.mainBundle().loadNibNamed("&lt;#WCInputView#&gt;", owner: nil, options: nil).first as! &lt;#InputView#&gt;
+    
+}
+
+/// 创建控制器对象
+let jump = &lt;#视图类名#&gt;(nibName: "&lt;#xib视图名#&gt;", bundle: nil)
+let nav:UINavigationController = UINavigationController(rootViewController: jump)
+
+/// Modal出一个控制器
+self.presentViewController(nav, animated: true, completion: nil)
+
+
+/// 从 sb 创建视图控制器
+class func &lt;#UIStoryboard#&gt;() -&gt; &lt;#UIStoryboard#&gt; {
+    
+    let sb = UIStoryboard(name: &lt;#name#&gt;, bundle: nil)
+    let vc = sb.instantiateInitialViewController() as! &lt;#UIStoryboard#&gt;
+    
+    return vc
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3089401C-E39C-427D-A9B1-2FC1EFFA5EE3</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -3,29 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jXIBStoryboard</string>
+	<string>varCGFloat</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // 从 sb 创建视图控制器
-    
-    class func &lt;#UIStoryboard#&gt;() -&gt; &lt;#UIStoryboard#&gt; {
-        
-        let sb = UIStoryboard(name: &lt;#name#&gt;, bundle: nil)
-        let vc = sb.instantiateInitialViewController() as! &lt;#UIStoryboard#&gt;
-        
-        return vc
-    }</string>
+	<string>var &lt;#w#&gt;:CGFloat = &lt;#locations.last#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>570F9FE5-B364-4139-A820-0A047F307FAD</string>
+	<string>8E0D47D2-2A3B-468F-8EB8-249CCAF0F3E0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>XIB加载Storyboard</string>
+	<string>varCGFloat</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>XIB加载Storyboard</string>
+	<string>varCGFloat</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

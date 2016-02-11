@@ -9,7 +9,52 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // MARK: - 内部控制方法创建动画
+	<string>    //MARK:  旋转箭头180一个方向
+    ///  旋转箭头180一个方向
+    func rotaionArrowIcon(flag: Bool)
+    {
+        var angle = M_PI
+        angle += flag ? -0.01 : 0.01
+        UIView.animateWithDuration(0.2) { () -&gt; Void in
+            self.arrowIcon.transform = CGAffineTransformRotate(self.arrowIcon.transform, CGFloat(angle))
+        }
+    }
+
+    //MARK: - 圆形图像
+    private lazy var iconView: UIImageView = {
+        let iv = UIImageView(image: UIImage(named: "&lt;#avatar_default_big#&gt;"))
+        iv.layer.cornerRadius = 50
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    
+    var view:UIView = UIView()
+    
+    //MARK: - 动画--弹性放大缩小
+    ///  动画--弹性放大缩小
+    func startBtnAnimation()
+    {
+        startButton.hidden = false
+        
+        // 执行动画
+        startButton.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        startButton.userInteractionEnabled = false
+        
+        // UIViewAnimationOptions(rawValue: 0) == OC knilOptions
+        // Damping--振幅 Velocity--速度
+        UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions(rawValue: 0), animations: { () -&gt; Void in
+            // 清空形变
+            self.startButton.transform = CGAffineTransformIdentity
+            }) { (_) -&gt; Void in
+                self.startButton.userInteractionEnabled = true
+        }
+        
+    }
+    
+    
+    // MARK: - 动画--360度旋转
+    ///  开始圈圈动画
     private func startAnimation(){
         // 1.创建动画
         let anim = CABasicAnimation(keyPath: "transform.rotation")
@@ -22,13 +67,113 @@
         anim.removedOnCompletion = false
         // 3.将动画添加到图层上
         &lt;#iconView#&gt;.layer.addAnimation(anim, forKey: nil)
+    }
+    //MARK:  停止圈圈动画
+    ///  停止圈圈动画
+    func stopLoadingViewAnim()
+    {
+        tipView.hidden = false
+        
+        loadingView.layer.removeAllAnimations()
+    }
+    
+    
+    /// 记录当前是否是展开
+    var isPresent: Bool = false
+    
+    //MARK: - 动画--开始=从上往下展开,结束=从下往上消失
+    private func startOverAnimation(){
+        
+        if isPresent{//开始=从上往下展开
+            
+            // 设置锚点anchor
+            view.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
+            // 2.执行动画
+            UIView.animateWithDuration(0.5, animations: { () -&gt; Void in
+                // 2.1清空transform改变 Identity.同一性(恒等式,本体)
+                view.transform = CGAffineTransformIdentity
+            })
+            
+        }else{//结束=从下往上消失
+            
+            UIView.animateWithDuration(0.2, animations: { () -&gt; Void in
+                // 注意:由于CGFloat是不准确的, 所以如果写0.0会没有动画
+                // 压扁
+                view.transform = CGAffineTransformMakeScale(1.0, 0.000001)
+            })
+        }
+        
+        
+        
+        
+        UIView.animateWithDuration(0.25) { () -&gt; Void in
+            view.transform =  isPresent ? CGAffineTransformMakeScale(1.3, 1.3) :CGAffineTransformIdentity
+            view.transform =  isPresent ? CGAffineTransformMakeScale(1.3, 1.3) :CGAffineTransformIdentity
+        }
+        
+        
+    }
+    
+    
+    //MARK: 动画--从上往下(约束的动画)
+    ///执行动画
+    private func startUpDownAnimation(){
+        
+        self.scanLineView.alpha = 0.1
+        self.scanLineCons.constant = -self.containerHeightCons.constant
+        //self.scanLineView.layoutIfNeeded()//会变形
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(1.5, animations: { () -&gt; Void in
+            
+            // 设置动画指定的次数
+            UIView.setAnimationRepeatCount(MAXFLOAT)
+            self.scanLineCons.constant = 0
+            self.scanLineView.alpha = 1
+            // 2.更新界面
+            self.view.layoutIfNeeded()
+        })
+        
+           
+
+    }
+
+    //MARK:  显示刷新提醒--动画
+    ///  显示刷新提醒动画
+    private func showNewStatusCount(count : Int)
+    {
+        newStatusLabel.hidden = false
+        newStatusLabel.text = (count == 0) ? "没有刷新到新的微博数据" : "刷新到\(count)条微博数据"
+        /*
+        // 1.记录提醒控件的frame
+        let rect = newStatusLabel.frame
+        // 2.执行动画
+        UIView.animateWithDuration(2, animations: { () -&gt; Void in
+        // 3.设置动画自动翻转
+        UIView.set Animation Repeat Auto reverses(true)
+        self.newStatusLabel.frame = CGRectOffset(rect, 0, 3 * rect.height)
+        
+        }) { (_) -&gt; Void in
+        self.newStatusLabel.frame = rect
+        }
+        */
+        // 2秒向下移动2秒还原然后隐藏 x轴移动0.Y轴移动视图的高度
+        UIView.animateWithDuration(2, animations: { () -&gt; Void in
+            self.newStatusLabel.transform = CGAffineTransformMakeTranslation(0, self.newStatusLabel.frame.height)
+            self.newStatusLabel.transform = CGAffineTransformScale(self.newStatusLabel.transform, 0.7, 0.7);
+            }) { (_) -&gt; Void in
+                UIView.animateWithDuration(2, animations: { () -&gt; Void in
+                    self.newStatusLabel.transform = CGAffineTransformIdentity
+                    }, completion: { (_) -&gt; Void in
+                        self.newStatusLabel.hidden = true
+                })
+        }
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5C807518-A9AB-4AF2-9CAA-8CD1F8B37AB6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>360°旋转</string>
+	<string>360°旋转动画</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>CABasicAnimation</string>
 	<key>IDECodeSnippetUserSnippet</key>

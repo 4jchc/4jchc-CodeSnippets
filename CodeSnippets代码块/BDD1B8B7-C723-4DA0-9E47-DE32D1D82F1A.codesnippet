@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jNSBundle.mainBundle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /**
+     :param: fileName 文件的名称
+     
+     :returns: 全路径
+     */
+    //MARK: 获取指定文件的全路径
+    func infoPath() -&gt; String {
+        return (EmoticonPackage.emoticonPath().stringByAppendingPathComponent(id!) as NSString).stringByAppendingPathComponent("&lt;#info.plist#&gt;")
+    }
+    //MARK: 获取微博表情的主路径
+    class func emoticonPath() -&gt; NSString{
+        return (NSBundle.mainBundle().bundlePath as NSString).stringByAppendingPathComponent("&lt;#Emoticons.bundle#&gt;")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BDD1B8B7-C723-4DA0-9E47-DE32D1D82F1A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSBundle.mainBundle路径</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSBundle.mainBundle路径</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

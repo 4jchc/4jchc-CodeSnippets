@@ -3,34 +3,88 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jTongZHi</string>
+	<string>4jTongZhi</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        let tongzhi = "tongzhi"
-        
-        NSNotificationCenter.defaultCenter().postNotificationName(tongzhi, object: nil,userInfo: [MTSelectCityName : city.name])
-        // 添加通知监听，监听用户登录成功
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cityDidChange:", name: tongzhi, object: nil)
-        
-        // 通知在不需要的时候，要及时销毁
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: tongzhi, object: nil)
-        
-        // MARK: - 增加监听通知
-        func cityDidChange(notification: NSNotification) {
-            
-            // 1.更换顶部区域item的文字
-            self.selectedCityName = notification.userInfo?[MTSelectCityName] as! String
-            let topItem = regionItem.customView as? MTHomeTopItem
-            topItem!.title = "\(selectedCityName) - 全部"
-            topItem!.subtitle = ""
-            
-            // 2.刷新表格数据
-            self.collectionView?.mj_header.beginRefreshing()
-            
-        }</string>
+	<string>//********************************
+//A 1.定义常量保存通知名称
+let tongzhi = "tongzhi"
+
+//A 2.发出通知postNotificationName
+NSNotificationCenter.defaultCenter().postNotificationName(tongzhi, object: nil,userInfo: [MTSelectCityName : city.name])
+
+
+//B 1.增加监听通知实现方法调用
+NSNotificationCenter.defaultCenter().addObserver(self, selector: "cityDidChange:", name: tongzhi, object: nil)
+
+// 通知在不需要的时候，要及时销毁
+NSNotificationCenter.defaultCenter().removeObserver(self, name: tongzhi, object: nil)
+
+// MARK: - 增加监听通知
+func cityDidChange(notification: NSNotification) {
+    
+    // 1.更换顶部区域item的文字
+    self.selectedCityName = notification.userInfo?[MTSelectCityName] as! String
+    let topItem = regionItem.customView as? MTHomeTopItem
+    topItem!.title = "\(selectedCityName) - 全部"
+    topItem!.subtitle = ""
+    
+    // 2.刷新表格数据
+    self.collectionView?.mj_header.beginRefreshing()
+    
+}
+//********************************
+
+/// 选中图片的通知名称
+let XMGStatusPictureViewSelected = "XMGStatusPictureViewSelected"
+/// 当前选中图片的索引对应的key
+let XMGStatusPictureViewIndexKey = "XMGStatusPictureViewIndexKey"
+/// 需要展示的所有图片对应的key
+let XMGStatusPictureViewURLsKey = "XMGStatusPictureViewURLsKey"
+
+
+let info = [XMGStatusPictureViewIndexKey : indexPath, XMGStatusPictureViewURLsKey : status!.storedLargePicURLS!]
+NSNotificationCenter.defaultCenter().postNotificationName(XMGStatusPictureViewSelected, object: self, userInfo: info)
+
+
+
+NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: XMGStatusPictureViewSelected, object: nil)
+
+//MARK: - 显示图片浏览器
+///  显示图片浏览器
+func showPhotoBrowser(notify: NSNotification)
+{
+    //        print(notify.userInfo)
+    // 注意: 如果通过通知传递数据, 一定要判断数据是否存在
+    guard let indexPath = notify.userInfo![XMGStatusPictureViewIndexKey] as? NSIndexPath else
+    {
+        print("没有indexPath")
+        return
+    }
+    
+    guard let urls = notify.userInfo![XMGStatusPictureViewURLsKey] as? [NSURL] else
+    {
+        print("没有配图")
+        return
+    }
+    
+    // 1.创建图片浏览器
+    let vc = PhotoBrowserController(index: indexPath.item, urls: urls)
+    
+    // 2.显示图片浏览器
+    presentViewController(vc, animated: true, completion: nil)
+}
+
+
+
+deinit
+{
+    // 移除通知
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>65CC1C9E-2BDD-4A3B-ABD7-FCB5EB87D088</string>
 	<key>IDECodeSnippetLanguage</key>

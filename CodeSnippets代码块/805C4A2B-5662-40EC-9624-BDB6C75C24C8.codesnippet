@@ -3,33 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDictLagerVarlue</string>
+	<string>4jGuard</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        
-        lazy var maxYDict = [Int: CGFloat]()
-        // 找到最长那一列
-        var maxYColumn = 0
-        for (column, maxY) in maxYDict {
-            if maxY &gt; maxYDict[maxYColumn] {
-                maxYColumn = column
-            }
-        }
-        // 清空每一列的最大Y值
-        for i in 0..&lt;self.columnsCount! {
-            maxYDict[i] = self.sectionInset.top
-        }</string>
+	<string>            //如果条件为nil, 那么就会执行else后面的语句
+            guard let &lt;#urls#&gt; = &lt;#status.storedPicURLS#&gt; else
+            {
+                continue
+            }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>37419CCA-0FFB-4C1F-8172-61EA28495E67</string>
+	<string>805C4A2B-5662-40EC-9624-BDB6C75C24C8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>字典中value最大值</string>
+	<string>就会执行else后面的语句</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>字典中value最大值</string>
+	<string>guard如果条件为nil,</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

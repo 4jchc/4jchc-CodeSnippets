@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jKVO</string>
+	<string>4jKVO2</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -73,7 +73,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>KVO添加观察者案例</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>KVO案例</string>
+	<string>KVO案例2</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

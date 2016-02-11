@@ -10,9 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>    lazy var &lt;#name#&gt;:NSMutableArray = {
-        
         var New = NSMutableArray()
-        
         return New
     }()</string>
 	<key>IDECodeSnippetIdentifier</key>

@@ -3,51 +3,73 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jmeijuanli</string>
+	<string>4jMeiJu1</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>enum CompassPoint {
-            case North
-            case South
-            case East
-            case West
+    case North
+    case South
+    case East
+    case West
+}
+var directionToHead = CompassPoint.West
+
+enum Planet: Int {
+    case Mercury = 1
+    case Venus = 2
+    case Earth = 3
+}
+//rawValue来获取他的原始值:3
+let earthsOrder = Planet.Earth.rawValue
+//通过原始值来寻找所对应的枚举成员:Venus
+let possiblePlanet = Planet(rawValue: 2)
+
+
+
+enum Direction {
+    case Up
+    case Down
+    
+    func description() -&gt; String{
+        switch(self){
+        case .Up:
+            return "向上"
+        case .Down:
+            return "向下"
         }
-        var directionToHead = CompassPoint.West
-        
-        enum Planet: Int {
-            case Mercury = 1
-            case Venus = 2
-            case Earth = 3
-        }
-        let earthsOrder = Planet.Earth.rawValue //rawValue来获取他的原始值:3
-        let possiblePlanet = Planet(rawValue: 2)  //通过原始值来寻找所对应的枚举成员:Venus
-        
-        enum Direction {
-            case Up
-            case Down
-            
-            func description() -&gt; String{
-                switch(self){
-                case .Up:
-                    return "向上"
-                case .Down:
-                    return "向下"
-                }
-            }
-        }
-        print(Direction.Up.description())
-</string>
+    }
+}
+print(Direction.Up.description())
+
+//MARK: - 用枚举保存cell的重用标示
+/**
+用枚举保存cell的重用标示
+- NormalCell:  原创微博的重用标识
+- ForwardCell: 转发微博的重用标识
+*/
+enum StatusTableViewCellIdentifier: String
+{
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+    
+    // 如果在枚举中利用static修饰一个方法 , 相当于类中的class修饰方法
+    // 如果调用枚举值的rawValue, 那么意味着拿到枚举对应的原始值
+    static func cellID(status: Status) -&gt;String
+    {
+        return status.retweeted_status != nil ? ForwardCell.rawValue : NormalCell.rawValue
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>87C51288-E24A-4667-B4CD-22596E973575</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>枚举案例</string>
+	<string>枚举案例1</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>enum-案例</string>
+	<string>enum-案例1</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

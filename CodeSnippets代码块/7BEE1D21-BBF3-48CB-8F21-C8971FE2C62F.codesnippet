@@ -3,27 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jxibshitu</string>
+	<string>4jJuHua</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    ////*****✅/ 创建控制器对象
-    
-    let jump = &lt;#视图类名#&gt;(nibName: "&lt;#xib视图名#&gt;", bundle: nil)
-    let nav:UINavigationController = UINavigationController(rootViewController: jump)
-    
-    ////*****✅/ Modal出一个控制器
-    self.presentViewController(nav, animated: true, completion: nil)</string>
+	<string>// 菊花
+private lazy var activity: UIActivityIndicatorView =  UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+
+contentView.addSubview(activity)
+
+activity.center = contentView.center
+
+// 2.显示菊花
+activity.startAnimating()
+
+// 4.隐藏菊花
+self.activity.stopAnimating()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1C8858DC-78CD-4084-98F1-9242D357EEF1</string>
+	<string>7BEE1D21-BBF3-48CB-8F21-C8971FE2C62F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>加载Xib视图</string>
+	<string>菊花</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>加载Xib视图</string>
+	<string>菊花</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

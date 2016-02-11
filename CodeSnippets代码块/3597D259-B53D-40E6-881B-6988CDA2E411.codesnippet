@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jBaoCunTuPianXiangCe</string>
+	<string>4jXiangCe</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -37,7 +37,31 @@
             SVProgressHUD.showInfoWithStatus("保存成功")
         }
     }
-    </string>
+    
+
+
+    //MARK:  保存图片到相册
+    ///  保存图片到相册
+    func save()
+    {
+        // 1.拿到当前正在显示的cell
+        let index = collectionView.indexPathsForVisibleItems().last!
+        let cell = collectionView.cellForItemAtIndexPath(index) as! PhotoBrowserCell
+        // 2.保存图片
+        let image = cell.iconView.image
+        UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        
+        // - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+    }
+    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject){
+        if error != nil
+        {
+            SVProgressHUD.showErrorWithStatus("保存失败", maskType: SVProgressHUDMaskType.Black)
+        }else
+        {
+            SVProgressHUD.showSuccessWithStatus("保存成功", maskType: SVProgressHUDMaskType.Black)
+        }
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3597D259-B53D-40E6-881B-6988CDA2E411</string>
 	<key>IDECodeSnippetLanguage</key>

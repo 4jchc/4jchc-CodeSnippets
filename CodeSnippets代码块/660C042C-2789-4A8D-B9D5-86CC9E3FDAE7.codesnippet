@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGesture</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class ViewController: UIViewController ,UIGestureRecognizerDelegate{
+    @IBOutlet var imageView: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //MARK:  拖动手势
+        let pan:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
+        imageView.addGestureRecognizer(pan)
+        
+        //MARK:  捏合
+        let pinch:UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "pinch:")
+        imageView.addGestureRecognizer(pinch)
+        pinch.delegate = self;
+        //MARK:   旋转
+        let rotation:UIRotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "rotation:")
+        rotation.delegate = self
+        imageView.addGestureRecognizer(rotation)
+        
+        //MARK:  滑动手势
+        let swipe:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "swipe:")
+        swipe.direction = UISwipeGestureRecognizerDirection.Left
+        imageView.addGestureRecognizer(swipe)
+        
+        //MARK:  长按手势
+        let longPress:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
+        longPress.minimumPressDuration = 2;
+        // 手势识别之前的最大移动范围，超出这个范围就不能识别
+        longPress.allowableMovement = 100;
+        imageView.addGestureRecognizer(longPress)
+        
+        //MARK:  点按手势 Tap轻敲 Gesture手势 Recognizer识别器
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
+        tap.numberOfTapsRequired = 2;
+        tap.numberOfTouchesRequired = 2;
+        tap.delegate = self;
+        imageView.addGestureRecognizer(tap)
+        imageView.userInteractionEnabled = true
+
+        
+    }
+    
+    //MARK:  拖动手势
+    func pan(pan:UIPanGestureRecognizer){
+        
+        let trans:CGPoint = pan.translationInView(imageView)
+        imageView.transform = CGAffineTransformTranslate(imageView.transform, trans.x, trans.y)
+        
+        // 复位
+        pan.setTranslation(CGPoint.zero, inView: imageView)
+    }
+    //MARK:  捏合
+    func pinch(pinch:UIPinchGestureRecognizer){
+        
+        imageView.transform = CGAffineTransformScale(imageView.transform, pinch.scale, pinch.scale)
+        
+        // 复位
+        pinch.scale = 1;
+        
+    }
+    //MARK:  旋转
+    func rotation(rotation:UIRotationGestureRecognizer){
+        
+        NSLog("%f",rotation.rotation);
+        imageView.transform = CGAffineTransformRotate(imageView.transform, rotation.rotation)
+        // 复位
+        rotation.rotation = 0
+    }
+    //MARK:  滑动手势
+    func swipe(swipe:UISwipeGestureRecognizer){
+        NSLog("左");
+        
+    }
+    //MARK:  长按手势
+    func longPress(longPress:UILongPressGestureRecognizer){
+        
+        if (longPress.state == UIGestureRecognizerState.Began) {
+            
+            NSLog("longPress");}
+        
+    }
+    //MARK:  创建点按手势
+    func tap(tap:UITapGestureRecognizer){
+        
+        NSLog("tap");
+    }
+    
+    //MARK:   返回NO，表示不触发手势事件
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -&gt; Bool {
+        
+        
+        let pos:CGPoint = touch.locationInView(imageView)
+        
+        if (pos.x &lt; imageView.bounds.size.width * 0.5 ) {
+            
+            return false
+        }
+        return true
+        
+    }
+    
+    
+    //MARK:  Simultaneously 同时的
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -&gt; Bool {
+        
+        return true
+    }
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>660C042C-2789-4A8D-B9D5-86CC9E3FDAE7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Gesture手势Recognizer识别器</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Gesture手势Recognizer识别器</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

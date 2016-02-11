@@ -3,16 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jDuoHangZhuShi</string>
+	<string>4jDDD</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/*
- &lt;#多行注释#&gt;
- 
- */</string>
+	<string>    /*
+    1.&lt;#多行注释#&gt;
+    2.&lt;#多行注释#&gt;
+    3.&lt;#多行注释#&gt;
+    */</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>964D8F80-3191-49A1-9CB9-94B3A2C0C795</string>
 	<key>IDECodeSnippetLanguage</key>

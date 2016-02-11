@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jGuiDang1</string>
+	<string>4jGuiDang2</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -123,9 +123,9 @@ class DataMode: NSObject {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>归档解档保存读取-案例1</string>
+	<string>归档解档保存读取-案例2</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>归档解档保存读取-案例1</string>
+	<string>归档解档保存读取-案例2</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -58,7 +58,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>GCD1-并发队列一般同时开多条并发执行</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>GCD1-并发队列（最常用）</string>
+	<string>GCD1-并发队列（最常用global子线程)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

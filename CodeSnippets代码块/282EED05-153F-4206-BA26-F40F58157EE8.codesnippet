@@ -58,7 +58,7 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>GCD4-NSBlockOperation面向对象的线程技术</string>
+	<string>GCD4-面向对象的线程技术</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>GCD4-NSBlockOperation</string>
 	<key>IDECodeSnippetUserSnippet</key>

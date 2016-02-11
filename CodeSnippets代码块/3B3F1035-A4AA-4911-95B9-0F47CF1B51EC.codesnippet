@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jDanLiAFN</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import AFNetworking
+
+class NetworkTools: AFHTTPSessionManager {
+    
+    static let tools:NetworkTools = {
+        // 注意: baseURL一定要以/结尾
+        let url = NSURL(string: "https://api.weibo.com/")
+        let t = NetworkTools(baseURL: url)
+        
+        // 设置AFN能够接收得数据类型
+        t.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as? Set&lt;String&gt;
+        return t
+    }()
+    
+    /// 获取单粒的方法
+    class func shareNetworkTools() -&gt; NetworkTools {
+        return tools
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3B3F1035-A4AA-4911-95B9-0F47CF1B51EC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>单例AFN</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>单例AFN</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

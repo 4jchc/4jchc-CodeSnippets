@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jKVC</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /// 将字典数组转换为模型数组
+    class func dict2Model(list: [[String: AnyObject]]) -&gt; [Status] {
+        var models = [Status]()
+        for dict in list
+        {
+            models.append(Status(dict: dict))
+        }
+        return models
+    }
+    
+    // 字典转模型
+    init(dict: [String: AnyObject])
+    {
+        super.init()
+        setValuesForKeysWithDictionary(dict)
+    }
+    
+    //MARK:KVC找不到的key要重写这个方法
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        
+    }
+    
+    //MARK: - KVC-setValuesForKeysWithDictionary内部会调用以下方法
+    override func setValue(value: AnyObject?, forKey key: String) {
+        
+        //        printLog("key = \(key), value = \(value)")
+        // 1.判断当前是否正在给微博字典中的user字典赋值
+        if "user" == key
+        {
+            // 2.根据user key对应的字典创建一个模型
+            user = User(dict: value as! [String : AnyObject])
+            return
+        }
+        // 2.判断是否是转发微博, 如果是就自己处理
+        if "retweeted_status" == key
+        {
+            retweeted_status = Status(dict: value as! [String : AnyObject])
+            return
+        }
+        // 3,调用父类方法, 按照系统默认处理
+        super.setValue(value, forKey: key)
+    }
+    
+    
+    
+    // 打印当前模型
+    var properties = ["created_at", "id", "text", "source", "pic_urls"]
+    override var description: String {
+        let dict = dictionaryWithValuesForKeys(properties)
+        return "\(dict)"
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1D5616F3-B830-4719-8E56-898DBFAC935E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>KVC</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>KVC</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

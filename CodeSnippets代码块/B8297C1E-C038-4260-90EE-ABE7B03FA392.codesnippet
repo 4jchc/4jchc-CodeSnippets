@@ -9,16 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override var description: String {
-    
-    let dict = NSString(format: "%@-%@", self.name!, self.pricew!)
-    
-    
-    return "\r\n\(dict)"
-}
-
+	<string>
 ///  如果要打印对象信息，OC 中的 description，在 swift 中需要遵守协议 DebugPrintable
-extension HWTextPart: CustomDebugStringConvertible {
+extension &lt;#HWTextPart#&gt;: CustomDebugStringConvertible {
     
     override var debugDescription: String {
         ///*****✅对象转字典
