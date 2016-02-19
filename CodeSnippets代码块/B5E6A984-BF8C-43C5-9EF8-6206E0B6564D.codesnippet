@@ -3,14 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jattribute</string>
+	<string>4jAttribute</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>         let attributes =  [NSForegroundColorAttributeName: UIColor.&lt;#orangeColor()#&gt;,            NSFontAttributeName: UIFont(name: "Heiti SC", size: &lt;#13.0#&gt;)!]
-    navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.&lt;#orangeColor()#&gt;,NSFontAttributeName:UIFont.systemFontOfSize(&lt;#13.0#&gt;)]</string>
+	<string>        var attr = [String:AnyObject]()
+        attr[NSForegroundColorAttributeName] = UIColor.grayColor()
+        attr[NSFontAttributeName] = UIFont.systemFontOfSize(12)
+        
+        var selectedAttrs = [String:AnyObject]()
+        selectedAttrs[NSForegroundColorAttributeName] = UIColor.darkGrayColor()
+        selectedAttrs[NSFontAttributeName] = UIFont.systemFontOfSize(12)
+        
+        // 设置tabbarItem的字体选中的颜色
+        UITabBarItem.appearance().setTitleTextAttributes(attr, forState:.Selected)
+        UITabBarItem.appearance().setTitleTextAttributes(attr, forState:.Normal)
+
+        var attr = [String:AnyObject]()
+        attr[NSForegroundColorAttributeName] = UIColor(red: &lt;#81#&gt;/255, green: &lt;#81#&gt;/255, blue: &lt;#81#&gt;/255, alpha: 1)
+        attr[NSFontAttributeName] = UIFont.systemFontOfSize(&lt;#81#&gt;)
+        
+        
+        let attributes =  [NSForegroundColorAttributeName: UIColor.&lt;#orangeColor()#&gt;,            NSFontAttributeName: UIFont(name: "Heiti SC", size: &lt;#13.0#&gt;)!]
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.&lt;#orangeColor()#&gt;,NSFontAttributeName:UIFont.systemFontOfSize(&lt;#13.0#&gt;)]</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B5E6A984-BF8C-43C5-9EF8-6206E0B6564D</string>
 	<key>IDECodeSnippetLanguage</key>

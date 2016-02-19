@@ -3,13 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jinitialize</string>
+	<string>4jInitialize</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    override class func initialize(){
+	<string>    // 当第一次使用这个类的时候会调用一次
+    override class func initialize(){
   
     }</string>
 	<key>IDECodeSnippetIdentifier</key>

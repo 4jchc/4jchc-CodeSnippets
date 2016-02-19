@@ -9,32 +9,114 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    private lazy var toolbar: UIToolbar = {
-        let bar = UIToolbar()
-        bar.tintColor = UIColor.darkGrayColor()
-        var items = [UIBarButtonItem]()
-        
-        var index = 0
-        for title in ["最近", "默认", "emoji", "浪小花"]
-        {
-            let item = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: "itemClick:")
-            item.tag = index++
-            items.append(item)
-            //MARK:  添加弹簧
-            items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
-        }
-        // 移除最后一个弹簧
-        items.removeLast()
-        bar.items = items
-        return bar
-    }()
-
-
-    func itemClick(item: UIBarButtonItem)
+	<string>private lazy var toolbar: UIToolbar = {
+    let bar = UIToolbar()
+    bar.tintColor = UIColor.darkGrayColor()
+    var items = [UIBarButtonItem]()
+    
+    var index = 0
+    for title in ["最近", "默认", "emoji", "浪小花"]
     {
-        print(item.tag)
+        let item = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: "itemClick:")
+        item.tag = index++
+        items.append(item)
+        //MARK: 伸缩弹簧UIBarButtonSystemItem. Flexible可弯曲的 Space
+        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
     }
-</string>
+    // 移除最后一个弹簧
+    items.removeLast()
+    bar.items = items
+    return bar
+}()
+
+
+func itemClick(item: UIBarButtonItem)
+{
+    print(item.tag)
+}
+
+//MARK:  初始化UIToolbar工具条
+///  初始化UIToolbar工具条
+private func setupToolbar()
+{
+    // 1.添加子控件
+    view.addSubview(toolbar)
+    
+    // 2.添加按钮
+    var items = [UIBarButtonItem]()
+    let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],
+        
+        ["imageName": "compose_mentionbutton_background"],
+        
+        ["imageName": "compose_trendbutton_background"],
+        
+        ["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"],
+        
+        ["imageName": "compose_addbutton_background"]]
+    for dict in itemSettings
+    {
+        
+        let item = UIBarButtonItem(imageName: dict["imageName"]!, target: self, action: dict["action"])
+        items.append(item)
+        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
+    }
+    items.removeLast()
+    toolbar.items = items
+    
+    // 3布局toolbar
+    let width = UIScreen.mainScreen().bounds.width
+    let cons = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
+    toolbarBottonCons = toolbar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
+}
+
+//MARK:  选择相片
+///  选择相片
+func selectPicture()
+{
+    
+}
+
+//MARK:  切换表情键盘
+///  切换表情键盘
+func inputEmoticon()
+{
+    
+}
+
+
+//MARK:  代码编写Toolbar
+///  代码编写Toolbar
+func codeForToolbar(){
+    let screenW:CGFloat = self.view.bounds.size.width
+    ///设置尺寸
+    let toolbar:UIToolbar = UIToolbar(frame: CGRectMake(0, 100, screenW, 44))
+    /// #warning 一定要设置bounds 否则UIBarButtonItem监听不了点击事件
+    toolbar.backgroundColor = UIColor.redColor()
+    
+    ///添加按钮
+    
+    let prevBtn:UIBarButtonItem = UIBarButtonItem(title: "上一个", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+    let nextBtn:UIBarButtonItem = UIBarButtonItem(title: "下一个", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+    let doneBtn:UIBarButtonItem = UIBarButtonItem(title: "完成", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+    
+    
+    ///固定弹簧UIBarButtonSystemItem. Fixed固定 Space
+    let fixedTanhuang:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+    ///一定设置宽度
+    fixedTanhuang.width = 100;
+    
+    ///伸缩弹簧UIBarButtonSystemItem. Flexible可弯曲的 Space
+    let flexTanhuang:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+    ///数组 //[toolbar setItems:&lt;#(NSArray *)#&gt;]
+    toolbar.items = [prevBtn,fixedTanhuang,nextBtn,flexTanhuang,doneBtn]
+    
+    ///设置textfield的键盘模式 💗一个是日期---💗一个是toobar
+    //        self.textField.inputView = self.datePicker
+    //        self.textField.inputAccessoryView = toolbar
+    self.view.addSubview(toolbar)
+    
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>97A6269A-8674-4868-BE0F-9A9781927F40</string>
 	<key>IDECodeSnippetLanguage</key>

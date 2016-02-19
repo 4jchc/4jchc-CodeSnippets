@@ -3,17 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jChunDMRootViewController</string>
+	<string>4jChunDaiMaRootViewController</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        // 1.创建window
+	<string>
+        // 1.创建window窗口
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        // 2.创建根控制器
+        // 2.设置窗口的根控制器
         window?.rootViewController = &lt;#MainViewController#&gt;()
+        // 3.显示窗口
         window?.makeKeyAndVisible()</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3E354C69-D0A0-4D4A-ABC3-4098C8189083</string>

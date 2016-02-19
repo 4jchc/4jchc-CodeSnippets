@@ -6,7 +6,7 @@
 	<string>4jUITabBarController-动态(网络本地)添加按钮控制器</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>    override func viewDidLoad() {

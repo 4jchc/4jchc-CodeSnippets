@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    private lazy var collectionVeiw: UICollectionView = {
+	<string>    private let XMGPhotoSelectorCellReuseIdentifier = "XMGPhotoSelectorCellReuseIdentifier"
+    private lazy var collectionVeiw: UICollectionView = {
         let clv = UICollectionView(frame: CGRectZero, collectionViewLayout: EmoticonLayout())
         // 注册cell
         clv.registerClass(EmoticonCell.self, forCellWithReuseIdentifier: XMGEmoticonCellReuseIdentifier)

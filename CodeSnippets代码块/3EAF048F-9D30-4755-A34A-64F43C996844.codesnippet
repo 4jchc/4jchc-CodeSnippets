@@ -3,26 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jCellChongYong</string>
+	<string>4jSSAA</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        let &lt;#ID#&gt;:String = "&lt;#contact#&gt;"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(&lt;#ID#&gt; as String)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: &lt;#ID#&gt; as String)
-        }</string>
+	<string>[[String: AnyObject]]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65BC6729-1056-4572-9C18-930E09204C3C</string>
+	<string>3EAF048F-9D30-4755-A34A-64F43C996844</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>重用cell</string>
+	<string>[[String: AnyObject]]</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>重用cell</string>
+	<string>[[String: AnyObject]]</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

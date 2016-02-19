@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>dengjicell</string>
+	<string>varIn</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "&lt;#cell#&gt;")</string>
+	<string>var &lt;#fansCount#&gt;: Int = 0</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>145A902A-287C-4F84-BD86-6C6AE3244AF7</string>
+	<string>6B785E2E-AEAA-48DF-A764-1672D950C575</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>登记cell</string>
+	<string>var-int</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>登记cell</string>
+	<string>var-int</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

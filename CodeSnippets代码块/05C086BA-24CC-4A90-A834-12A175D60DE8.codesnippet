@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jCCell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let &lt;#NewfeatureCell#&gt;:String = "&lt;#NewfeatureCell#&gt;"
+        // 注册cell
+        self.tableView.registerNib(UINib(nibName: "&lt;#NewfeatureCell#&gt;", bundle: nil), forCellReuseIdentifier: &lt;#NewfeatureCell#&gt;)
+        
+        self.tableView.registerClass(&lt;#NewfeatureCell#&gt;.self, forCellWithReuseIdentifier: &lt;#NewfeatureCell#&gt;)
+
+        // 设置automatically自动地 Adjusts调整 ScrollView Insets嵌入
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+        
+        
+        // 设置标题
+        self.title = "推荐标签";
+        self.tableView.rowHeight = 70;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        // 设置背景色
+        self.view.backgroundColor = XMGGlobalBg;
+        
+        
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(&lt;#NewfeatureCell#&gt;) as! &lt;#NewfeatureCell#&gt;
+        cell.user = self.users![indexPath.row] as? &lt;#NewfeatureCell#&gt;;
+        return cell;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>05C086BA-24CC-4A90-A834-12A175D60DE8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>注册cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>注册cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

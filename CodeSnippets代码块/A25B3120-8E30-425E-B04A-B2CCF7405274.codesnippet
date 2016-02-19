@@ -3,26 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jCellChongYong</string>
+	<string>4jKVC模型数组</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        let &lt;#ID#&gt;:String = "&lt;#contact#&gt;"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(&lt;#ID#&gt; as String)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: &lt;#ID#&gt; as String)
-        }</string>
+	<string>class Person: NSObject {
+    var id: Int = 0
+    var age: Int = 0
+    var name: String?
+    
+
+// MARK: - 系统内部方法
+init(dict: [String: AnyObject])
+{
+    super.init()
+    setValuesForKeysWithDictionary(dict)
+}
+
+override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    
+}
+
+override var description: String{
+    
+    return "id = \(id), age = \(age), name = \(name)"
+}
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65BC6729-1056-4572-9C18-930E09204C3C</string>
+	<string>A25B3120-8E30-425E-B04A-B2CCF7405274</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>重用cell</string>
+	<string>KVC模型数组</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>重用cell</string>
+	<string>KVC模型数组</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -166,7 +166,7 @@ extension ComposeViewController: UITextViewDelegate {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>键盘高度的判断和文本添加占位符</string>
+	<string>键盘高度和文本占位符+toobar</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>键盘-textview的placehodle</string>
 	<key>IDECodeSnippetUserSnippet</key>

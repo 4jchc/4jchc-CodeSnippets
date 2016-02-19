@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jLazyUITextView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK:  初始化输入视图
+///  初始化输入视图
+private func setupInpuView()
+{
+    // 1.添加子控件
+    view.addSubview(textView)
+    textView.addSubview(placeholderLabel)
+    // 下拉弹簧效果
+    textView.alwaysBounceVertical = true
+    // 键盘消失模式On Drag拖
+    textView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
+    
+    // 2.布局子控件
+    textView.xmg_Fill(view)
+    placeholderLabel.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: textView, size: nil, offset: CGPoint(x: 5, y: 8))
+}
+
+private lazy var textView: UITextView = {
+    let tv = UITextView()
+    tv.delegate = self
+    return tv
+}()
+    /// 占位文本 － 注意：懒加载的对象属性，不要使用 weak
+    lazy var placeHolderLabel: UILabel? = {
+        let l = UILabel()
+        l.text = "分享新鲜事..."
+        l.font = UIFont.systemFontOfSize(18)
+        l.textColor = UIColor.lightGrayColor()
+        l.frame = CGRectMake(5, 8, 0, 0)
+        // 可以根据文本的内容大小，自动调整
+        l.sizeToFit()
+        
+        return l
+    }()
+extension ComposeViewController: UITextViewDelegate {
+    
+    
+    /// 将要使用 replacementText 添加到 textView 的 range 位置
+    /// 能够在用户输入之前进行判断
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -&gt; Bool {
+        
+        // 删除键或者其他的功能键如何判断？
+        if text.isEmpty {
+            print("是删除吗？")
+            return true
+        }
+        
+        // 在 textView 控件中，没有代理方法监听回车键！
+        // 以下代码是在 textView 中拦截回车键的办法
+        if text == "\n" {
+            print("回车键")
+            view.endEditing(true)
+        }
+        
+        // 微博文字通常限制 140 个字
+        if textView.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) &gt; 10 {
+            return false
+        }
+        
+        return true
+    }
+    func textViewDidChange(textView: UITextView) {
+        print(textView.text)
+        
+        placeHolderLabel!.hidden = !textView.text.isEmpty
+        sendButton.enabled = !textView.text.isEmpty
+    }
+    /// 滚动视图开始被拖拽
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        textView.resignFirstResponder()
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B1BF91B4-67DC-4C61-A209-7E1208F9302A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>懒加载UITextView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载UITextView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

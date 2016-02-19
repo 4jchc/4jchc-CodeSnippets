@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jyuesu</string>
+	<string>4jVFL</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -42,6 +42,27 @@
         self.inputViewConstraint = vContraints.lastObject as! NSLayoutConstraint
         NSLog("%@",vContraints);
     }
+
+    private func setupUI()
+    {
+        // 1.添加子控件
+        contentView.addSubview(addButton)
+        contentView.addSubview(removeButton)
+        
+        
+        // 2.布局子控件
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        removeButton.translatesAutoresizingMaskIntoConstraints = false
+        var cons = [NSLayoutConstraint]()
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[addButton]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["addButton": addButton])
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[addButton]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["addButton": addButton])
+        
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:[removeButton]-2-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["removeButton": removeButton])
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-2-[removeButton]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["removeButton": removeButton])
+        
+        contentView.addConstraints(cons)
+    }
+    
     </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>A8049DF2-B78B-4A25-A6A3-F0BB0C184125</string>
@@ -50,7 +71,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>代码实现自动布局 VFL</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>代码实现自动布局</string>
+	<string>代码实现自动布局 VFL</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>varCGFloat</string>
+	<string>4jSA</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#w#&gt;:CGFloat = &lt;#locations.last#&gt;</string>
+	<string>[String: AnyObject]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>8E0D47D2-2A3B-468F-8EB8-249CCAF0F3E0</string>
+	<string>1A24CCF7-E8C5-4BA4-8192-93BF342AAF06</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>varCGFloat</string>
+	<string>[String: AnyObject]</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>varCGFloat</string>
+	<string>[String: AnyObject]</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

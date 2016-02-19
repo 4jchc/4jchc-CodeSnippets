@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jParams参数</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 显示指示器
+        SVProgressHUD.showInfoWithStatus("正在加载...", maskType: SVProgressHUDMaskType.Black)
+        // 1.定义URL路径
+        let path = "&lt;#a#&gt;"
+        // 2.封装参数
+        let params = NSMutableDictionary()
+        params["&lt;#a#&gt;"] = "&lt;#a#&gt;";
+        params["&lt;#a#&gt;"] = "&lt;#a#&gt;";
+        // 隐藏指示器
+        SVProgressHUD.dismiss()
+        
+        // 显示失败信息
+        SVProgressHUD.showErrorWithStatus("加载信息失败!")</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DA200DA8-65D9-4104-A626-1BDCDE33FD67</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>网络请求params参数</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>网络请求params参数</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

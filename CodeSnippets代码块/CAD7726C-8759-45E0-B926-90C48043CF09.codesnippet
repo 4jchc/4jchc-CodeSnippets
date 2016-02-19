@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jvarBian</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** &lt;#友好显示名称#&gt; */
+    var image_list: String?
+    /** &lt;#友好显示名称#&gt; */
+    var theme_name: String?
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#name#&gt;: String?
+    
+    /** &lt;#友好显示名称#&gt; */
+    var sub_number: Int = 0
+    
+    /** &lt;#友好显示名称#&gt; */
+    var expires_in:NSNumber = 0
+    
+    /** &lt;#友好显示名称#&gt; */
+    var isVip:Bool?
+    
+    /** &lt;#友好显示名称#&gt; */
+    var pic_urls:NSArray?
+    
+    /** &lt;#友好显示名称#&gt; */
+    var nameLabel:UILabel?</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CAD7726C-8759-45E0-B926-90C48043CF09</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>模型属性var变量</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型属性var变量</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

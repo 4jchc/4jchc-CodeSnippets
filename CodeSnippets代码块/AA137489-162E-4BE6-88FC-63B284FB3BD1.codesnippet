@@ -3,34 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>jianlimoxingshuzu</string>
+	<string>4jAssert</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///****✅&lt;#HMHero#&gt;模型数组
-class &lt;#HMHero#&gt;:NSObject{
-    
-    ///*****✅模型数组元素
-    var &lt;#name#&gt;:NSString!
-    var &lt;#name#&gt;:NSString!
-    var &lt;#name#&gt;:NSString!
-    
-    
-    ///*****✅模型数组元素赋值方法
-    func initWithDict(dict:NSDictionary){
-        
-        dict.setValuesForKeysWithDictionary(dict as! [String : AnyObject])  }
-    
-
-}</string>
+	<string>assert(&lt;#name#&gt; != nil, "&lt;#name#&gt;不能为空")</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>174A7583-3481-4676-BB9E-A608651C634C</string>
+	<string>AA137489-162E-4BE6-88FC-63B284FB3BD1</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>assert断言</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>建立模型数组</string>
+	<string>assert断言</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

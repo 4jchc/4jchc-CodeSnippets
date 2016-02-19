@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jZDYUIToolbar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+import UIKit
+/** 枚举 */
+enum XMGKeyboardToolItem {
+    case Previous
+    case Next
+    case Done
+
+}
+
+/** 代理 */
+protocol XMGKeyboardToolDelegate:NSObjectProtocol{
+    
+    func keyboardTool(tool:XMGKeyboardTool,didClickItem:XMGKeyboardToolItem)
+    
+}
+
+class XMGKeyboardTool: UIToolbar {
+
+    //A.2初始化代理协议一定要加上weak, 避免循环引用
+    weak var toolbarDelegate:XMGKeyboardToolDelegate?
+    func tool()-&gt;XMGKeyboardTool{
+        
+    return NSBundle.mainBundle().loadNibNamed("XMGKeyboardTool", owner: nil, options: nil).first as! XMGKeyboardTool
+ 
+    }
+    
+    @IBAction func previous(sender: AnyObject) {
+        
+        self.toolbarDelegate?.keyboardTool(self, didClickItem: XMGKeyboardToolItem.Previous)
+    }
+    
+    
+    @IBAction func next(sender: AnyObject) {
+        
+        self.toolbarDelegate?.keyboardTool(self, didClickItem: XMGKeyboardToolItem.Next)
+    }
+    
+    
+    @IBAction func done(sender: AnyObject) {
+        
+        self.toolbarDelegate?.keyboardTool(self, didClickItem: XMGKeyboardToolItem.Done)
+    }
+
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7D23C810-EF8D-4784-8503-D1C7DD8567E4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>枚举-代理-自定义UIToolbar</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>枚举-代理-自定义UIToolbar</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIProgressView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: - Variables
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var progress: UIProgressView!
+    
+    //MARK: - Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let savedProgress = read()
+        if savedProgress == -1 {
+            label.text = "An error occurred."
+            progress.hidden = true
+        } else {
+            label.text = "Papyros is \(savedProgress)% done."
+            progress.hidden = false
+            progress.progress = Float(savedProgress) / 100.0
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let currentProgress = downloadProgress()
+        if currentProgress != -1 {
+            save(currentProgress)
+            label.text = "Papyros is \(currentProgress)% done."
+            progress.hidden = false
+            progress.progress = Float(currentProgress) / 100.0
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0C48AAF6-7BEE-4DB0-A085-81D034EF088A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UIProgressView案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIProgressView案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

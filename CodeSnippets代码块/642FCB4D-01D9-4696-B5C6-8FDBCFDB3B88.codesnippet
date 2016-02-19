@@ -3,13 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jLazyLable</string>
+	<string>4jLazyUILabel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    private lazy var newStatusLabel: UILabel = {
+	<string>    
+    private lazy var newStatusLabel: UILabel = {
         let label = UILabel()
         let height: CGFloat = 44
         //        label.frame =  CGRect(x: 0, y: -2 * height, width: UIScreen.mainScreen().bounds.width, height: height)
@@ -23,15 +24,28 @@
         
         label.hidden = true
         return label
+    }()
+    private lazy var placeholderLabel: UILabel = {
+       let label = UILabel()
+        label.font = UIFont.systemFontOfSize(20)
+        label.textColor = UIColor.darkGrayColor()
+        label.text = "分享新鲜事..."
+        return label
+    }()
+    
+    private lazy var tipLabel: UILabel = {
+       let label = UILabel()
+        
+        return label
     }()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>814DF044-DB79-4AD7-8C19-10816BA63392</string>
+	<string>642FCB4D-01D9-4696-B5C6-8FDBCFDB3B88</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>懒加载Lable</string>
+	<string>懒加载UILabel </string>
 	<key>IDECodeSnippetTitle</key>
-	<string>懒加载Lable</string>
+	<string>懒加载UILabel </string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

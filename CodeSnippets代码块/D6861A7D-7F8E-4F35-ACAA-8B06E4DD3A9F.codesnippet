@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>patharrayanimation</string>
+	<string>4jDongHuaPathaArray</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -74,9 +74,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>可以添加路径和数组的动画效果</string>
+	<string>CAKeyframeAnimation可以添加路径和数组的动画效果</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>CAKeyframeAnimation</string>
+	<string>CAKeyframeAnimation可以添加路径和数组的动画效果</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

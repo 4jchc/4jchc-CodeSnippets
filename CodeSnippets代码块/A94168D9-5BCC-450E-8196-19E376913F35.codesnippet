@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAFNetworking-SVProgressHUD</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK: - AFNetworking
+import UIKit
+import AFNetworking
+
+class NetworkTools: AFHTTPSessionManager {
+    
+    static let tools:NetworkTools = {
+        // 注意: baseURL一定要以/结尾
+        let url = NSURL(string: "https://api.weibo.com/")
+        let t = NetworkTools(baseURL: url)
+        
+        // 设置AFN能够接收得数据类型
+        t.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as? Set&lt;String&gt;
+        return t
+    }()
+    
+    /// 获取单粒的方法
+    class func shareNetworkTools() -&gt; NetworkTools {
+        return tools
+    }
+
+
+    
+    
+    class func GET(vc: UIViewController, url: NSURL) {
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+
+
+        
+        NetworkTools.shareNetworkTools().GET(url.absoluteString, parameters: nil, progress: { (progress) -&gt; Void in} , success: { (_, JSON) -&gt; Void in
+            /*
+            let responseViewController = HTTPResponseViewController(nibName: "HTTPResponseView", bundle: nil)
+            responseViewController.responseObject = responseObject
+            vc.presentViewController(responseViewController, animated: true, completion: {
+            SVProgressHUD.showSuccessWithStatus("Success")
+            })
+            */
+            
+            
+            
+            // 1.提示用户发送成功
+            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+            
+            }) { (_, error) -&gt; Void in
+                
+                // 3.提示用户发送失败
+                SVProgressHUD.showErrorWithStatus("\(error)发送失败", maskType: SVProgressHUDMaskType.Black)
+        }
+        
+    }
+    
+    
+    
+    
+    class func POST(vc: UIViewController, url: NSURL, parameters: NSDictionary) {
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+
+        NetworkTools.shareNetworkTools().POST(url.absoluteString, parameters: parameters,progress: { (progress) -&gt; Void in} , success: { (_, JSON) -&gt; Void in
+            /*
+            let responseViewController = HTTPResponseViewController(nibName: "HTTPResponseView", bundle: nil)
+            responseViewController.responseObject = responseObject
+            vc.presentViewController(responseViewController, animated: true, completion: {
+            SVProgressHUD.showSuccessWithStatus("Success")
+            })
+            */
+
+            
+            
+            // 1.提示用户发送成功
+            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+
+            }) { (_, error) -&gt; Void in
+                
+                // 3.提示用户发送失败
+                SVProgressHUD.showErrorWithStatus("\(error)发送失败", maskType: SVProgressHUDMaskType.Black)
+        }
+    }
+    
+    
+    class func POST(vc: UIViewController, url: NSURL, parameters: NSDictionary,filePath: NSURL) {
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+
+
+        NetworkTools.shareNetworkTools().POST(url.absoluteString, parameters: parameters, constructingBodyWithBlock: {(formData: AFMultipartFormData!) in
+            /*
+            formData.appendPartWithFileURL(filePath, name: "file", error: nil)
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+            
+            */
+
+            },progress: { (progress) -&gt; Void in} , success: { (_, JSON) -&gt; Void in
+            /*
+            let responseViewController = HTTPResponseViewController(nibName: "HTTPResponseView", bundle: nil)
+            responseViewController.responseObject = responseObject
+            vc.presentViewController(responseViewController, animated: true, completion: {
+            SVProgressHUD.showSuccessWithStatus("Success")
+            })
+            */
+            
+            
+            
+            // 1.提示用户发送成功
+            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+            
+            }) { (_, error) -&gt; Void in
+                
+                // 3.提示用户发送失败
+                SVProgressHUD.showErrorWithStatus("\(error)发送失败", maskType: SVProgressHUDMaskType.Black)
+        }
+    }
+    
+    
+}
+    
+    
+    
+    
+    
+
+
+//MARK: - SVProgressHUD
+import UIKit
+import SVProgressHUD
+
+class Progress: NSObject {
+    
+    static func setupProgress() {
+        SVProgressHUD.setRingThickness(1.0)
+        SVProgressHUD.setForegroundColor(UIColor.redColor())
+    }
+    
+    static func show() {
+        setupProgress()
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+    }
+    static func dismiss() {
+        setupProgress()
+        SVProgressHUD.dismiss()
+    }
+    
+    class func showProgressWithMessage(message:String){
+        SVProgressHUD.setBackgroundColor(UIColor.redColor())
+        SVProgressHUD.showWithStatus(message)
+    }
+    
+    class func stopProgress(){
+        SVProgressHUD.dismiss()
+    }
+    
+    class func stopWithSuccessMessage(message:String){
+        SVProgressHUD.popActivity()
+        SVProgressHUD.showSuccessWithStatus(message)
+    }
+    
+    class func stopWithSuccessMessageImg(image:UIImage,message:String){
+        SVProgressHUD.popActivity()
+        SVProgressHUD.showImage(image, status: message)
+    }
+    
+    class func stopWithErrorMessage(message:String){
+        SVProgressHUD.popActivity()
+        SVProgressHUD.showErrorWithStatus(message)
+    }
+    
+    class func dispatch_async_main(block: () -&gt; ()) {
+        
+        dispatch_async(dispatch_get_main_queue(), block)
+    }
+    
+    class func dispatch_async_global(block: () -&gt; ()) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+    }
+}
+
+
+import UIKit
+class ProgressHUDManager {
+    
+    class func setBackgroundColor(color: UIColor) {
+        SVProgressHUD.setBackgroundColor(color)
+    }
+    
+    class func setForegroundColor(color: UIColor) {
+        SVProgressHUD.setForegroundColor(color)
+    }
+    
+    class func setSuccessImage(image: UIImage) {
+        SVProgressHUD.setSuccessImage(image)
+    }
+    
+    class func setErrorImage(image: UIImage) {
+        SVProgressHUD.setErrorImage(image)
+    }
+    
+    class func setFont(font: UIFont) {
+        SVProgressHUD.setFont(UIFont.systemFontOfSize(16))
+    }
+    
+    class func showImage(image: UIImage, status: String) {
+        SVProgressHUD.showImage(image, status: status)
+    }
+    
+    class func show() {
+        SVProgressHUD.show()
+    }
+    
+    class func dismiss() {
+        SVProgressHUD.dismiss()
+    }
+    
+    class func showWithStatus(status: String) {
+        SVProgressHUD.showWithStatus(status)
+    }
+    
+    class func isVisible() -&gt; Bool {
+        return SVProgressHUD.isVisible()
+    }
+    
+    class func showSuccessWithStatus(string: String) {
+        SVProgressHUD.showSuccessWithStatus(string)
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A94168D9-5BCC-450E-8196-19E376913F35</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AFNetworking-SVProgressHUD</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AFNetworking-SVProgressHUD</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

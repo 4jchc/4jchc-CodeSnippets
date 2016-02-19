@@ -3,26 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jCellChongYong</string>
+	<string>4jFuncHanZi</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        let &lt;#ID#&gt;:String = "&lt;#contact#&gt;"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(&lt;#ID#&gt; as String)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: &lt;#ID#&gt; as String)
-        }</string>
+	<string>func &lt;#基本查询指令#&gt;(){
+    
+    /*
+    
+    &lt;#多行注释#&gt;
+
+    */
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65BC6729-1056-4572-9C18-930E09204C3C</string>
+	<string>5EDDAC72-6B5B-43F6-A75E-E1B8B5E375B8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>重用cell</string>
+	<string>func汉子</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>重用cell</string>
+	<string>func汉子</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

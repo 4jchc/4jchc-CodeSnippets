@@ -27,14 +27,6 @@ private lazy var &lt;#composeBtn#&gt;:UIButton = {
 }()
 
 
-func close()
-{
-    dismissViewControllerAnimated(true, completion: nil)
-}
-func save()
-{
-    print(__FUNCTION__)
-}
 
 // MARK: - 懒加载
 private lazy var closeBtn: UIButton = {
@@ -56,12 +48,47 @@ private lazy var saveBtn: UIButton = {
     btn.addTarget(self, action: "save", forControlEvents: UIControlEvents.TouchUpInside)
     return btn
 }()
+func close()
+{
+    dismissViewControllerAnimated(true, completion: nil)
+}
+func save()
+{
+    print(__FUNCTION__)
+}
 
-    private lazy var iconButton: UIButton = {
-        let btn = UIButton()
-        btn.titleLabel?.font = UIFont.systemFontOfSize(32)
-        return btn
-    }()</string>
+
+// MARK: - 懒加载
+private lazy var removeButton: UIButton = {
+    let btn = UIButton()
+    btn.setBackgroundImage(UIImage(named: "&lt;#compose_photo_close#&gt;"), forState: UIControlState.Normal)
+    btn.addTarget(self, action: "removeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+    return btn
+}()
+private lazy  var addButton: UIButton = {
+    let btn = UIButton()
+    btn.setBackgroundImage(UIImage(named: "&lt;#compose_photo_close#&gt;"), forState: UIControlState.Normal)
+    btn.addTarget(self, action: "addBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+    return btn
+}()
+
+func addBtnClick()
+{
+    print(__FUNCTION__)
+}
+
+func removeBtnClick()
+{
+    print(__FUNCTION__)
+}
+
+
+
+private lazy var iconButton: UIButton = {
+    let btn = UIButton()
+    btn.titleLabel?.font = UIFont.systemFontOfSize(32)
+    return btn
+}()</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>103F000C-D4A0-4F50-84EB-17504CB86727</string>
 	<key>IDECodeSnippetLanguage</key>

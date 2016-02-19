@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAFN0</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import AFNetworking
+
+class NetworkTools: AFHTTPSessionManager {
+    
+    static let tools:NetworkTools = {
+        // 注意: baseURL一定要以/结尾
+        let url = NSURL(string: "https://api.weibo.com/")
+        let t = NetworkTools(baseURL: url)
+        
+        // 设置AFN能够接收得数据类型
+        t.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as? Set&lt;String&gt;
+        return t
+    }()
+    
+    /// 获取单粒的方法
+    class func shareNetworkTools() -&gt; NetworkTools {
+        return tools
+    }
+
+}
+
+
+//MARK: 发送文本微博
+func sendStatus(){
+    
+    print(textView.text)
+    // 更改图文混排
+    print(textView.emoticonAttributedText())
+    
+    if let image = photoSelectorVC.pictureImages.first
+    {
+        // 发送图片微博
+        let path = "2/statuses/upload.json"
+        let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, constructingBodyWithBlock: { (formData) -&gt; Void in
+            // 1.将数据转换为二进制
+            let data = UIImagePNGRepresentation(image)
+            
+            // 2.上传数据
+            /*
+            第一个参数: 需要上传的二进制数据
+            第二个参数: 服务端对应哪个的字段名称
+            第三个参数: 文件的名称(在大部分服务器上可以随便写)
+            第四个参数: 数据类型, 通用类型application/octet-stream
+            */
+            formData.appendPartWithFileData(data!
+                , name:"pic", fileName:"abc.png", mimeType:"application/octet-stream");
+            
+            },progress: { (progress) -&gt; Void in} , success: { (_, JSON) -&gt; Void in
+                // 1.提示用户发送成功
+                SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+                // 2.关闭发送界面
+                self.close()
+                //  disables禁止Automatic自动的Keyboard键盘Dismissal解雇
+                self.photoSelectorVC.disablesAutomaticKeyboardDismissal()
+                
+            }, failure: { (_, error) -&gt; Void in
+                print(error)
+                // 3.提示用户发送失败
+                SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
+                
+        })
+    }else
+    {
+        // 发送文字微博
+        let path = "2/statuses/update.json"
+        let params = ["access_token":UserAccount.loadAccount()!.access_token! , "status": textView.emoticonAttributedText()]
+        NetworkTools.shareNetworkTools().POST(path, parameters: params,progress: { (progress) -&gt; Void in} , success: { (_, JSON) -&gt; Void in
+            
+            // 1.提示用户发送成功
+            SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+            // 2.关闭发送界面
+            self.close()
+            }) { (_, error) -&gt; Void in
+                print(error)
+                // 3.提示用户发送失败
+                SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
+        }
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CF19D16A-B47A-49C1-8A89-3FF6230439D1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AFN-前期0新浪微博发送微博</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AFN-前期0</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

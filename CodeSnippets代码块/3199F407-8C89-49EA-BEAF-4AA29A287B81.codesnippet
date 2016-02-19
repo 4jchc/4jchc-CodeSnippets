@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>    deinit{
-        print("**\(super.classForCoder)--已销毁")
+        print("\(super.classForCoder)--❤️已销毁")
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3199F407-8C89-49EA-BEAF-4AA29A287B81</string>

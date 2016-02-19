@@ -9,31 +9,42 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    //MARK: - async -- 串行队列（有时候用）
-    // 会不会创建线程：会，一般只开1条线程
-    // 任务的执行方式：串行执行（一个任务执行完毕后再执行下一个任务）
+	<string>//MARK: - async -- 串行队列（有时候用）
+// 会不会创建线程：会，一般只开1条线程
+// 任务的执行方式：Serial串行执行（一个任务执行完毕后再执行下一个任务）
+func asyncSerialQueue(){
+    /// 1.创建一个串行队列
     
-    func asyncSerialQueue(){
-        /// 1.创建一个串行队列
-        
-        let queue:dispatch_queue_t = dispatch_queue_create("cn.heima.queue", nil)
-        
-        /// 2.将任务添加到串行队列中 异步 执行
-        
-        dispatch_async(queue) { () -&gt; Void in
-            NSLog("-----下载图片1---%@", NSThread.currentThread())
-        }
+    let queue:dispatch_queue_t = dispatch_queue_create("cn.heima.queue", DISPATCH_QUEUE_SERIAL)
+    
+    /// 2.将任务添加到串行队列中 异步 执行
+    
+    dispatch_async(queue) { () -&gt; Void in
+        NSLog("-----下载图片1---%@", NSThread.currentThread())
+    }
+    
+    
+    
+    dispatch_async(queue) { () -&gt; Void in
+        NSLog("-----下载图片5---%@", NSThread.currentThread())
+    }
+    
+    
+    // 3.非ARC，需要释放创建的队列
+    //    dispatch_release(queue);
+}
+// 创建一个串行队列DISPATCH调度 _ QUEUE队列 _SERIAL串行的
+private let dbQueue = dispatch_queue_create("com.520it.lnj", DISPATCH_QUEUE_SERIAL)
 
-
-
-        dispatch_async(queue) { () -&gt; Void in
-            NSLog("-----下载图片5---%@", NSThread.currentThread())
-        }
-        
-
-        // 3.非ARC，需要释放创建的队列
-        //    dispatch_release(queue);
-    }</string>
+func execQueueSQL(action: (manager: SQLiteManager)-&gt;())
+{
+    // 1.开启一个子线程
+    dispatch_async(dbQueue) { () -&gt; Void in
+        print(NSThread.currentThread())
+        // 2.执行闭包
+        action(manager: self)
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>BAF80406-E7E2-4987-9947-2AE903A08C14</string>
 	<key>IDECodeSnippetLanguage</key>

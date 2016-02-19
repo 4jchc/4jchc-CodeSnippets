@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>chundaima-cell</string>
+	<string>4jChunDaiMa-cell</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -262,6 +262,8 @@ class HMStatusCell: UITableViewCell {
 	<string>CB920217-3176-44AD-A59B-DC4AA5FF6CF8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>纯代码cell-高度自适应微博版</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>纯代码cell-高度自适应微博版</string>
 	<key>IDECodeSnippetUserSnippet</key>

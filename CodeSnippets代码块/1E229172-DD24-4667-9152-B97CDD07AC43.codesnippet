@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jNSTimer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+class TimeKeeper {
+    var interTime: NSTimer!
+    var progress: UIProgressView!
+    var currentProgress: Float!
+    var max: Float!
+    var responder: UIViewController!
+    
+    var paused: Bool!
+    
+    init(progress: UIProgressView, responder: UIViewController) {
+        self.responder = responder
+        self.progress = progress
+        self.currentProgress = 0.0
+        self.paused = false
+        self.progress.setProgress(0.0, animated: false)
+        
+        NSNotificationCenter.defaultCenter().addObserver(responder, selector: "timeUp:", name: "TimeFinishedNotification", object: nil)
+        
+        self.max = Upgrade().isUpgraded() ? 10 : 7
+    }
+    
+    func startTime() {
+        interTime = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "fireUpdate:", userInfo: nil, repeats: true)
+    }
+    
+    @objc func fireUpdate(timer: NSTimer) {
+        currentProgress = currentProgress + 0.1
+        progress!.setProgress(currentProgress / max, animated: true)
+        print("Time: \(currentProgress / max)", terminator: "")
+        
+        if (currentProgress &gt;= max) {
+            dispatch_async(dispatch_get_main_queue()) {
+                NSNotificationCenter.defaultCenter().postNotificationName("TimeFinishedNotification", object: nil)
+            }
+        }
+    }
+    
+    func endTime() {
+        interTime.invalidate()
+        currentProgress = 0.0
+    }
+    
+    func togglePause() {
+        if (!paused) {
+            self.startTime()
+        } else {
+            interTime.invalidate()
+        }
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1E229172-DD24-4667-9152-B97CDD07AC43</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSTimer案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSTimer案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

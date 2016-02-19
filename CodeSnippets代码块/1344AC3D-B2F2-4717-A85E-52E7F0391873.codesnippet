@@ -3,13 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jPresent</string>
+	<string>4jPresentViewController</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        // 弹出Nav&lt;#登录#&gt;界面
+	<string>        let login = &lt;#OAuthViewController#&gt;()
+        self.presentViewController(login, animated: true, completion: nil)
+        
+        let tags = &lt;#OAuthViewController#&gt;()
+        self.navigationController?.pushViewController(tags, animated: true)
+        
+        // 弹出Nav&lt;#登录#&gt;界面
         let oauthVC = &lt;#OAuthViewController#&gt;()
         let nav = UINavigationController(rootViewController: oauthVC)
         presentViewController(nav, animated: true, completion: nil)
@@ -27,8 +33,10 @@
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "registerBtnWillClick")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "loginBtnWillClick")
         
-
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItemStyle.Plain, target: self, action: "close")
+        //MARK: 关闭控制器
+        ///  关闭控制器
         func close()
         {
             dismissViewControllerAnimated(true, completion: nil)
@@ -41,13 +49,13 @@
             
         }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1AA0632F-5DC0-4FDB-AC63-B79F91CB8DBC</string>
+	<string>1344AC3D-B2F2-4717-A85E-52E7F0391873</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>presentViewController</string>
+	<string>弹出控制器presentViewController</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>弹出带Nav&amp;StroBD的控制器左右按钮点击消失</string>
+	<string>弹出控制器presentViewController</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

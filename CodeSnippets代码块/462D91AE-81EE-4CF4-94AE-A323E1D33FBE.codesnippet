@@ -9,11 +9,24 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class PhotoBrowserLayout : UICollectionViewFlowLayout {
+	<string>//MARK: - 自定义FlowLayout布局
+class EmoticonLayout: UICollectionViewFlowLayout {
     
     override func prepareLayout() {
-        itemSize = UIScreen.mainScreen().bounds.size
+        super.prepareLayout()
+        // 1.设置cell相关属性
+        let width = UIScreen.mainScreen().bounds.width/7
+        var hight = width
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
+            
+            hight = collectionView!.bounds.height/3.2
+        }
+
+        //let width = collectionView!.bounds.width / 7
+        itemSize = CGSize(width: width, height: hight)
+        // minimum Inter在...中间 item项 Spacing间隔
         minimumInteritemSpacing = 0
+        // minimum最小量 Line行Spacing间隔
         minimumLineSpacing = 0
         // 滚动Direction方向
         scrollDirection = UICollectionViewScrollDirection.Horizontal
@@ -23,7 +36,13 @@
         collectionView?.pagingEnabled = true
         // 弹簧效果
         collectionView?.bounces =  false
+        
+        // 注意:最好不要乘以0.5, 因为CGFloat不准确, 所以如果乘以0.5在iPhone4/4身上会有问题
+        let y = (collectionView!.bounds.height - 3 * hight) * 0.45
+        collectionView?.contentInset = UIEdgeInsets(top: y, left: 0, bottom: y, right: 0)
+        
     }
+    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>462D91AE-81EE-4CF4-94AE-A323E1D33FBE</string>

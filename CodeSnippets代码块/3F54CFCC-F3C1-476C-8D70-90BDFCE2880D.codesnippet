@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>touchyidongtupian</string>
+	<string>4jUITouch移动图片</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>        
@@ -31,13 +31,51 @@
         center.x += offsetX
         center.y += offsetY
         
-        self.center = center</string>
+        self.center = center
+
+
+
+
+    override func touchesBegan(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        
+        // 1.获取手指点击的位置
+        let touch = (touches as NSSet).anyObject()!
+        let point = touch.locationInView(touch.view)
+        
+        print(point)
+        
+        // 2.获取URL的区域
+        // 注意: 没有办法直接设置UITextRange的范围
+        let range = NSMakeRange(10, 20)
+        // 只要设置selectedRange, 那么就相当于设置了selectedTextRange
+        selectedRange = range
+        
+        // 给定指定的range, 返回range对应的字符串的rect
+        // 返回数组的原因是因为文字可能换行
+        let array = selectionRectsForRange(selectedTextRange!)
+        
+        for selectionRect in array{
+            //            let tempView = UIView(frame: selectionRect.rect)
+            //            tempView.backgroundColor = UIColor.redColor()
+            //            addSubview(tempView)
+            
+            if CGRectContainsPoint(selectionRect.rect, point)
+            {
+                print("点击了URL")
+            }
+        }
+  
+    }
+
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3F54CFCC-F3C1-476C-8D70-90BDFCE2880D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UITouch移动图片</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>touch移动图片</string>
+	<string>UITouch移动图片</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

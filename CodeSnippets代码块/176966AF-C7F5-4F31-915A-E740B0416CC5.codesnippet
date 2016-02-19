@@ -92,9 +92,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>底部5个按钮的添加</string>
+	<string>UITabBar底部5个按钮的添加</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITabBar</string>
+	<string>UITabBar底部5个按钮的添加</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

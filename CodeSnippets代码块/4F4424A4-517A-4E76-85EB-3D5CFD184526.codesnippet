@@ -3,43 +3,68 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jBiBaoAnLi2</string>
+	<string>4jBiBao2</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    //A1.声明闭包
-    //A2.加入Func
-    //B1.调用Func
-    typealias AssetLoadCompletionHandler = () -&gt; Void
+	<string>//A1.声明闭包
+//A2.加入Func || A2传值-&gt;A3赋值给另一个Func的block
+//B1.调用Func
+typealias AssetLoadCompletionHandler = () -&gt; Void
+
+/**
+ *  加载场景需要使用的素材
+ *
+ *  @param callback 回调方法
+ */
+ //MARK: - 加载场景需要使用的素材
+static func loadSceneAssetsWithCompletionHandler(callback:AssetLoadCompletionHandler?){
     
-    /**
-     *  加载场景需要使用的素材
-     *
-     *  @param callback 回调方法
-     */
-     //MARK: - 加载场景需要使用的素材
-    static func loadSceneAssetsWithCompletionHandler(callback:AssetLoadCompletionHandler?){
+    
+    let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    let weakSelf = self
+    dispatch_async(queue) { () -&gt; Void in
         
-        
-        let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        let weakSelf = self
-        dispatch_async(queue) { () -&gt; Void in
-            
-            //处理耗时操作的代码块...
-            weakSelf.loadSceneAssets()
-            if callback != nil{
-                //因为回调函数涉及到实例化场景以及展现，因此需要在主线程执行
-                dispatch_async(dispatch_get_main_queue(), { () -&gt; Void in
-                    NSLog("实例化场景2： %@", NSThread.currentThread());
-                    callback!();
-                })
-            }
+        //处理耗时操作的代码块...
+        weakSelf.loadSceneAssets()
+        if callback != nil{
+            //因为回调函数涉及到实例化场景以及展现，因此需要在主线程执行
+            dispatch_async(dispatch_get_main_queue(), { () -&gt; Void in
+                NSLog("实例化场景2： %@", NSThread.currentThread());
+                callback!();
+            })
         }
     }
+}
+
+//B1.调用Func
+
+//A1.声明闭包
+var emoticonDidSelectedCallBack: (emoticon: Emoticon)-&gt;()
+
+//A2传值 || 外界调用需要参数.内部要定义一个闭包来保存获得的值让外界调用此闭包
+emoticonDidSelectedCallBack(emoticon: emoticon)
+
+//A3赋值给另一个Func的block
+init(callBack: (emoticon: Emoticon)-&gt;())
+{
+    self.emoticonDidSelectedCallBack = callBack
+    super.init(nibName: nil, bundle: nil)
+}
+
+//B1.调用Func
+// MARK: - 懒加载
+// weak 相当于OC中的 __weak , 特点对象释放之后会将变量设置为nil
+// unowned 相当于OC中的 unsafe_unretained, 特点对象释放之后不会将变量设置为nil
+private lazy var emoticonVC: EmoticonViewController = EmoticonViewController { [unowned self] (emoticon) -&gt; () in
     
-    //B1.调用Func</string>
+    // 1.判断当前点击的是否是emoji表情
+    if emoticon.emojiStr != nil{
+        self.customTextView.replaceRange(self.customTextView.selectedTextRange!, withText: emoticon.emojiStr!)
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>4F4424A4-517A-4E76-85EB-3D5CFD184526</string>
 	<key>IDECodeSnippetLanguage</key>

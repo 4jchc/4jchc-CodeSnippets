@@ -3,26 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jCellChongYong</string>
+	<string>4jDD1234</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        let &lt;#ID#&gt;:String = "&lt;#contact#&gt;"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(&lt;#ID#&gt; as String)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: &lt;#ID#&gt; as String)
-        }</string>
+	<string>        // 1.&lt;#从本地数据库中获取#&gt;
+        &lt;#从本地数据库中获取#&gt;
+        // 2.&lt;#从本地数据库中获取#&gt;
+        &lt;#从本地数据库中获取#&gt;
+        // 3.&lt;#从本地数据库中获取#&gt;
+        &lt;#从本地数据库中获取#&gt;
+        // 4.&lt;#从本地数据库中获取#&gt;
+        &lt;#从本地数据库中获取#&gt;
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65BC6729-1056-4572-9C18-930E09204C3C</string>
+	<string>4CF4CA06-4188-4283-8DCF-A4EBCF31D541</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>重用cell</string>
+	<string>注释1234</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>重用cell</string>
+	<string>注释1234</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
