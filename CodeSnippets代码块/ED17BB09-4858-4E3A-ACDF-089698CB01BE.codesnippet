@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>letWindow</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 窗口级别
+        // UIWindowLevelNormal &lt; UIWindowLevelStatusBar &lt; UIWindowLevelAlert
+        let window:UIWindow = UIWindow()
+        window.frame = CGRectMake(0, 0, 375, 20);
+        window.backgroundColor = UIColor.redColor()
+        window.windowLevel = UIWindowLevelStatusBar;
+        window.hidden = false</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ED17BB09-4858-4E3A-ACDF-089698CB01BE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>let-window</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>let-window</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

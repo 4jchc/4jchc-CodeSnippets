@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jConvertRect</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            let newFrame:CGRect = UIApplication.sharedApplication().keyWindow!.convertRect(subview.frame, fromView: subview.superview)
+            let newFrame:CGRect = (subview.superview!.convertRect(subview.frame, toView: nil))</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4B43AEA6-C2C6-4778-82BB-A0E96EA11552</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>坐标转换-convertRect</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>坐标转换-convertRect</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

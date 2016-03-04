@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jCellCeshi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 50;
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        
+        let ID:String = "contact"
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(ID as String)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ID as String)
+        }
+        cell!.textLabel!.text = String(format: "----%zd",indexPath.row)
+        
+        
+        return cell!
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F5FCC2C2-5955-429A-BCE8-C06D7E52F51A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>测试cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>测试cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

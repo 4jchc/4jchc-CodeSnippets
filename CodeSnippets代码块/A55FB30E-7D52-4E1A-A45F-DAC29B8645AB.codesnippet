@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAFN-正常加载数据</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK:   加载数据
+    ///   加载数据
+    func loadCategories(){
+        
+        // 显示指示器
+        SVProgressHUD.showInfoWithStatus("正在加载...", maskType: SVProgressHUDMaskType.Black)
+        // 1.定义URL路径
+        let path = "api/api_open.php"
+        // 2.封装参数
+        let params = NSMutableDictionary()
+        
+        params["a"] = "list";
+        params["c"] = "data";
+        params["type"] = "29";
+        NetworkTools.shareNetworkTools().sendGET(path, params: params, successCallback: { (responseObject) -&gt; () in
+            
+            // 隐藏指示器
+            SVProgressHUD.dismiss()
+            // 服务器返回的JSON数据
+            self.topics = responseObject["list"] as! NSMutableArray
+            
+            // 刷新表格
+            self.tableView.reloadData()
+            
+            }) { (error) -&gt; () in
+                // 显示失败信息
+                SVProgressHUD.showErrorWithStatus("加载推荐信息失败!")
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A55FB30E-7D52-4E1A-A45F-DAC29B8645AB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AFN加载数据</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AFN加载数据</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

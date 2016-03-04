@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>letUIView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let indicatorView:UIView = UIView()
+        indicatorView.backgroundColor = UIColor.&lt;#redColor()#&gt;
+        indicatorView.height = &lt;#2#&gt;
+        indicatorView.y = &lt;#titlesView.height - indicatorView.height;#&gt;
+        &lt;#titlesView#&gt;.addSubview(indicatorView)
+        self.indicatorView = indicatorView;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C6DB27BA-0165-4D10-9B46-2F10C9AC45CB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>let-UIView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>let-UIView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

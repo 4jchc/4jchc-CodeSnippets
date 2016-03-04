@@ -60,9 +60,9 @@ class XMGKeyboardTool: UIToolbar {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>枚举-代理-自定义UIToolbar</string>
+	<string>自定义UIToolbar-枚举-代理</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>枚举-代理-自定义UIToolbar</string>
+	<string>自定义UIToolbar-枚举-代理</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

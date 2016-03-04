@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIButton-按钮的文字分为3种情况</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: 按钮的文字分为3种情况
+    func setupButtonTitle(button:UIButton,count:Int,var placeholder:String){
+
+        if (count &gt; 10000) {
+            placeholder = String(format: "%.1f万", (Double(count) / 10000.0))
+            
+            
+        } else if (count &gt; 0) {
+            placeholder = String(format: "%zd", count)
+            
+        }
+        button.setTitle(placeholder, forState: UIControlState.Normal)
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E656BB07-8B26-4A59-8B2D-BC0DC96CEEF9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UIButton-按钮的文字分为3种情况-%.1f万</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIButton-按钮的文字分为3种情况-%.1f万</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

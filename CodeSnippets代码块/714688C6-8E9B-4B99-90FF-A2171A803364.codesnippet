@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jcellChongYong</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let ID:String = "&lt;#contact#&gt;"
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(ID as String)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ID as String)
+        }
+
+        
+        let topic = self.topics[indexPath.row] as! XMGTopic
+        cell!.textLabel!.text = topic.name
+        cell!.detailTextLabel!.text = topic.text
+        cell!.imageView!.sd_setImageWithURL(NSURL(string: topic.profile_image!), placeholderImage: UIImage(named: "defaultUserIcon"))
+        
+        
+        return cell!</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>714688C6-8E9B-4B99-90FF-A2171A803364</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cell-重用sd_set</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell-重用sd_set</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

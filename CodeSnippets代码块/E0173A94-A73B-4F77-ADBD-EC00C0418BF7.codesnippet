@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jStringTiHuan-替换</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    let text:NSString = String(format: "%.0f%%", progress * CGFloat(100))
+    // 替换
+    progressLabel.text = text.stringByReplacingOccurrencesOfString("-", withString: "")
+
+    // 1. 定义一个字符串
+    let str = &lt;#thumbnail_pic#&gt;! as NSString
+    // 2. 直接替换字符串
+    large_pic = str.stringByReplacingOccurrencesOfString("&lt;#thumbnail_pic#&gt;", withString: "&lt;#thumbnail_pic#&gt;")
+    
+    
+    // 1. 查找thumbnail_pic在字符串中出现的范围
+    let range = (str).rangeOfString("&lt;#thumbnail_pic#&gt;")
+    // 3. 处理字符串
+    // 判断是否找打对应的字符串
+    if range.location != NSNotFound {
+    // 拼接大图 url 地址
+    large_pic = str.substringToIndex(range.location) + "&lt;#thumbnail_pic#&gt;" + str.substringFromIndex(range.location + range.length)
+    }
+
+
+    
+    // 替换
+    &lt;#-#&gt; = &lt;#-#&gt;.stringByReplacingOccurrencesOfString("&lt;#-#&gt;", withString: "&lt;#-#&gt;")</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E0173A94-A73B-4F77-ADBD-EC00C0418BF7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>String-替换</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String-替换</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

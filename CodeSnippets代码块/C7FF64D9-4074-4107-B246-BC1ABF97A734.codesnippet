@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tianjia--分割线cell</string>
+	<string>4jCellFengGeXiang</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///*****💗cell添加分割线-------
+	<string>
     func addXian(cell:UITableViewCell){
         ///*****✅懒加载小视图添加到cell
         let divide = UIView.init()
@@ -27,9 +27,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>分割线cell</string>
+	<string>cell-分割线纯代码</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>分割线cell</string>
+	<string>cell-分割线纯代码</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

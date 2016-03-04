@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jSDSetImageProgrrss</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 设置图片带进度
+self.imageView.sd_setImageWithURL(NSURL(string: &lt;#topic!.large_image!#&gt;),placeholderImage: nil, options: .CacheMemoryOnly, progress: { [weak self] (receivedSize, expectedSize) -&gt; Void in
+    
+    self!.progressView.hidden = false
+    let progress:CGFloat =  CGFloat(receivedSize)/CGFloat(expectedSize)
+    self!.progressView.setProgress(progress, animated: false)
+                    self!.progressView.progressLabel.text = String(format: "%.0f%%", progress * CGFloat(100))
+    }) { [weak self] (image, error, cacheType, imageURL) -&gt; Void in
+        self!.progressView.hidden = true
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BDA19F1A-67BB-4C5A-AB95-DC02EFCF643C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>SD-sd_setImageProgrrss带进度</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SD-sd_setImageProgrrss带进度</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

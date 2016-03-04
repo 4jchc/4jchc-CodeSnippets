@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAttribute-属性</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 正常状态
+        var normalAttrs = [String:AnyObject]()
+        normalAttrs[NSForegroundColorAttributeName] = UIColor.grayColor()
+        normalAttrs[NSForegroundColorAttributeName] = UIColor(red: 81/255, green: &lt;#81#&gt;/255, blue: &lt;#81#&gt;/255, alpha: 1)
+        
+        normalAttrs[NSFontAttributeName] = UIFont.systemFontOfSize(12)
+        normalAttrs[NSFontAttributeName] = UIFont(name: "Heiti SC", size: &lt;#13.0#&gt;)
+        // 选中状态
+        var selectedAttrs = [String:AnyObject]()
+        selectedAttrs[NSForegroundColorAttributeName] = UIColor.darkGrayColor()
+        selectedAttrs[NSFontAttributeName] = UIFont.systemFontOfSize(&lt;#13.0#&gt;)
+        
+        // Disabled残废的状态
+        var disabledAttrs = [String:AnyObject]()
+        disabledAttrs[NSForegroundColorAttributeName] = UIColor.darkGrayColor()
+        disabledAttrs[NSFontAttributeName] = UIFont.systemFontOfSize(&lt;#13.0#&gt;)
+
+        
+        
+        let navBar:UINavigationBar = UINavigationBar.appearance()
+        navBar.setBackgroundImage(UIImage(named: "navigationbarBackgroundWhite"), forBarMetrics: UIBarMetrics.Default)
+        navBar.barTintColor = UIColor.redColor()
+        navBar.tintColor = UIColor.whiteColor()
+        navBar.barStyle = .Black
+        
+        
+
+        // 当导航栏用在XMGNavigationController中, appearance设置才会生效
+        //    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
+        // 设置tabbarItem的字体选中的颜色
+        let item = UIBarButtonItem.appearance()
+        // UIControlStateNormal
+        item.setTitleTextAttributes(normalAttrs, forState: .Normal)
+        // UIControlStateDisabled
+        item.setTitleTextAttributes(disabledAttrs, forState: .Disabled)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>453D10DD-1C69-4ABE-B856-EDF9256F5957</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Attribute-属性</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Attribute-属性</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

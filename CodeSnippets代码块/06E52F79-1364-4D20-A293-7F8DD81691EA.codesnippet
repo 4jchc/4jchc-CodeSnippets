@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jpresent-UINavigationControl</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 弹出带Nav
+    let &lt;#OAuthViewController#&gt; = &lt;#OAuthViewController#&gt;()
+    let nav = UINavigationController(rootViewController: &lt;#OAuthViewController#&gt;)
+    presentViewController(nav, animated: true, completion: nil)
+
+    let tags = &lt;#OAuthViewController#&gt;()
+    self.navigationController?.pushViewController(tags, animated: true)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>06E52F79-1364-4D20-A293-7F8DD81691EA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>present-带导航的控制器UINavigationController</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>present-带导航的控制器UINavigationController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

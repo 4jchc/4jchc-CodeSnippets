@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jsetupUIToolbar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK:  初始化UIToolbar工具条
+    ///  初始化UIToolbar工具条
+    private func setupToolbar()
+    {
+        // 1.添加子控件
+        view.addSubview(toolbar)
+        view.addSubview(tipLabel)
+        // 2.添加按钮
+        var items = [UIBarButtonItem]()
+        let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],
+            
+            ["imageName": "compose_mentionbutton_background"],
+            
+            ["imageName": "compose_trendbutton_background"],
+            
+            ["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"],
+            
+            ["imageName": "compose_addbutton_background"]]
+        for dict in itemSettings
+        {
+            
+            let item = UIBarButtonItem(imageName: dict["imageName"]!, target: self, action: dict["action"])
+            items.append(item)
+            items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
+        }
+        items.removeLast()
+        toolbar.items = items
+        
+        // 3布局toolbar
+        let width = UIScreen.mainScreen().bounds.width
+        let cons = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
+        // 拿到底部约束
+        toolbarBottonCons = toolbar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
+        tipLabel.xmg_AlignVertical(type: XMG_AlignType.TopRight, referView: toolbar, size: nil, offset: CGPoint(x: -10, y: -10))
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5EA5B755-8C5A-4E9E-A917-CB79F1861E26</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>setup-初始化UIToolbar工具条</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setup-初始化UIToolbar工具条</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

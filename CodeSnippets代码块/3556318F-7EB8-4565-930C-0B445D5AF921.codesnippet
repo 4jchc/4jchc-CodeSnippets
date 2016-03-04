@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jBianLiFiveButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 内部的子标签
+        let titles:NSArray = ["全部全部", "视频", "声音", "图片", "段子"]
+        let width:CGFloat = titlesView.width / CGFloat(titles.count)
+        let height:CGFloat = titlesView.height
+        
+        for var i:Int = 0; i &lt; titles.count; i++ {
+            let button:UIButton = UIButton()
+            button.height = height;
+            button.width = width;
+            button.x = CGFloat(i)  * width;
+            button.setTitle(titles[i] as? String, forState: UIControlState.Normal)
+            button.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+            button.titleLabel?.font = UIFont.systemFontOfSize(14)
+            button.addTarget(self, action: "titleClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            titlesView.addSubview(button)
+            
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3556318F-7EB8-4565-930C-0B445D5AF921</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>遍历数组添加5个按钮到view上</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>遍历数组添加5个按钮到view上</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

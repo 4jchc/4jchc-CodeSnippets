@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jStringTiHuan</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 替换
+        &lt;#-#&gt; = &lt;#-#&gt;.stringByReplacingOccurrencesOfString("&lt;#-#&gt;", withString: "&lt;#-#&gt;")</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7866AB2C-CC17-4D87-83F1-C5CCCEEF97BD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>String-替换</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String-替换</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

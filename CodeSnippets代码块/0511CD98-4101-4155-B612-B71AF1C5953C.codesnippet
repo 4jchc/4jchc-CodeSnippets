@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jJiLuZhuangTai</string>
+	<string>varBool</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -16,9 +16,9 @@ var is&lt;#Present#&gt;: Bool = false</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>记录当前是状态</string>
+	<string>var-Bool记录当前是状态</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>记录当前是状态</string>
+	<string>var-Bool记录当前是状态</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

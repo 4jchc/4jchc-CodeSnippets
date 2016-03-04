@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>letUIScrollView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // 不要自动调整inset
+        self.automaticallyAdjustsScrollViewInsets = true
+        let contentView = UIScrollView()
+        contentView.frame = self.view.bounds;
+        // 设置内边距
+        let bottom:CGFloat = self.tabBarController!.tabBar.height;
+        let top:CGFloat = CGRectGetMaxY(self.titlesView!.frame);
+        contentView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+        self.view.insertSubview(contentView, atIndex: 0)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BA0B81C4-F067-418E-A03E-95880D2A6C82</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>let-UIScrollView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>let-UIScrollView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

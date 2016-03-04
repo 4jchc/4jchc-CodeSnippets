@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jpresent-RootViewController弹出</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    let &lt;#登录#&gt; = &lt;#OAuthViewController#&gt;()
+    let nav = &lt;#OAuthViewController#&gt;(rootViewController:&lt;#登录#&gt;)
+    // 这里不能使用self来弹出其他控制器, 因为self执行了dismiss操作
+    let root:UIViewController = UIApplication.sharedApplication().keyWindow?.rootViewController
+    root.presentViewController(nav, animated: true, completion: nil)
+    
+    
+    //拿到根控制器来弹出控制器
+    let &lt;#登录#&gt; = &lt;#OAuthViewController#&gt;()
+    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(&lt;#登录#&gt;, animated: true, completion: nil)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6949DCB7-E76A-4A9E-BF23-A562E1D6D33E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>present弹出-rootViewController</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>present弹出-rootViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jJianPanHidden1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+        self.view.endEditing(true)
+    }
+    //MARK:  点按手势 Tap轻敲 Gesture手势 Recognizer识别器
+    let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "keyboardHide")
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tap.cancelsTouchesInView = true
+    view.addGestureRecognizer(tap)
+    
+    func keyboardHide(){
+        
+        view.endEditing(true)
+    }
+    
+    
+    
+    /// 点击别的地方会结束编辑
+    override func touchesBegan(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?) {
+        
+        self.view.endEditing(true)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 主动召唤键盘
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // 主动隐藏键盘
+        textView.resignFirstResponder()
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>08FBE7B3-A436-4DC2-9BD0-730A398720BA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>键盘隐藏</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>键盘隐藏</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

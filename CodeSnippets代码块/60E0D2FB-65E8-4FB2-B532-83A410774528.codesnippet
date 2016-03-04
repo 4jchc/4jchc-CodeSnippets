@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jSetup-设置导航栏</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: 设置导航栏
+    func setupNav() {
+        
+        self.title = "发表文字";
+        // 设置导航栏标题
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
+        
+        // 设置导航栏左的按钮
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem.ItemWithBarButtonItem("MainTagSubIcon", target: self, action: "tagClick")
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem.ItemWithBarButtonItem("MainTagSubIcon", target: self, action: "tagClick")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Done, target: self, action: "cancel")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发表", style: UIBarButtonItemStyle.Done, target: self, action: "post")
+        // 设置背景色
+        self.view.backgroundColor = XMGGlobalBg;
+        // 默认不能点击
+        self.navigationItem.rightBarButtonItem!.enabled = false
+        /*
+        // 3.添加中间视图
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 32))
+        let label1 = UILabel()
+        label1.text = "发送微博"
+        label1.font = UIFont.systemFontOfSize(15)
+        label1.sizeToFit()
+        titleView.addSubview(label1)
+        
+        let label2 = UILabel()
+        label2.text = UserAccount.loadAccount()?.screen_name
+        label2.font = UIFont.systemFontOfSize(13)
+        label2.textColor = UIColor.darkGrayColor()
+        label2.sizeToFit()
+        titleView.addSubview(label2)
+        
+        label1.xmg_AlignInner(type: XMG_AlignType.TopCenter, referView: titleView, size: nil)
+        label2.xmg_AlignInner(type: XMG_AlignType.BottomCenter, referView: titleView, size: nil)
+        
+        navigationItem.titleView = titleView
+        */
+        // 强制刷新
+        self.navigationController?.navigationBar.layoutIfNeeded()
+
+    }
+    
+
+    func cancel(){
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    func post(){
+        
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>60E0D2FB-65E8-4FB2-B532-83A410774528</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>setup-设置导航栏</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setup-设置导航栏</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

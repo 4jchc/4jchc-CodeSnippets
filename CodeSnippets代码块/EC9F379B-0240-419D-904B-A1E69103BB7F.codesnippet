@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jJianPanAnLi2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func setupBasic(){
+        self.automaticallyAdjustsScrollViewInsets = true
+
+        self.title = "评论";
+        // 设置导航栏左的按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.ItemWithBarButtonItem("comment_nav_item_share_icon", target: nil, action: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        self.tableView.backgroundColor = XMGGlobalBg;
+    }
+    
+    
+    func keyboardWillChangeFrame(note: NSNotification){
+        
+        // 键盘显示\隐藏完毕的frame
+        let frame:CGRect = note.userInfo![UIKeyboardFrameEndUserInfoKey]!.CGRectValue
+
+        // 修改底部约束
+        self.bottomSapce.constant = XMGScreenH - frame.origin.y;
+        // 动画时间
+        let duration:Double = note.userInfo![UIKeyboardAnimationDurationUserInfoKey]!.doubleValue
+
+        // 动画 及时刷新
+        UIView.animateWithDuration(duration) { () -&gt; Void in
+            self.view.layoutIfNeeded()
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EC9F379B-0240-419D-904B-A1E69103BB7F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自定义键盘顶部视图变化</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义键盘顶部视图变化</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

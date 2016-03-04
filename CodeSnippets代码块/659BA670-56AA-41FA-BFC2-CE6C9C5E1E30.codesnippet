@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jClass_CopyPropertyList</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // MARK: 遍历一个类的所有属性的方法
+    /// 遍历一个类的所有属性的方法
+    func modelInfoPropertyList(modelClass:AnyClass,closure:(propertyName:String?,attrType:String?)-&gt;()){
+        
+        var count: UInt32 = 0
+        let properties = class_copyPropertyList(modelClass, &amp;count)
+        var tempP : objc_property_t? = nil
+        var cPName : UnsafePointer&lt;Int8&gt;? = nil
+        var pName : String? = nil
+        var attrType : NSString? = nil
+        for(var i : UInt32 = 0; i &lt; count ; i++){
+            tempP = properties[Int(i)]
+            cPName = property_getName(tempP!)
+            pName = String.fromCString(cPName!)!
+            // 类型
+            attrType = String.fromCString(property_getAttributes(tempP!))
+            attrType = attrType!.substringToIndex(attrType!.rangeOfString(",").location)
+            closure(propertyName: pName, attrType: attrType as? String)
+            
+        }
+        free(properties)
+        
+    }
+    
+    
+    // MARK: 遍历一个类的所有属性
+    /// 遍历一个类的所有属性
+    class func modelInfoIvarList(modelClass:AnyClass,closure:(propertyName:String?,attrType:String?)-&gt;()){
+        
+        var count: UInt32 = 0
+        let properties:UnsafeMutablePointer&lt;Ivar&gt; = class_copyIvarList(modelClass, &amp;count)
+        var tempP : objc_property_t? = nil
+        
+        var cPName : UnsafePointer&lt;Int8&gt;? = nil
+        var pName : String? = nil
+        var attrType : NSString? = nil
+        for(var i : UInt32 = 0; i &lt; count ; i++){
+            tempP = properties[Int(i)]
+            cPName = ivar_getName(tempP!)
+            pName = String.fromCString(cPName!)!
+            // 类型
+            attrType = String.fromCString(property_getAttributes(tempP!))
+            
+            closure(propertyName: pName, attrType: attrType as? String)
+            
+        }
+        free(properties)
+        
+        
+    }
+    
+
+    // 当第一次使用这个类的时候会调用一次
+    override class func initialize(){
+        
+        modelInfoIvarList(UITextField.self) { ( propertyName, attrType) -&gt; () in
+            print("getName-\(propertyName!)-(\(attrType!))")
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>659BA670-56AA-41FA-BFC2-CE6C9C5E1E30</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>class_copyPropertyList</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>class_copyPropertyList</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

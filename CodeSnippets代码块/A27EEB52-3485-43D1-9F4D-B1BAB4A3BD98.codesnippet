@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jXIBFunc</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /// 加载XIB
+    static func &lt;#pictureView#&gt;()-&gt;&lt;#pictureView#&gt; {
+        
+        return NSBundle.mainBundle().loadNibNamed("&lt;#pictureView#&gt;", owner: nil, options: nil).first as! &lt;#pictureView#&gt;
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A27EEB52-3485-43D1-9F4D-B1BAB4A3BD98</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>XIB-Func加载单一</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XIB-Func加载单一</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

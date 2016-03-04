@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jZDYUIButton按钮--图片在上-文字在下</string>
+	<string>4jZDYUIButton按钮--图片填充在上-文字在下</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -55,9 +55,9 @@ class XMGVerticalButton: UIButton {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>自定义UIButton按钮--图片在上-文字在下</string>
+	<string>自定义UIButton按钮--图片填充在上-文字在下</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>自定义UIButton按钮--图片在上-文字在下</string>
+	<string>自定义UIButton按钮--图片填充在上-文字在下</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

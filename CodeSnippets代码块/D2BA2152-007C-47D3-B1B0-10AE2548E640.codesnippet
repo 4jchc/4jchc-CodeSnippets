@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUITableView-row-section表格的列行</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /**
+     * 返回第section组的所有评论数组
+     */
+    func commentsInSection(section:NSInteger)-&gt;NSArray{
+        
+        if (section == 0) {
+            return self.hotComments.count != 0 ? self.hotComments : self.latestComments;
+        }
+        return self.latestComments;
+        
+    }
+    
+    func commentInIndexPath(indexPath:NSIndexPath)-&gt;XMGComment{
+        
+
+        return commentsInSection(indexPath.section)[indexPath.row]  as! XMGComment
+        
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        
+
+        let ID:String = "contact"
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(ID)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ID)
+        }
+        let comment:XMGComment = commentInIndexPath(indexPath)
+        cell!.textLabel!.text = comment.content
+        
+        
+        return cell!
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D2BA2152-007C-47D3-B1B0-10AE2548E640</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UITableView-row-section表格的列行</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UITableView-row-section表格的列行</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

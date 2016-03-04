@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAFNAnli1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import SVProgressHUD
+import MJExtension
+import MJRefresh
+class XMGWordViewController: UITableViewController {
+    
+
+    /** 当前页码 */
+    var page: Int = 0
+    /** 当加载下一页数据时需要这个参数 */
+    var maxtime: String?
+    /** 上一次的请求参数 */
+    var params: NSDictionary?
+    /** 帖子数据 */
+    lazy var topics = NSMutableArray()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupRefresh()
+       
+    }
+    
+    //MARK:   加载左侧的类别数据
+    ///   加载左侧的类别数据
+    func loadCategories(){
+        
+        // 显示指示器
+        SVProgressHUD.showInfoWithStatus("正在加载...", maskType: SVProgressHUDMaskType.Black)
+        // 1.定义URL路径
+        let path = "api/api_open.php"
+        // 2.封装参数
+        let params = NSMutableDictionary()
+        
+        params["a"] = "list";
+        params["c"] = "data";
+        params["type"] = "29";
+        NetworkTools.shareNetworkTools().sendGET(path, params: params, successCallback: { (responseObject) -&gt; () in
+            
+            // 隐藏指示器
+            SVProgressHUD.dismiss()
+            // 服务器返回的JSON数据
+            self.topics = responseObject["list"] as! NSMutableArray
+            
+            // 刷新表格
+            self.tableView.reloadData()
+            
+            }) { (error) -&gt; () in
+                // 显示失败信息
+                SVProgressHUD.showErrorWithStatus("加载推荐信息失败!")
+        }
+    }
+    
+    //MARK:  添加刷新控件
+    ///  添加刷新控件
+    func setupRefresh(){
+        
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("loadNewTopics"))
+        
+        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: Selector("loadMoreTopics"))
+        
+        // 自动改变透明度
+        self.tableView.mj_header.automaticallyChangeAlpha = true
+        // 让用户表格进入下拉刷新状态
+        self.tableView.mj_header.beginRefreshing()
+
+    }
+    
+    /// 加载新的帖子数据
+    func loadNewTopics(){
+
+        // 结束上啦
+        self.tableView.mj_header.endRefreshing()
+        // 1.定义URL路径
+        let path = "api/api_open.php"
+        // 2.封装参数
+        let params = NSMutableDictionary()
+        params["a"] = "list";
+        params["c"] = "data";
+        params["type"] = "29";
+        //.存储请求参数.判断2次请求参数是否相同.不同就直接返回
+        self.params = params
+        NetworkTools.shareNetworkTools().sendGET(path, params: params, successCallback: { (responseObject) -&gt; () in
+            if (self.params != params) {return}
+            
+            // 存储maxtime
+            self.maxtime = (responseObject["info"] as! NSDictionary)["maxtime"] as? String
+
+            // 服务器返回的JSON数据- 字典数组 -&gt; 模型数组
+            self.topics = XMGTopic.mj_objectArrayWithKeyValuesArray(responseObject["list"])
+
+            // 刷新表格
+            self.tableView.reloadData()
+            
+            // 结束刷新
+            self.tableView.mj_header.endRefreshing()
+            
+            // 清空页码
+            self.page = 0;
+
+            }) { (error) -&gt; () in
+                
+                // 不是最后一次请求
+                if (self.params != params) {return}
+                // 显示失败信息
+                SVProgressHUD.showErrorWithStatus("加载推荐信息失败!")
+                // 让底部控件结束刷新
+                self.tableView.mj_header.endRefreshing()
+        }
+    }
+    
+    // 先下拉刷新, 再上拉刷新第5页数据
+    
+    // 下拉刷新成功回来: 只有一页数据, page == 0
+    // 上啦刷新成功回来: 最前面那页 + 第5页数据
+    
+    /// 加载更多的帖子数据
+    func loadMoreTopics(){
+        
+        // 结束下拉
+        self.tableView.mj_header.endRefreshing()
+        self.page++;
+
+        // 1.定义URL路径
+        let path = "api/api_open.php"
+        // 2.封装参数
+        let params = NSMutableDictionary()
+        params["a"] = "list";
+        params["c"] = "data";
+        params["type"] = "29";
+        params["page"] = (self.page);
+        params["maxtime"] = self.maxtime;
+        //.存储请求参数.判断2次请求参数是否相同.不同就直接返回
+        self.params = params
+        NetworkTools.shareNetworkTools().sendGET(path, params: params, successCallback: { (responseObject) -&gt; () in
+
+            if (self.params != params) {return}
+            
+            // 存储maxtime
+            self.maxtime = (responseObject["info"] as! NSDictionary)["maxtime"] as? String
+            
+            // 服务器返回的JSON数据- 字典数组 -&gt; 模型数组
+            let newTopics:NSArray = XMGTopic.mj_objectArrayWithKeyValuesArray(responseObject["list"])
+            self.topics.addObjectsFromArray(newTopics as [AnyObject])
+            // 刷新表格
+            self.tableView.reloadData()
+            
+            // 结束刷新
+            self.tableView.mj_footer.endRefreshing()
+            
+            // 清空页码
+            self.page = 0;
+            }) { (error) -&gt; () in
+                // 不是最后一次请求
+                if (self.params != params) {return}
+                // 显示失败信息
+                SVProgressHUD.showErrorWithStatus("加载推荐信息失败!")
+                // 让底部控件结束刷新
+                self.tableView.mj_footer.endRefreshing()
+                // 恢复页码
+                self.page--;
+        }
+    }
+    
+    // MARK: - Table view data source
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        // #warning Incomplete implementation, return the number of rows
+        return self.topics.count ?? 0
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        
+        let ID:String = "contact"
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(ID as String)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ID as String)
+        }
+
+        
+        let topic = self.topics[indexPath.row] as! XMGTopic
+        cell!.textLabel!.text = topic.name
+        cell!.detailTextLabel!.text = topic.text
+        cell!.imageView!.sd_setImageWithURL(NSURL(string: topic.profile_image!), placeholderImage: UIImage(named: "defaultUserIcon"))
+        
+        
+        return cell!
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4D8B558D-DFDE-4570-AD3A-C7170A4A32DD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MJRef-Ex-SVP-AFN案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MJRef-Ex-SVP-AFN案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

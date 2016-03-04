@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAutoResizingMask自动调整视图</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    override func awakeFromNib() {
+        // 取消自动调整伸缩
+        self.autoresizingMask = UIViewAutoresizing.None;
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>835AE695-25C8-4AA5-B704-E41480EB4C46</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>autoresizingMask自动调整视图</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>autoresizingMask自动调整视图</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

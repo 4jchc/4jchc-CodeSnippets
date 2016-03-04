@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIAlertController弹窗-简单判断</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    @IBAction func more(sender: AnyObject) {
+        
+
+        // 危险操作:弹框提醒
+        // 1.UIAlertView
+        // 2.UIActionSheet
+        // iOS8开始:UIAlertController == UIAlertView + UIActionSheet
+        let alert:UIAlertController = UIAlertController(title: "亲要收藏吗?", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        // 添加按钮
+        alert.addAction(UIAlertAction(title: "举报", style: UIAlertActionStyle.Destructive, handler:nil))
+        alert.addAction(UIAlertAction(title: "收藏", style: UIAlertActionStyle.Default, handler:nil))
+        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler:nil))
+        // ipad没有这个取消按钮
+        //alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        alert.modalPresentationStyle = .Popover
+        
+        
+        if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
+            print("IPAD")
+            ///  ios9
+            /*
+            let popover = UIPopoverController(contentViewController: alert)
+            popover.popoverContentSize = CGSize(width: 320, height: 280)
+            popover.presentPopoverFromRect(sender.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+            
+            let popover = anActionSheet.popoverPresentationController
+            popover?.sourceView = sender
+            popover?.sourceRect = sender.bounds;
+            
+            self.presentViewController(anActionSheet, animated: true)
+            
+            let vc:SecondViewController = SecondViewController()
+            let popover:UIPopoverController = UIPopoverController(contentViewController: vc)
+            popover.presentPopoverFromRect(self.slider.bounds, inView: self.slider, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+            */
+            
+            alert.popoverPresentationController!.sourceView = sender as? UIView
+            alert.popoverPresentationController!.sourceRect = sender.bounds
+            //拿到根控制器来弹出控制器
+            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        else{
+            //拿到根控制器来弹出控制器
+            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+        }
+
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4D536EF4-ED7C-4387-BADA-414B1CA0778C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UIAlertController弹窗-简单判断</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIAlertController弹窗-简单判断</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

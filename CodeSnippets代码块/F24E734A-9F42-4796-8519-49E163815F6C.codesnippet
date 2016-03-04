@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>letUIButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    let &lt;#button#&gt;:UIButton = UIButton()
+    button.setTitle(&lt;#button#&gt;, forState: UIControlState.Normal)
+    button.setTitleColor(UIColor.&lt;#button#&gt;, forState: UIControlState.Normal)
+    button.titleLabel?.font = UIFont.systemFontOfSize(&lt;#button#&gt;)
+    button.addTarget(self, action: "&lt;#button#&gt;", forControlEvents: UIControlEvents.TouchUpInside)
+    button.setBackgroundImage(UIImage(named: "&lt;#button#&gt;"), forState: .Normal)
+    &lt;#button#&gt;.addSubview(button)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F24E734A-9F42-4796-8519-49E163815F6C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>let-UIButton</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>let-UIButton</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

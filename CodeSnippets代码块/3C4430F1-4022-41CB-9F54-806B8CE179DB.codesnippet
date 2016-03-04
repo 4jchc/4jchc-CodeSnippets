@@ -38,6 +38,9 @@
         
         //键盘隐藏
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameChanged:", name: UIKeyboardWillHideNotification, object: nil)
+        
+        // 总的一句就可以
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameChanged:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     
@@ -69,14 +72,14 @@
         }
     }
     
-
+    
     func setupView(){
         // 代码方式实现自动布局 VFL
         // 创建一个Tableview
         self.view.addSubview(tableView)
         // 创建输入框View
         self.view.addSubview(InputView)
-
+        
         // 自动布局
         
         // 水平方向的约束
@@ -84,7 +87,7 @@
         // 1.tabview水平方向的约束
         let tabviewHConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[tableview]-0-|",options: [],metrics: nil,
             views: views as! [String : AnyObject]
-            )
+        )
         self.view.addConstraints(tabviewHConstraints as! [NSLayoutConstraint])
         
         // 2.inputView水平方向的约束

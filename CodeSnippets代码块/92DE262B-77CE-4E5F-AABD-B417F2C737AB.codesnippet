@@ -92,9 +92,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>弹出照片选择器</string>
+	<string>cell-弹出照片选择器</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>cell的照片选择器</string>
+	<string>cell-的照片选择器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

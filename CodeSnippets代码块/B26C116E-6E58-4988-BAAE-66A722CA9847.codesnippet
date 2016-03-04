@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGet-方法模型专用</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 会不断访问
+    var &lt;#exname#&gt; : &lt;#exname#&gt;?
+    var &lt;#exname#&gt; : &lt;#exname#&gt;? {
+        get{
+            return "&lt;#exname#&gt;"
+        }
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B26C116E-6E58-4988-BAAE-66A722CA9847</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Get-方法模型专用</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get-方法模型专用</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

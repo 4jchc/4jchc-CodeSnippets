@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jAFNetworking-SVProgressHUD</string>
+	<string>4jAFN-SD</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -238,9 +238,9 @@ class ProgressHUDManager {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>AFNetworking-SVProgressHUD</string>
+	<string>AFN-SVProgressHUD封装</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>AFNetworking-SVProgressHUD</string>
+	<string>AFN-SVProgressHUD封装</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jUIButton-N行4列</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func createSquares(sqaures:NSArray){
+        
+        // 一行最多4列
+        let maxCols:Int = 4
+        // 宽度和高度
+        let buttonW:CGFloat = XMGScreenW / CGFloat(maxCols)
+         let buttonH:CGFloat = buttonW
+        for var i:Int = 0; i &lt; sqaures.count; i++ {
+
+            // 创建按钮
+            let button = XMGSqaureButton()
+            button.addTarget(self, action: "buttonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            // 传递模型
+            button.square = sqaures[i] as? XMGSquare;
+            self.addSubview(button)
+            // 计算frame
+            // 当前的索引
+            let col:Int = i % maxCols
+            let row:Int = i / maxCols
+            
+            button.x = CGFloat(col) * buttonW;
+            button.y = CGFloat(row) * buttonH;
+            button.width = buttonW;
+            button.height = buttonH;
+        }
+        
+        // 8个方块, 每行显示4个, 计算行数 8/4 == 2 2
+        // 9个方块, 每行显示4个, 计算行数 9/4 == 2 3
+        // 7个方块, 每行显示4个, 计算行数 7/4 == 1 2
+        
+        // 总行数
+        //    NSUInteger rows = sqaures.count / maxCols;
+        //    if (sqaures.count % maxCols) { // 不能整除, + 1
+        //        rows++;
+        //    }
+        // 总页数 == (总个数 + 每页的最大数 - 1) / 每页最大数
+        // 当前的索引
+        let rows:Int = (sqaures.count + maxCols - 1) / maxCols;
+
+        // 计算footer的高度
+        self.height = CGFloat(rows) * buttonH;
+        
+        // 重绘
+        self.setNeedsDisplay()
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A25F0B11-B3A7-49DA-B312-21E6487B809B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UIButton-N行4列</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIButton-N行4列</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

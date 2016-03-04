@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>OverrideFrame</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: 重写frame来设置cell的内嵌
+    override var frame:CGRect{
+        set{
+            
+            var frame = newValue
+            let margin:CGFloat = 10
+            frame.origin.x = margin;
+            frame.size.width -= 2 * margin;
+            frame.size.height -= margin;
+            frame.origin.y += margin;
+            super.frame=frame
+        }
+        get{
+            return super.frame
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2E5E5EC4-2DB8-437D-8CB3-37626AD01066</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>get和set方法</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>重写frame来设置cell的内嵌</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

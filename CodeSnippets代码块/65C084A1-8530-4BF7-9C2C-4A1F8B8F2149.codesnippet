@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jGet1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 这个是模型的会不断访问
+    var &lt;#exname#&gt; : &lt;#exname#&gt;?
+    // 访问这个
+    var &lt;#exname#&gt; : &lt;#exname#&gt;? {
+        
+        get{
+            return "&lt;#exname#&gt;"
+        }
+        
+    }
+    
+    // 这个是模型的会不断访问
+    var &lt;#exname#&gt; : &lt;#exname#&gt;?
+    // 访问这个
+    var &lt;#exname#&gt; : &lt;#exname#&gt;? {
+        
+        get{
+            
+            if self.&lt;#exname#&gt; == nil{
+                
+                return &lt;#exname#&gt;
+            }else{
+                
+                return self.&lt;#exname#&gt;
+            }
+        }
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65C084A1-8530-4BF7-9C2C-4A1F8B8F2149</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Get-方法模型赋值判断不断访问</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get-方法模型赋值判断不断访问</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

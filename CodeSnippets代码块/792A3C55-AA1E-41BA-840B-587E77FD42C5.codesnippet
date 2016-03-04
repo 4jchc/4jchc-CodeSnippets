@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jMJ替换属性模型</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 告诉mj数组里对应的是什么模型
+    override static func mj_objectClassInArray() -&gt; [NSObject : AnyObject]! {
+        
+        return ["top_cmt" : XMGComment.classForCoder()]
+    }
+
+    // 替换属性名
+    override static func mj_replacedKeyFromPropertyName() -&gt; [NSObject : AnyObject]! {
+        
+        return [
+            "small_image" : "image0",
+            "large_image" : "image1",
+            "middle_image" : "image2"]
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>792A3C55-AA1E-41BA-840B-587E77FD42C5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MJ-替换属性模型</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MJ-替换属性模型</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

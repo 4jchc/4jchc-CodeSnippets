@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jphotoCell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func close()
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    //MARK:  保存图片到相册
+    ///  保存图片到相册
+    func save()
+    {
+        // 1.拿到当前正在显示的cell
+        let index = collectionView.indexPathsForVisibleItems().last!
+        let cell = collectionView.cellForItemAtIndexPath(index) as! PhotoBrowserCell
+        // 2.保存图片
+        let image = cell.iconView.image
+        UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        
+        // - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+    }
+    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject){//UnsafePointer&lt;Void&gt;
+        if error != nil
+        {
+            SVProgressHUD.showErrorWithStatus("保存失败", maskType: SVProgressHUDMaskType.Black)
+        }else
+        {
+            SVProgressHUD.showSuccessWithStatus("保存成功", maskType: SVProgressHUDMaskType.Black)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8413FDAD-E772-41AA-BDCE-CD3960F62636</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>photo-保存到相册cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>photo-保存到相册cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

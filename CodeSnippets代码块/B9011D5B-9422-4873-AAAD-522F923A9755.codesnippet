@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jNSUserDefaults1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+class SecondViewController: UIViewController
+{
+    
+    @IBOutlet weak var Marca: UITextField!
+    @IBOutlet weak var Color: UITextField!
+    @IBOutlet weak var Rodada: UITextField!
+    
+    
+    var temp = "Vacio"
+    var Bicicleta=NSUserDefaults.standardUserDefaults()
+    
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        print ("Mi Bici")
+        
+        Marca.text = Bicicleta.valueForKey("Marca") as? String
+        Color.text = Bicicleta.valueForKey("Color") as? String
+        Rodada.text = Bicicleta.valueForKey("Rodada") as? String
+        Marca.becomeFirstResponder()
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    @IBAction func Save()
+    {
+        self.view.endEditing(true)
+        
+        temp = Marca.text!
+        Bicicleta.setValue(temp, forKey: "Marca")
+        temp = Color.text!;
+        Bicicleta.setValue(temp, forKey: "Color")
+        temp = Rodada.text!
+        Bicicleta.setValue(temp, forKey: "Rodada")
+        Bicicleta.synchronize()
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B9011D5B-9422-4873-AAAD-522F923A9755</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSUserDefaults案例1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSUserDefaults案例1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

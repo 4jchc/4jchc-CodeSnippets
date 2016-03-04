@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAFNFengZhuang</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension UIImageView {
+    func loadAsync(url:NSURL, animate: Bool = true,
+        failure: ((request: NSURLRequest!, response: NSHTTPURLResponse?, error: NSError!) -&gt; Void)?) {
+            weak var weakSelf = self
+            
+            let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 5)
+            self.setImageWithURLRequest(request, placeholderImage: nil, success: { (request, response, image) -&gt; Void in
+                if animate {
+                    if let weakSelf = weakSelf {
+                        weakSelf.alpha = 0.0
+                        weakSelf.image = image
+                        UIView.animateWithDuration(0.5, animations: { () -&gt; Void in
+                            weakSelf.alpha = 1.0
+                        })
+                    }
+                } else {
+                    weakSelf!.image = image
+                }
+                }, failure: failure)
+    }
+}
+
+
+import UIKit
+import AFNetworking
+
+class NetworkTools: AFHTTPSessionManager {
+    
+    static let tools:NetworkTools = {
+        // 注意: baseURL一定要以/结尾
+        let url = NSURL(string: "http://api.budejie.com/")
+        let t = NetworkTools(baseURL: url)
+        
+        // 设置AFN能够接收得数据类型
+        t.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as? Set&lt;String&gt;
+        return t
+    }()
+    
+    /// 获取单粒的方法
+    class func shareNetworkTools() -&gt; NetworkTools {
+        return tools
+    }
+    
+    // NSURLSessionDataTask task
+    func sendGET(url:String,params:AnyObject?,successCallback: (responseObject:AnyObject) -&gt; (),errorCallback:(error:NSError) -&gt; ()){
+        
+        
+        // 2.发送请求
+        assert(NetworkTools.shareNetworkTools() == self, "应该相等")
+        
+        self.GET(url, parameters: params, progress: { (progress) -&gt; Void in} ,success: { (_, responseObject) -&gt; Void in
+            
+            successCallback(responseObject: responseObject!)
+            
+            }) { (operation, error) -&gt; Void in
+                
+                errorCallback(error: error)
+        }
+    }
+    
+    
+    
+    
+    func sendPOST(url:String,params:AnyObject?,successCallback: (responseObject:AnyObject) -&gt; Void,errorCallback:(error:NSError) -&gt; Void){
+        
+        //self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
+        //mgr.responseSerializer.acceptableContentTypes = NSSet(objects: ["text/plain","application/json","text/json","text/javascript"]) as Set&lt;NSObject&gt;
+        //responseSerializer.acceptableContentTypes = NSSet(array: ["text/plain","application/json","text/json","text/javascript"])as Set&lt;NSObject&gt;
+        // 2.发送请求
+        
+        POST(url, parameters: params,progress: { (progress) -&gt; Void in} , success: { (_, responseObject) -&gt; Void in
+            
+            successCallback(responseObject: responseObject!)
+            
+            }) { (_, error) -&gt; Void in
+                
+                errorCallback(error: error)
+        }
+        
+    }
+    
+    
+    
+    func sendPOST(url:String,params:AnyObject?,constructingBodyBlock: (formData:AFMultipartFormData) -&gt; Void,successCallback: (responseObject:AnyObject) -&gt; Void,errorCallback:(error:NSError) -&gt; Void){
+        
+        POST(url, parameters: params!, constructingBodyWithBlock: {(formData: AFMultipartFormData!) in
+            
+            
+            /*
+            formData.appendPartWithFileURL(filePath, name: "file", error: nil)
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Black)
+            
+            */
+            constructingBodyBlock(formData: formData!)
+            
+            },progress: { (progress) -&gt; Void in} , success: { (_, responseObject) -&gt; Void in
+                /*
+                let responseViewController = HTTPResponseViewController(nibName: "HTTPResponseView", bundle: nil)
+                responseViewController.responseObject = responseObject
+                vc.presentViewController(responseViewController, animated: true, completion: {
+                SVProgressHUD.showSuccessWithStatus("Success")
+                })
+                */
+                
+                successCallback(responseObject: responseObject!)
+            }) { (_, error) -&gt; Void in
+                
+                errorCallback(error: error)
+        }
+        
+    }
+    
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>72822CFE-CF86-4A77-8BAC-708C1C7E09CD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AFN封装</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AFN封装</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

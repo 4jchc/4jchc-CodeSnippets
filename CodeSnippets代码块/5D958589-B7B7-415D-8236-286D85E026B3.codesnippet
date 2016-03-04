@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>varJiHe</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** &lt;#友好显示名称#&gt; */
+    var &lt;#nameLabel#&gt;: String?
+    
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#nameLabel#&gt;: Int = 0
+    
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#nameLabel#&gt;:NSNumber = 0
+    
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#nameLabel#&gt;:Bool?
+    
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#nameLabel#&gt;:NSArray?
+
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#fansCount#&gt;: NSDictionary?
+
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#topics#&gt;:NSMutableArray?
+
+    /** &lt;#友好显示名称#&gt; */
+    var &lt;#nameLabel#&gt;:UILabel?
+
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5D958589-B7B7-415D-8236-286D85E026B3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>var-集合</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>var-集合</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

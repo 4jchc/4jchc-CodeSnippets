@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jCellInner</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: 重写frame来设置cell的内嵌
+    override var frame:CGRect{
+        set{
+            
+            var frame = newValue
+            frame.origin.x = XMGTopicCellMargin;
+            frame.size.width -= 2 * XMGTopicCellMargin;
+            frame.size.height -= XMGTopicCellMargin;
+            frame.origin.y += XMGTopicCellMargin;
+            super.frame=frame
+        }
+        get{
+            return super.frame
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>200C9620-9086-4C8A-958B-30A1EF40A31E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cell-内嵌inner</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell-内嵌inner</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

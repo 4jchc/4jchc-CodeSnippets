@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jStringRangeOfString</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /// 截取字符串
+    var source: String?
+        {
+        didSet{
+            // &lt;a href=\"http://app.weibo.com/t/feed/4fuyNj\" rel=\"nofollow\"&gt;即刻笔记&lt;/a&gt;
+            
+            // 1.截取字符串
+            if let str = source
+            {
+                // 1.1获取开始截取的位置
+                let startLocation = (str as NSString).rangeOfString("&gt;").location + 1
+                // 1.2获取截取的长度
+                let length = (str as NSString).rangeOfString("&lt;", options: NSStringCompareOptions.BackwardsSearch).location - startLocation
+                // 1.3截取字符串
+                source = "来自:" + (str as NSString).substringWithRange(NSMakeRange(startLocation, length))
+            }
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>442D3CC4-AE96-4233-AAB7-428737C5E269</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>String-截取字符串rangeOfString</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String-截取字符串rangeOfString</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

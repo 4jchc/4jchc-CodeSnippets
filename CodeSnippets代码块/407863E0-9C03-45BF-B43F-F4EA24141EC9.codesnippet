@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jforBianLi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        for var i:Int = 0; i &lt; &lt;#20#&gt;; i++ {
+            
+            
+        }
+        
+        
+        for i in 0..&lt;&lt;#20#&gt; {
+            
+            &lt;#20#&gt;
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>407863E0-9C03-45BF-B43F-F4EA24141EC9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>遍历For i</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>遍历For i</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

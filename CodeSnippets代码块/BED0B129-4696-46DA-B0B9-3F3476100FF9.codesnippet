@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jcellHight1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat {
+            
+            // cell的高度设置estimated估计的 RowHeight估计的
+            self.tableView.estimatedRowHeight = 44;
+            self.tableView.rowHeight = UITableViewAutomaticDimension;
+            
+            
+            
+            // 取出帖子模型
+            let topic = self.topics[indexPath.row] as! XMGTopic;
+            
+            // 文字的最大尺寸
+            let maxSize:CGSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width - 4 * XMGTopicCellMargin, CGFloat(MAXFLOAT))
+            
+            let textH:CGFloat = (topic.text! as NSString).boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(14)], context: nil).size.height
+            
+            // cell的高度
+            let cellH:CGFloat = XMGTopicCellTextY + textH + XMGTopicCellBottomBarH + 2 * XMGTopicCellMargin;
+            
+            return cellH;
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BED0B129-4696-46DA-B0B9-3F3476100FF9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>cell-高度1简单</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell-高度1简单</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

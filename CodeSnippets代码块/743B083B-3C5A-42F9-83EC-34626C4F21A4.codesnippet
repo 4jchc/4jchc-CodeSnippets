@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jString-判断是否为gif</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>            // 判断是否为gif
+            let extensio:NSString = (topic!.large_image! as NSString).pathExtension
+            
+            self.gifView.hidden = !(extensio.lowercaseString as NSString).isEqualToString("gif")</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>743B083B-3C5A-42F9-83EC-34626C4F21A4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>String-判断是否为gif</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String-判断是否为gif</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
