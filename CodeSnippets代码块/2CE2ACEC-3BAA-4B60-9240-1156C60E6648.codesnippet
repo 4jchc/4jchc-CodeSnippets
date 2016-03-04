@@ -3,21 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>letKongZhiQi</string>
+	<string>4jFunc0</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let &lt;#postWord#&gt; = &lt;#postWord#&gt;()</string>
+	<string>    func &lt;#updatePlaceholderLabelSize#&gt;(){
+        
+        &lt;#updatePlaceholderLabelSize#&gt;
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E1D2284E-592E-4DFE-9012-93760992C0B1</string>
+	<string>2CE2ACEC-3BAA-4B60-9240-1156C60E6648</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>let -控制器</string>
+	<string>Func-0个参数</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>let -控制器</string>
+	<string>Func-0个参数</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

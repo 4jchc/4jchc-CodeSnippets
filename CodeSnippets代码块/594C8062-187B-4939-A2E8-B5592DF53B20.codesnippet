@@ -3,24 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>letKongZhiQi</string>
+	<string>4jDeinit-销毁</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let &lt;#postWord#&gt; = &lt;#postWord#&gt;()</string>
+	<string>    deinit{
+        print("\(super.classForCoder)--❤️已销毁")
+        // 移除通知
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E1D2284E-592E-4DFE-9012-93760992C0B1</string>
+	<string>594C8062-187B-4939-A2E8-B5592DF53B20</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>let -控制器</string>
+	<string>deinit-销毁</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>let -控制器</string>
+	<string>deinit-销毁</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

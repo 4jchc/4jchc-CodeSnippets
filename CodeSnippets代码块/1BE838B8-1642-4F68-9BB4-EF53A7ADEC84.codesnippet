@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>letKongZhiQi</string>
+	<string>selfViewAddSubview</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let &lt;#postWord#&gt; = &lt;#postWord#&gt;()</string>
+	<string>self.view.addSubview(&lt;#T##view: UIView##UIView#&gt;)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E1D2284E-592E-4DFE-9012-93760992C0B1</string>
+	<string>1BE838B8-1642-4F68-9BB4-EF53A7ADEC84</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>let -控制器</string>
+	<string>self.view.addSubview</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>let -控制器</string>
+	<string>self.view.addSubview</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

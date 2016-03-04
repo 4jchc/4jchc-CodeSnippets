@@ -9,13 +9,16 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    let &lt;#button#&gt;:UIButton = UIButton()
-    button.setTitle(&lt;#button#&gt;, forState: UIControlState.Normal)
-    button.setTitleColor(UIColor.&lt;#button#&gt;, forState: UIControlState.Normal)
-    button.titleLabel?.font = UIFont.systemFontOfSize(&lt;#button#&gt;)
-    button.addTarget(self, action: "&lt;#button#&gt;", forControlEvents: UIControlEvents.TouchUpInside)
-    button.setBackgroundImage(UIImage(named: "&lt;#button#&gt;"), forState: .Normal)
-    &lt;#button#&gt;.addSubview(button)</string>
+	<string>        let button:UIButton = UIButton()
+        button.setTitle(&lt;#button#&gt;, forState: UIControlState.Normal)
+        button.setTitleColor(UIColor.&lt;#button#&gt;, forState: UIControlState.Normal)
+        button.titleLabel?.font = UIFont.systemFontOfSize(&lt;#button#&gt;)
+        button.addTarget(self, action: "addButtonClick", forControlEvents: UIControlEvents.TouchUpInside)
+        button.setBackgroundImage(UIImage(named: "&lt;#button#&gt;"), forState: .Normal)
+        button.setImage(UIImage(named: "&lt;#button#&gt;"), forState: .Normal)
+        button.size = button.currentImage!.size;
+        button.x = XMGTopicCellMargin;
+        &lt;#button#&gt;.addSubview(button)</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>F24E734A-9F42-4796-8519-49E163815F6C</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jlazyPlaceholderLabel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    private lazy var placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFontOfSize(20)
+        label.textColor = UIColor.darkGrayColor()
+        label.text = "分享新鲜事..."
+        return label
+    }()
+
+
+    extension ComposeViewController: UITextViewDelegate ,UIScrollViewDelegate{
+    
+    func textViewDidChange(textView: UITextView) {
+        
+        // 注意点: 输入图片表情的时候不会促发textViewDidChange
+        placeholderLabel.hidden = textView.hasText()
+        navigationItem.rightBarButtonItem?.enabled = textView.hasText()
+        
+        // 当前已经输入的内容长度
+        let count =  textView.emoticonAttributedText().characters.count
+        let res = maxTipLength - count
+        tipLabel.textColor = (res &gt; 0) ? UIColor.darkGrayColor() : UIColor.redColor()
+        tipLabel.text = res == maxTipLength ? "" : "\(res)"
+        
+    }
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        printLog("开始拖拽")
+        photoSelectorVC.view.hidden = true
+       
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5CD4BA52-44E7-43F5-87CD-3ABC872CE81D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>lazy-placeholderLabel</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>lazy-placeholderLabel</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

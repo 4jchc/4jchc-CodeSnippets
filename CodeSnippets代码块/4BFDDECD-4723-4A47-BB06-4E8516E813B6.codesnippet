@@ -3,30 +3,38 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>didset</string>
+	<string>4jUITextViewDelegate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>   var &lt;#product#&gt;:&lt;#ILProduct#&gt;?{
+	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
+    
+    // MARK: - UITextViewDelegate
+    func textViewDidChange(textView: UITextView) {
         
-        didSet{
-            
-            &lt;#直接赋值#&gt;
+        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
+
+    }
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         
-        }
-        
-    }</string>
+        self.view.endEditing(true)
+
+    }
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>3F9AFBEC-BB5A-4C29-8AD7-B91F88713133</string>
+	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UITextViewDelegate-</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>oc的set方法</string>
+	<string>UITextViewDelegate-</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

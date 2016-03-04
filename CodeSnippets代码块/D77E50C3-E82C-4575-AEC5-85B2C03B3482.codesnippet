@@ -3,21 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>letKongZhiQi</string>
+	<string>didset</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let &lt;#postWord#&gt; = &lt;#postWord#&gt;()</string>
+	<string>    var &lt;#product#&gt;:&lt;#ILProduct#&gt;?{
+        
+        didSet{
+            
+            &lt;#直接赋值#&gt;
+        }
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E1D2284E-592E-4DFE-9012-93760992C0B1</string>
+	<string>D77E50C3-E82C-4575-AEC5-85B2C03B3482</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>let -控制器</string>
+	<string>set-方法oc的set方法</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>let -控制器</string>
+	<string>set-方法oc的set方法</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

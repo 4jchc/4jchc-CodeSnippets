@@ -3,24 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>letKongZhiQi</string>
+	<string>awakeFromNib</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let &lt;#postWord#&gt; = &lt;#postWord#&gt;()</string>
+	<string>    override func awakeFromNib() {
+        super.awakeFromNib()
+     
+        &lt;#self.backgroundView = UIImageView(image: UIImage(named: "mainCellBackground"))#&gt;
+        
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E1D2284E-592E-4DFE-9012-93760992C0B1</string>
+	<string>263B49D7-7AC6-48DB-A9BA-1E457EED85F6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>let -控制器</string>
+	<string>awakeFromNib</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>let -控制器</string>
+	<string>awakeFromNib</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

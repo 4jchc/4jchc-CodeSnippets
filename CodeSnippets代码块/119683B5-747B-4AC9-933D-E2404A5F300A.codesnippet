@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jZDYUITextField</string>
+	<string>4jZDYUITextFieldSetColor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -84,9 +84,9 @@ class XMGTextField: UITextField {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>自定义UITextField</string>
+	<string>自定义-UITextField更换占位符文字颜色KVC</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>自定义UITextField</string>
+	<string>自定义-UITextField更换占位符文字颜色KVC</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

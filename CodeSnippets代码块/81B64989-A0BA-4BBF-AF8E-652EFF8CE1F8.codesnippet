@@ -3,23 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jdeinit</string>
+	<string>layoutSubviews快捷键</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    deinit{
-        print("\(super.classForCoder)--❤️已销毁")
+	<string>    override func layoutSubviews() {
+        super.layoutSubviews()
+        
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>3199F407-8C89-49EA-BEAF-4AA29A287B81</string>
+	<string>81B64989-A0BA-4BBF-AF8E-652EFF8CE1F8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>销毁</string>
+	<string>layoutSubviews-快捷键</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>deinit</string>
+	<string>layoutSubviews-快捷键</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
