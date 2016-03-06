@@ -3,35 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITextViewDelegate</string>
+	<string>blockWuCan</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
-    
-    // MARK: - UITextViewDelegate
-    func textViewDidChange(textView: UITextView) {
-        
-        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
+	<string>public typealias &lt;#DeleteBlock#&gt; = () -&gt; Void
 
-    }
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-        self.view.endEditing(true)
-
-    }
-    
-}</string>
+var &lt;#DeleteBlock#&gt;:&lt;#DeleteBlock#&gt;?</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
+	<string>77BE064A-4EBF-46F7-A5F3-DCE393C3BAE7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITextViewDelegate-</string>
+	<string>block-无参数</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITextViewDelegate-</string>
+	<string>block-无参数</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

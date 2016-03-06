@@ -3,27 +3,43 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jpresent-UINavigationControl</string>
+	<string>4jpresentNav</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // 弹出带Nav
-    let &lt;#OAuthViewController#&gt; = &lt;#OAuthViewController#&gt;()
-    let nav = UINavigationController(rootViewController: &lt;#OAuthViewController#&gt;)
-    presentViewController(nav, animated: true, completion: nil)
+	<string>//拿到根控制器来弹出带导航的控制器
+let 登录 = &lt;#OAuthViewController#&gt;()
+// 这里不能使用self来弹出其他控制器, 因为self执行了dismiss操作
+let root:UIViewController = UIApplication.sharedApplication().keyWindow!.rootViewController!
+let nav = root.presentedViewController as? UINavigationController
+nav?.pushViewController(vc, animated: true)
 
-    let tags = &lt;#OAuthViewController#&gt;()
-    self.navigationController?.pushViewController(tags, animated: true)</string>
+
+// 取出当前UITabBarController所在的导航控制器
+let window:UIWindow = UIApplication.sharedApplication().keyWindow!
+let tabBarVc:UITabBarController = window.rootViewController as! UITabBarController
+let nav:UINavigationController = tabBarVc.selectedViewController as! UINavigationController
+
+nav.pushViewController(web, animated: true)
+
+
+// 弹出带Nav
+let &lt;#OAuthViewController#&gt; = &lt;#OAuthViewController#&gt;()
+let nav = UINavigationController(rootViewController: &lt;#OAuthViewController#&gt;)
+presentViewController(nav, animated: true, completion: nil)
+
+let tags = &lt;#OAuthViewController#&gt;()
+self.navigationController?.pushViewController(tags, animated: true)</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>06E52F79-1364-4D20-A293-7F8DD81691EA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>present-带导航的控制器UINavigationController</string>
+	<string>present-带导航的控制器</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>present-带导航的控制器UINavigationController</string>
+	<string>present-带导航的控制器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

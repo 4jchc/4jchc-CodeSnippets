@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jSetup-设置导航栏</string>
+	<string>4jSetupNav设置导航栏</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -67,9 +67,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>setup-设置导航栏</string>
+	<string>setup-Nav设置导航栏</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>setup-设置导航栏</string>
+	<string>setup-Nav设置导航栏</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

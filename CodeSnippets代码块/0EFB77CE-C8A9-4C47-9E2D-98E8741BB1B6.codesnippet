@@ -3,35 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITextViewDelegate</string>
+	<string>4j UITextFieldDelegate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
-    
-    // MARK: - UITextViewDelegate
-    func textViewDidChange(textView: UITextView) {
-        
-        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
+	<string>extension  &lt;#view#&gt;:UITextFieldDelegate{
 
+    /// 监听键盘最右下角按钮的点击（return key， 比如“换行”、“完成”等等）
+    func textFieldShouldReturn(textField: UITextField) -&gt; Bool {
+        if (textField.hasText()) {
+            
+             addButtonClick()
+        }
+        return true
     }
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-        self.view.endEditing(true)
-
-    }
-    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
+	<string>0EFB77CE-C8A9-4C47-9E2D-98E8741BB1B6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITextViewDelegate-</string>
+	<string>UITextFieldDelegate</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITextViewDelegate-</string>
+	<string>UITextFieldDelegate</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

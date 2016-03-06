@@ -22,6 +22,6 @@ fatalError("\(__FUNCTION__): &lt;#No nib named \'\(self.getClassName())\'#&gt;")
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

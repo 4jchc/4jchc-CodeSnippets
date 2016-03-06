@@ -3,13 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jJianPanAnLi代码设置高度</string>
+	<string>4jSetupToolbar设置键盘工具条</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    func setupToolbar(){
+	<string>    //MARK: 设置键盘工具条
+    func setupToolbar(){
         
         let toolbar:XMGAddTagToolbar = XMGAddTagToolbar.viewFromXIB()
         toolbar.width = self.view.width;
@@ -18,6 +19,7 @@
         self.toolbar = toolbar;
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
+    
     func keyboardWillChangeFrame(note: NSNotification){
         
         // 键盘显示\隐藏完毕的frame
@@ -32,13 +34,13 @@
         }
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D3F78534-C7A7-459E-BB8A-88C812C19073</string>
+	<string>16C3DB10-B5A1-475E-AFC1-1F46C3533623</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>自定义键盘视图XIB-代码设置高度</string>
+	<string>setup-Toolbar设置键盘工具条</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>自定义键盘视图XIB-代码设置高度</string>
+	<string>setup-Toolbar设置键盘工具条</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jSetupTextFiled多行文本</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** 文本输入框 */
+    var textField:UITextField?
+
+    //MARK: 设置多行文本
+    func setupTextFiled(){
+        
+        let textField:UITextField = UITextField()
+        textField.width = XMGScreenW;
+        textField.height = 25;
+        textField.placeholder = "&lt;#self.contentView!#&gt;"
+        textField.addTarget(self, action: "textDidChange", forControlEvents: UIControlEvents.EditingChanged)
+        textField.becomeFirstResponder()
+        &lt;#self.contentView!#&gt;.addSubview(textField)
+        self.textField = textField;
+    }
+
+    ///  监听文字改变
+    func textDidChange(){
+        
+        if (self.textField!.hasText()) { // 有文字
+            // 显示"添加标签"的按钮
+            self.addButton!.hidden = false
+            self.addButton!.y = CGRectGetMaxY(self.textField!.frame) + XMGTopicCellMargin;
+            self.addButton?.setTitle("&lt;#self.contentView!#&gt;", forState: .Normal)
+           
+        } else { // 没有文字
+            // 隐藏"添加标签"的按钮
+            self.addButton!.hidden = true
+        }
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7BFCF4B0-9CA2-4F2A-BE72-F28E60EDC8B0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>setup-TextFiled多行文本</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setup-TextFiled多行文本</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

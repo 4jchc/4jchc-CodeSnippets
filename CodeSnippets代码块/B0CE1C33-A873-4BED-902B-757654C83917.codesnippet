@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jSetupTextView单行文本</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /** 文本输入控件 */
+    var textView:XMGPlaceholderTextView?
+    
+    //MARK: 设置单行文本
+    func setupTextView(){
+        let textView:XMGPlaceholderTextView = XMGPlaceholderTextView()
+        
+        textView.frame = self.view.bounds;
+        textView.placeholder = "&lt;#把好玩的图片，好笑的段子或糗事发到这里，接受千万网友膜拜吧！发布违反国家法律内容的，我们将依法提交给有关部门处理。#&gt;";
+        textView.delegate = self;
+        self.view.addSubview(textView)
+        self.textView = textView;
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B0CE1C33-A873-4BED-902B-757654C83917</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>setup-TextView单行文本</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setup-TextView单行文本</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

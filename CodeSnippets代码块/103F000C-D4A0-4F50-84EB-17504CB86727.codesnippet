@@ -3,13 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jLazyUIButton前景和背景图片</string>
+	<string>4jLazyUIButton大全</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: - 懒加载
+	<string>private lazy  var addButton: UIButton = {
+    let btn = UIButton()
+    btn.width = self.contentView!.width;
+    btn.height = &lt;#32#&gt;;
+    btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+    btn.titleLabel?.font = UIFont.systemFontOfSize(&lt;#32#&gt;)
+    btn.contentEdgeInsets = UIEdgeInsetsMake(0, XMGTopicCellMargin, 0, XMGTopicCellMargin);
+    // 让按钮内部的文字和图片都左对齐
+    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left;
+    btn.backgroundColor = UIColor.RGB(&lt;#32#&gt;, &lt;#32#&gt;, &lt;#32#&gt;);
+    btn.setBackgroundImage(UIImage(named: "&lt;#compose_photo_close#&gt;"), forState: UIControlState.Normal)
+    btn.addTarget(self, action: "addBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+    self.contentView!.addSubview(btn)
+    return btn
+}()
+
+
+/// 监听"添加标签"按钮点击
+func addButtonClick(){
+    
+    &lt;#updatePlaceholderLabelSize#&gt;
+}
+
+
+// MARK: - 懒加载
 private lazy var &lt;#composeBtn#&gt;:UIButton = {
     let btn = UIButton()
     
@@ -88,13 +112,14 @@ private lazy var iconButton: UIButton = {
     let btn = UIButton()
     btn.titleLabel?.font = UIFont.systemFontOfSize(32)
     return btn
-}()</string>
+}()
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>103F000C-D4A0-4F50-84EB-17504CB86727</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>懒加载UIButton</string>
+	<string>懒加载UIButton大全</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>懒加载UIButton的前景和背景图片</string>
 	<key>IDECodeSnippetUserSnippet</key>

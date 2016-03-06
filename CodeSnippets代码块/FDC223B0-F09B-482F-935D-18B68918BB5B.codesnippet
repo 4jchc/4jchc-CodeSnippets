@@ -3,35 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITextViewDelegate</string>
+	<string>4jArray数组-从数组和类中--删除数组</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
-    
-    // MARK: - UITextViewDelegate
-    func textViewDidChange(textView: UITextView) {
-        
-        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
-
-    }
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-        self.view.endEditing(true)
-
-    }
-    
-}</string>
+	<string>    &lt;#self.tagLabels#&gt;.forEach({$0.&lt;#removeFromSuperview()#&gt;})
+        &lt;#self.tagLabels#&gt;.removeAllObjects()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
+	<string>FDC223B0-F09B-482F-935D-18B68918BB5B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITextViewDelegate-</string>
+	<string>Array数组-从数组和类中--删除数组</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITextViewDelegate-</string>
+	<string>Array数组-从数组和类中--删除数组</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,35 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITextViewDelegate</string>
+	<string>GangXing</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
-    
-    // MARK: - UITextViewDelegate
-    func textViewDidChange(textView: UITextView) {
-        
-        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
-
-    }
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-        self.view.endEditing(true)
-
-    }
-    
-}</string>
+	<string>/** &lt;#标签-间距#&gt; */</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
+	<string>3B0A162E-6A5C-43C5-AC7F-FAD9E3C0571B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITextViewDelegate-</string>
+	<string>/***/</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITextViewDelegate-</string>
+	<string>/***/</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

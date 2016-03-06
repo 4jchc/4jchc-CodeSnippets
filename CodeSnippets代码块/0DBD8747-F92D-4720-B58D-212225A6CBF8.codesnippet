@@ -13,7 +13,11 @@
         let maxSize:CGSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width - 4 * XMGTopicCellMargin, CGFloat(MAXFLOAT))
         
         let textH:CGFloat = (self.text! as NSString).boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(14)], context: nil).size.height
-        </string>
+        
+
+            let textW:CGFloat = (self.textField!.text! as NSString).sizeWithAttributes([NSFontAttributeName:self.textField!.font!]).width
+
+        return max(100, textW);</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0DBD8747-F92D-4720-B58D-212225A6CBF8</string>
 	<key>IDECodeSnippetLanguage</key>

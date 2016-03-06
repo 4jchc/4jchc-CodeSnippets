@@ -9,12 +9,16 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        let indicatorView:UIView = UIView()
-        indicatorView.backgroundColor = UIColor.&lt;#redColor()#&gt;
-        indicatorView.height = &lt;#2#&gt;
-        indicatorView.y = &lt;#titlesView.height - indicatorView.height;#&gt;
-        &lt;#titlesView#&gt;.addSubview(indicatorView)
-        self.indicatorView = indicatorView;</string>
+	<string>        var contentView:UIView?
+        let contentView:UIView = UIView()
+        contentView.x = XMGTopicCellMargin;
+        contentView.width = self.view.width - 2 * contentView.x;
+        contentView.y = 64 + XMGTopicCellMargin;
+        contentView.backgroundColor = UIColor.&lt;#redColor()#&gt;
+        contentView.height = XMGScreenH;
+        
+        &lt;#titlesView#&gt;.addSubview(contentView)
+        self.contentView = contentView;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>C6DB27BA-0165-4D10-9B46-2F10C9AC45CB</string>
 	<key>IDECodeSnippetLanguage</key>

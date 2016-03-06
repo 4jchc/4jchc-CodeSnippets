@@ -3,35 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITextViewDelegate</string>
+	<string>initFrame快捷键</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
-    
-    // MARK: - UITextViewDelegate
-    func textViewDidChange(textView: UITextView) {
-        
-        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
-
-    }
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-        self.view.endEditing(true)
-
+	<string>    override init(frame: CGRect) {
+        super.init(frame: frame)
+        &lt;#setup()#&gt;
     }
     
-}</string>
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        //fatalError("init(coder:) has not been implemented")
+        
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
+	<string>1D1A4DFA-724B-4CEB-A17C-9BD2F7CD40FC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITextViewDelegate-</string>
+	<string>init-frame快捷键</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITextViewDelegate-</string>
+	<string>init-frame快捷键</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

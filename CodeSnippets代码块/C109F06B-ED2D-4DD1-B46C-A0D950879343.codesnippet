@@ -3,35 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jUITextViewDelegate</string>
+	<string>4jSetupUIView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension  &lt;#naem#&gt;:UITextViewDelegate{
+	<string>    /** 内容 */
+    var contentView:UIView?
     
-    // MARK: - UITextViewDelegate
-    func textViewDidChange(textView: UITextView) {
+    //MARK: 设置视图容器
+    func setupContentView(){
         
-        self.navigationItem.rightBarButtonItem!.enabled = textView.hasText()
+        let contentView:UIView = UIView()
+        contentView.x = XMGTopicCellMargin;
+        contentView.width = self.view.width - 2 * contentView.x;
+        contentView.y = 64 + XMGTopicCellMargin;
 
-    }
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        contentView.height = XMGScreenH;
         
-        self.view.endEditing(true)
-
+        self.view.addSubview(contentView)
+        self.contentView = contentView;
     }
-    
-}</string>
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4BFDDECD-4723-4A47-BB06-4E8516E813B6</string>
+	<string>C109F06B-ED2D-4DD1-B46C-A0D950879343</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>UITextViewDelegate-</string>
+	<string>setup-UIView-ContentView视图容器</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITextViewDelegate-</string>
+	<string>setup-UIView-ContentView视图容器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

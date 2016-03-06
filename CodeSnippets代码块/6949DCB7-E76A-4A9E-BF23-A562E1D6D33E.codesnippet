@@ -9,7 +9,15 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    let &lt;#登录#&gt; = &lt;#OAuthViewController#&gt;()
+	<string>    //拿到根控制器来弹出带导航的控制器
+    let &lt;#登录#&gt; = &lt;#OAuthViewController#&gt;()
+    // 这里不能使用self来弹出其他控制器, 因为self执行了dismiss操作
+    let root:UIViewController = UIApplication.sharedApplication().keyWindow!.rootViewController!
+    let nav = root.presentedViewController as? UINavigationController
+    nav?.pushViewController(vc, animated: true)
+    
+    //拿到根控制器来弹出控制器
+    let &lt;#登录#&gt; = &lt;#OAuthViewController#&gt;()
     let nav = &lt;#OAuthViewController#&gt;(rootViewController:&lt;#登录#&gt;)
     // 这里不能使用self来弹出其他控制器, 因为self执行了dismiss操作
     let root:UIViewController = UIApplication.sharedApplication().keyWindow?.rootViewController

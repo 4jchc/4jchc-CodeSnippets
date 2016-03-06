@@ -11,8 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>    //MARK:  初始化UIToolbar工具条
     ///  初始化UIToolbar工具条
-    private func setupToolbar()
-    {
+    private func setupToolbar(){
         // 1.添加子控件
         view.addSubview(toolbar)
         view.addSubview(tipLabel)
@@ -27,8 +26,7 @@
             ["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"],
             
             ["imageName": "compose_addbutton_background"]]
-        for dict in itemSettings
-        {
+        for dict in itemSettings{
             
             let item = UIBarButtonItem(imageName: dict["imageName"]!, target: self, action: dict["action"])
             items.append(item)
@@ -49,9 +47,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>setup-初始化UIToolbar工具条</string>
+	<string>setup-UIToolbar-代码遍历添加按钮</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>setup-初始化UIToolbar工具条</string>
+	<string>setup-UIToolbar-代码遍历添加按钮</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
