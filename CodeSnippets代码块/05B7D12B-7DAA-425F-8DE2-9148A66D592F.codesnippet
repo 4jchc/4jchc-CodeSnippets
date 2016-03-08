@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jPOD-下载第三方框架</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>pod 'AFNetworking'
+
+pod 'SDWebImage'
+
+pod 'SVProgressHUD'
+
+pod 'MJExtension'
+pod 'MJRefresh'
+
+
+
+pod 'DACircularProgress'
+
+pod 'pop'
+
+pod 'KILabel'</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>05B7D12B-7DAA-425F-8DE2-9148A66D592F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>POD-下载第三方框架</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>POD-下载第三方框架</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
