@@ -3,39 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jPOD-下载第三方框架</string>
+	<string>4jCodeSnippets-代码块地址</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>pod 'AFNetworking'
-
-pod 'SDWebImage'
-
-pod 'SVProgressHUD'
-
-pod 'MJExtension'
-pod 'MJRefresh'
-
-
-
-pod 'DACircularProgress'
-
-pod 'pop'
-
-pod 'KILabel'</string>
+	<string>~/Library/Developer/Xcode/UserData/CodeSnippets</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>05B7D12B-7DAA-425F-8DE2-9148A66D592F</string>
+	<string>6367D227-D24D-49B6-9E0F-0FFEDF54D07C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>POD-下载第三方框架</string>
+	<string>CodeSnippets-代码块地址</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>POD-下载第三方框架</string>
+	<string>CodeSnippets-代码块地址</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

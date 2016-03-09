@@ -3,22 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jlayer-圆角</string>
+	<string>viewDidLayoutSubviews快捷键</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>            self.profileImageView.layer.cornerRadius = self.profileImageView.width * 0.5;
-            self.profileImageView.layer.masksToBounds = true</string>
+	<string>    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E32B2322-5ADB-43D8-8461-E8B2E2D49E23</string>
+	<string>32D5AC5D-682D-4505-8E0A-D68C1D298DCE</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>layer-圆角</string>
+	<string>viewDidLayoutSubviews快捷键</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>layer-圆角</string>
+	<string>viewDidLayoutSubviews快捷键</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

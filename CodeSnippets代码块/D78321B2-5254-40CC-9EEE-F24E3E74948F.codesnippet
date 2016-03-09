@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jAVAudioPlayerDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK: - AVAudioplayer的代理方法
+extension HMPlayingViewController :AVAudioPlayerDelegate{
+    
+    // 播放结束时调用
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        // 下一曲
+        if (flag) {
+            self.next()
+            
+        }
+    }
+    // 播放器被打断时调用(例如电话)
+    func audioPlayerBeginInterruption(player: AVAudioPlayer) {
+        // 暂停
+        if (self.player.playing) {
+            
+            HMAudioTool.pauseMusicWithFilename(self.playingMusic!.filename)
+        }
+    }
+    
+    
+    // 播放器打断结束
+    func audioPlayerEndInterruption(player: AVAudioPlayer) {
+        // 继续播放
+        if (!self.player.playing) {
+            self.startplayingMusics()
+        }
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D78321B2-5254-40CC-9EEE-F24E3E74948F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AVAudioPlayerDelegate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AVAudioPlayerDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

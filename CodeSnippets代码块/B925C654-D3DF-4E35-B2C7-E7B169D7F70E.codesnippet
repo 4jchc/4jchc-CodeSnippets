@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jNSTimer1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK: - 获取进度定时器
+var progressTimer:NSTimer?
+
+
+// 1.创建定时器
+self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateCurrentProgress", userInfo: nil, repeats: true)
+// 2.将定时器添加到事件循环
+NSRunLoop.mainRunLoop().addTimer(self.progressTimer!, forMode: NSRunLoopCommonModes)
+
+
+//MARK: - 移除定时器
+func removeProgressTimer(){
+    
+    self.progressTimer?.invalidate()
+    self.progressTimer = nil;
+}
+
+
+
+NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: Selector("bigSmalltransformChose"), userInfo: nil, repeats: true)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B925C654-D3DF-4E35-B2C7-E7B169D7F70E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSTimer-案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSTimer-案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

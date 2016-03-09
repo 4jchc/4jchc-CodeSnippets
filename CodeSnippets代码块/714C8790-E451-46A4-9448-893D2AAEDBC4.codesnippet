@@ -3,19 +3,51 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jVFL</string>
+	<string>4jVFL-布局</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    func setupView(){
+	<string>    
+    // 添加毛玻璃效果
+    func setupBlurGlass(){
+        // 添加毛玻璃效果
+        let toolBar:UIToolbar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Black;
+        self.albumView.addSubview(toolBar)
+
+        
+        // Masonry
+        toolBar.mas_makeConstraints { (make) -&gt; Void in
+            //make.top.equalTo()(self.albumView)
+            make.edges.equalTo()(self.albumView)
+            
+        }
+        // VFL
+        /*
+        toolBar.translatesAutoresizingMaskIntoConstraints = false
+        let VVFL:String = "V:|-0-[toolBar]-0-|";
+        let HVFL:String = "H:|-0-[toolBar]-0-|";
+        let views:NSDictionary = ["toolBar":toolBar]
+        var cons = [NSLayoutConstraint]()
+        // 水平方向的约束
+        cons += NSLayoutConstraint.constraintsWithVisualFormat(HVFL, options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views as! [String : AnyObject])
+        // 垂直方向的约束
+        cons += NSLayoutConstraint.constraintsWithVisualFormat(VVFL, options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views as! [String : AnyObject])
+        self.albumView.addConstraints(cons)
+        */
+
+
+    }
+
+    func setupView(){
         // 代码方式实现自动布局 VFL
         // 创建一个Tableview
         self.view.addSubview(tableView)
         // 创建输入框View
         self.view.addSubview(InputView)
-
+        
         // 自动布局
         
         // 水平方向的约束
@@ -23,7 +55,7 @@
         // 1.tabview水平方向的约束
         let tabviewHConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[tableview]-0-|",options: [],metrics: nil,
             views: views as! [String : AnyObject]
-            )
+        )
         self.view.addConstraints(tabviewHConstraints as! [NSLayoutConstraint])
         
         // 2.inputView水平方向的约束
@@ -42,7 +74,7 @@
         self.inputViewConstraint = vContraints.lastObject as! NSLayoutConstraint
         NSLog("%@",vContraints);
     }
-
+    
     private func setupUI()
     {
         // 1.添加子控件
@@ -62,16 +94,15 @@
         
         contentView.addConstraints(cons)
     }
-    
     </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A8049DF2-B78B-4A25-A6A3-F0BB0C184125</string>
+	<string>714C8790-E451-46A4-9448-893D2AAEDBC4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>代码实现自动布局 VFL</string>
+	<string>VFL-布局</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>代码实现自动布局 VFL</string>
+	<string>VFL-布局</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

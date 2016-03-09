@@ -3,36 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jPOD-下载第三方框架</string>
+	<string>4jCornerRadius-圆角</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>pod 'AFNetworking'
-
-pod 'SDWebImage'
-
-pod 'SVProgressHUD'
-
-pod 'MJExtension'
-pod 'MJRefresh'
-
-
-
-pod 'DACircularProgress'
-
-pod 'pop'
-
-pod 'KILabel'</string>
+	<string>        // 3.设置图片圆角
+        self.iconView.layer.cornerRadius = self.iconView.frame.size.width * 0.5;
+        self.iconView.layer.borderWidth = &lt;#36#&gt;
+        self.iconView.layer.borderColor = UIColor.RGB(&lt;#36#&gt;, &lt;#36#&gt;, &lt;#36#&gt;).CGColor;
+        self.iconView.layer.masksToBounds = true</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>05B7D12B-7DAA-425F-8DE2-9148A66D592F</string>
+	<string>4E1BC3D1-8809-443F-95CF-DCC41F4E2D2A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>POD-下载第三方框架</string>
+	<string>cornerRadius-圆角</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>POD-下载第三方框架</string>
+	<string>cornerRadius-圆角</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
