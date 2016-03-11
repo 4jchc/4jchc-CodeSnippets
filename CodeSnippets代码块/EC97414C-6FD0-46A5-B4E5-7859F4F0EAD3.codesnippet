@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jRegex-正则表达式</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    ///  :returns:  href
+    func hrefLink() -&gt; (href: String, linkText: String)? {
+        
+        // 1. 匹配方案
+        let pattern = "&lt;a.*?href=\"(.*?)\".*?&gt;(.*?)&lt;/a&gt;"
+        
+        // 2. 实例化表达式
+        let regex = try! NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.DotMatchesLineSeparators)
+        
+        // 3. 匹配
+        if let result = regex.firstMatchInString(self, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, length())) {
+            
+            // href
+            let range1 = result.rangeAtIndex(1)
+            // link text
+            let range2 = result.rangeAtIndex(2)
+            
+            let href = (self as NSString).substringWithRange(range1)
+            let linkText = (self as NSString).substringWithRange(range2)
+            
+            return (href, linkText)
+        }
+        return nil
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EC97414C-6FD0-46A5-B4E5-7859F4F0EAD3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>regex-正则表达式</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>regex-正则表达式</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

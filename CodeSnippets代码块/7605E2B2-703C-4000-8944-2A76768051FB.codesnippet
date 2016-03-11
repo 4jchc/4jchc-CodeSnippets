@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jSQLite-保存本地</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+class SQLiteManager {
+    // swift 创建数据库上下文变量
+    var db: COpaquePointer = nil
+    // swift 调用打开数据库的方法传递参数的类型设定
+    private func test() {
+        var db: COpaquePointer = nil
+        var fileName = "111".cStringUsingEncoding(NSUTF8StringEncoding)!
+        sqlite3_open(fileName, &amp;db)
+        
+    }
+    // 1&gt; 私有静态成员
+    static private let instance = SQLiteManager()
+    // 2&gt; 公共的类函数，作为全局访问点
+    class func sharedSQLManager() -&gt; SQLiteManager {
+        return instance
+    }
+    
+    /// 打开数据库
+    func openDB(dbName: String) -&gt; Bool {
+        
+        // 数据库文件可以保存在沙盒的 document / cache 目录中
+        var filePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as! String
+        filePath = filePath.stringByAppendingPathComponent(dbName)
+        // 转换成 C 语言格式的字符串
+        let path = filePath.cStringUsingEncoding(NSUTF8StringEncoding)!
+        
+        /**
+        参数：
+        1. 文件路径：完整的 C 语言格式的路径字符串 Int8, Char, Byte, char *
+        2. 数据库句柄，数据库指针地址，后续通过句柄操作数据库
+        
+        如果数据库已经存在，就会直接打开
+        如果数据库不存在，会新建之后再打开
+        */
+        if sqlite3_open(path, &amp;db) != SQLITE_OK {
+            println("打开数据失败")
+            return false
+        }
+        
+        println("打开数据库成功 \(filePath)")
+        
+        // 创建数据表
+        let result = createTable()
+        let tip = result ? "创表成功" : "创表失败"
+        println(tip)
+        
+        return result
+    }
+    
+    /// 开启事务
+    func beginTransction() -&gt; Bool {
+        return execSQL("BEGIN TRANSACTION;")
+    }
+    
+    /// 提交事务
+    func commitTransction() -&gt; Bool {
+        return execSQL("COMMIT TRANSACTION;")
+    }
+    
+    /// 回滚事务
+    func rollbackTransction() -&gt; Bool {
+        return execSQL("ROLLBACK TRANSACTION;")
+    }
+    
+    /// 批量更新
+    func execUpdate(sql: String, params: CVarArgType...) -&gt; Bool {
+        // INSERT INTO T_Person (name, age, height) VALUES (?, ?, ?);
+        let cSQL = sql.cStringUsingEncoding(NSUTF8StringEncoding)!
+        
+        // 1. 准备语句
+        var stmt: COpaquePointer = nil
+        // 准备批量更新语句的结果
+        var result = true
+        if sqlite3_prepare_v2(db, cSQL, -1, &amp;stmt, nil) == SQLITE_OK {
+            // 语句已经编译完成，可以绑定参数，需要针对不同的数据类型
+            
+            // 2. 判断参数的属性
+            // ** bind 函数的第二个参数，是对应的 ? 参数的索引
+            // 索引值是从 `1` 开始
+            var index: Int32 = 1
+            for obj in params {
+                if obj is Int {
+                    sqlite3_bind_int64(stmt, index, sqlite3_int64(obj as! Int))
+                } else if obj is Double {
+                    sqlite3_bind_double(stmt, index, obj as! Double)
+                } else if obj is String {
+                    //                    println("String \(obj)")
+                    // 将 obj 转换成 c 语言的 char *
+                    let cStr = (obj as! String).cStringUsingEncoding(NSUTF8StringEncoding)!
+                    /**
+                    3. c 语言字符串的地址 char *
+                    4. 字符串长度，可以传入 -1
+                    5. 是对字符串的引用方式，SQLITE_TRANSIENT 让 SQLite copy 字符串，以保证字符串的内容正确
+                    
+                    之所以有的时候，打断点跟踪执行是正确的，是因为程序在断电的地方为了方便程序员调试
+                    会记录当前所有变量的值
+                    */
+                    sqlite3_bind_text(stmt, index, cStr, -1, SQLITE_TRANSIENT)
+                } else if obj is NSNull {
+                    sqlite3_bind_null(stmt, index)
+                }
+                index++
+            }
+            
+            // 3. 执行语句 - 需要注意更新记录返回的结果是 `DONE`
+            if sqlite3_step(stmt) != SQLITE_DONE {
+                println("插入数据错误!")
+                result = false
+            }
+            
+            // 4. 复位语句
+            if sqlite3_reset(stmt) != SQLITE_OK {
+                println("复位语句错误")
+                result = false
+            }
+        }
+        
+        // 5. 释放语句
+        sqlite3_finalize(stmt)
+        
+        // 6. 返回结果
+        return result
+    }
+    
+    /// 执行 SQL，返回?数组
+    func execRecordSet(sql: String) -&gt; [[String: AnyObject]]? {
+        // 转换成 C 语言的字符串
+        let cSQL = sql.cStringUsingEncoding(NSUTF8StringEncoding)!
+        
+        // 1. 准备 SQL，预先编译 SQL
+        /**
+        参数
+        1. 数据库句柄
+        2. SQL
+        3. 以字节为单位的 SQL 语句的长度，使用 -1 可以自动计算
+        4. 编译后的语句句柄，后续 step 操作都依赖这个句柄，需要释放
+        5. 未使用的指针，nil
+        */
+        var stmt: COpaquePointer = nil
+        
+        // 定义结果数组
+        var list: [[String: AnyObject]]?
+        
+        if sqlite3_prepare_v2(db, cSQL, -1, &amp;stmt, nil) == SQLITE_OK {
+            
+            // 2. 如果准备 OK，sqlite3_step 逐行取出记录，while
+            // 如果取到一行，就执行
+            // 实例化结果字典数组
+            list = [[String: AnyObject]]()
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                list!.append(recordDict(stmt))
+            }
+        }
+        
+        // 3. 释放语句句柄
+        sqlite3_finalize(stmt)
+        
+        return list
+    }
+    
+    /// 从指令中提取一条完整的记录字典
+    private func recordDict(stmt: COpaquePointer) -&gt; [String: AnyObject] {
+        // 3. 一行数据，包含了指定查询的所有字段，name, age, height
+        // 1&gt; 获得当前行的列数
+        let colCount = sqlite3_column_count(stmt)
+        
+        // 2&gt; 希望知道所有列的信息 -&gt; 遍历所有列
+        // 创建一个字典，记录当前行的所有信息
+        var recordDict = [String: AnyObject]()
+        
+        // 遍历列获取详细信息
+        for i in 0..&lt;colCount {
+            // 获取到对应的列名
+            let cname = sqlite3_column_name(stmt, i)
+            // 转换名称
+            let colName = String(CString: cname, encoding: NSUTF8StringEncoding)!
+            
+            // 获取到列的字段类型
+            let colType = sqlite3_column_type(stmt, i)
+            
+            // 根据类型来获取不同类型的结果
+            switch colType {
+            case SQLITE_INTEGER:
+                let iNum = Int(sqlite3_column_int64(stmt, i))
+                recordDict[colName] = iNum
+            case SQLITE_FLOAT:
+                let dNum = sqlite3_column_double(stmt, i)
+                recordDict[colName] = dNum
+            case SQLITE3_TEXT:
+                let cStr = UnsafePointer&lt;Int8&gt;(sqlite3_column_text(stmt, i))
+                let str = String(CString: cStr, encoding: NSUTF8StringEncoding)
+                recordDict[colName] = str
+            case SQLITE_NULL:
+                recordDict[colName] = NSNull()
+            default:
+                println("不支持的数据类型")
+            }
+        }
+        
+        // 返回完整字典
+        return recordDict
+    }
+    
+    /// 执行 SQL 语句
+    func execSQL(sql: String) -&gt; Bool {
+        
+        let cSQL = sql.cStringUsingEncoding(NSUTF8StringEncoding)!
+        /**
+        参数
+        1. 数据库句柄
+        2. C 语言的 SQL 语句 （evaluated）
+        3. 回调 nil
+        4. 回调函数的第一个参数 nil
+        5. 错误信息 nil
+        */
+        return sqlite3_exec(db, cSQL, nil, nil, nil) == SQLITE_OK
+    }
+    
+    /**
+     创建数据表：只需要执行一次
+     目的：就是创建数据表，以便保存数据
+     提示：SQL可以从 navicat 中粘贴
+     1&gt; 替换 "
+     2&gt; IF NOT EXISTS
+     3&gt; 在末尾添加 \n
+     创表的动作，就是执行一条 SQL 语句
+     */
+    private func createTable() -&gt; Bool {
+        
+        // 1. 从文件读取 SQL
+        let path = NSBundle.mainBundle().pathForResource("db.sql", ofType: nil)!
+        let data = NSData(contentsOfFile: path)!
+        // 将二进制数据转换成 sql 字符串
+        let sql = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        
+        println(sql)
+        // 2. 执行 SQL
+        return execSQL(sql)
+    }
+    
+    /**
+     typedef void (*sqlite3_destructor_type)(void*);
+     #define SQLITE_STATIC      ((sqlite3_destructor_type)0)
+     #define SQLITE_TRANSIENT   ((sqlite3_destructor_type)-1)
+     */
+    private let SQLITE_TRANSIENT = sqlite3_destructor_type(COpaquePointer(bitPattern: -1))
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7605E2B2-703C-4000-8944-2A76768051FB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>SQLite-保存本地案例1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SQLite-保存本地案例1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

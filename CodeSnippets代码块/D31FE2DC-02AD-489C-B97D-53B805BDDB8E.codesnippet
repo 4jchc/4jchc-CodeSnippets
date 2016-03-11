@@ -3,21 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>4jCodeSnippets-代码块地址</string>
+	<string>import-#</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>~/Library/Developer/Xcode/UserData/CodeSnippets</string>
+	<string>#import "UIImageView+WebCache.h"
+
+#import "MJExtension.h"
+
+#import "MJRefresh.h"
+
+
+#import "CBAutoScrollLabel.h"</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6367D227-D24D-49B6-9E0F-0FFEDF54D07C</string>
+	<string>D31FE2DC-02AD-489C-B97D-53B805BDDB8E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>CodeSnippets-代码块地址</string>
+	<string>#import-#</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>CodeSnippets-代码块地址</string>
+	<string>#import-#</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

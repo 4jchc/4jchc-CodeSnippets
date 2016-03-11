@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>override-重写案例</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    var exname : String {
+        get{
+            return "扩展的"
+        }
+        set{
+            self.exname = newValue
+        }
+        
+        
+        private var _emotion:WBEmotion?
+        var emotion:WBEmotion?{
+        get{
+        return self._emotion
+        }
+        set{
+        self._emotion=newValue
+        self.image=UIImage(named: newValue!.png!)
+        }
+        }
+        
+        
+        
+        override var text:String?{
+        get{
+        return super.text
+        }
+        set{
+        super.text=newValue
+        // setNeedsDisplay会在下一个消息循环时刻，调用drawRect:
+        self.setNeedsDisplay()
+        }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>724A81EE-5F17-4B84-BE4C-56F569DB4238</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>override-重写</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>override-重写</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
