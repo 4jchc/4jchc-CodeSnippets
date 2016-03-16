@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>Bibao3</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    A-新建闭包-传值 B-接受闭包然后调用
+    
+    /** 获取tags的block */
+    
+    var tagsBlock: ((tags:NSArray) -&gt; Void)?
+    
+    
+    // 传递tags给这个block
+    let tags:NSArray = self.tagButtons.valueForKeyPath("currentTitle") as! NSArray
+    
+    self.tagsBlock?(tags: tags)
+
+    
+    
+    vc.tagsBlock = {
+    (tags) in
+    if let weakSelf = weakSelf {
+    
+    weakSelf.createTagLabels(tags)
+    
+    }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>276966F8-BB94-4C44-8FC2-9645D4D65D83</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>闭包-案例3</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>闭包-案例3</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

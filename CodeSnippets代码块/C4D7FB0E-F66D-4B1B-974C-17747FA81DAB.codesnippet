@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jRows组Cols列</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let cols = 4
+        let rows = 8
+        let cellWidth = Int(self.view.frame.width / CGFloat(cols))
+        let cellHeight = Int(self.view.frame.height / CGFloat(rows))
+        
+        for var i = 0; i &lt; activityTypes.count; i++ {
+            let x = i % cols * cellWidth
+            let y = i / cols * cellHeight
+            let frame = CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
+            
+            
+            let activityIndicatorView = NVActivityIndicatorView(frame: frame,
+                type: activityTypes[i])
+            
+            self.view.addSubview(activityIndicatorView)
+            activityIndicatorView.startAnimation()
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C4D7FB0E-F66D-4B1B-974C-17747FA81DAB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>rows组cols列</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rows组cols列</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>4jNSTimer-停止继续案例</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>enum FiveDuiJiaoType:Int {
+    
+    case leftDown = 0
+    case rightDown
+    case rightUp
+    case leftUp
+    
+}
+
+    static var startTime:NSTimer?
+    
+NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: Selector("DuiJiaoRight"), userInfo: nil, repeats: true)
+        //leftUpRight(0, centY: 0, H: 100, count: 8, Width: ScreenWidth, Height: ScreenHeight)
+        bigSmalltransformChose()
+        
+    }
+
+    
+   static var FiveViewArray:NSMutableArray=NSMutableArray()
+    //MARK:  停止动画
+    ///  停止动画
+    static func stop(){
+        FiveViewController.startTime?.fireDate = NSDate.distantFuture()
+        FiveViewArray.forEach({$0.layer.pauseAnimation1()})
+        print("*FiveViewArray\(FiveViewArray.count)")
+        
+        
+    }
+    //MARK:  resume继续执行
+    ///  resume继续执行
+    func resume(){
+        FiveViewController.startTime?.fireDate = NSDate()
+        ViewController.startTime?.fire()
+        FiveViewController.FiveViewArray.forEach({$0.layer.resumeAnimation1()})
+ 
+        
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0FD56ACA-32E2-4665-A87C-440CD2810215</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSTimer-停止继续案例</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSTimer-停止继续案例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
